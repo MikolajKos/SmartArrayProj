@@ -1,3 +1,0 @@
-C:/Users/nikok/OneDrive/Dokumenty/STUDIA/SmartArrayProj/SmartArray/build/CMakeFiles/sa.dir
-C:/Users/nikok/OneDrive/Dokumenty/STUDIA/SmartArrayProj/SmartArray/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/nikok/OneDrive/Dokumenty/STUDIA/SmartArrayProj/SmartArray/build/CMakeFiles/ZERO_CHECK.dir
