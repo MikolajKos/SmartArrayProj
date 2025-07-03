@@ -7,20 +7,28 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\SmartArray.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\handlers\\ErrorHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\src\\handlers\\ErrorHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\handlers\\ErrorHandler.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\handlers\\ErrorHandler.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\SmartArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\src\\SmartArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\Employee.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\Employee.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\data\\Employee.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\src\\data\\Employee.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\handlers\\ErrorHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\src\\handlers\\ErrorHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\handlers\\ErrorHandler.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\handlers\\ErrorHandler.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +38,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "Employee.hpp",
+              "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\Employee.hpp",
+              "RelativeDocumentMoniker": "app\\includes\\Employee.hpp",
+              "ToolTip": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\Employee.hpp",
+              "RelativeToolTip": "app\\includes\\Employee.hpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-03T13:51:23.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Employee.cpp",
+              "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\data\\Employee.cpp",
+              "RelativeDocumentMoniker": "app\\src\\data\\Employee.cpp",
+              "ToolTip": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\data\\Employee.cpp",
+              "RelativeToolTip": "app\\src\\data\\Employee.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-03T13:20:38.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ErrorHandler.hpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\handlers\\ErrorHandler.hpp",
               "RelativeDocumentMoniker": "app\\includes\\handlers\\ErrorHandler.hpp",
@@ -53,14 +87,14 @@
               "RelativeDocumentMoniker": "app\\includes\\SmartArray.hpp",
               "ToolTip": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\SmartArray.hpp",
               "RelativeToolTip": "app\\includes\\SmartArray.hpp",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAAAFoAAAAQAAAA",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAAAJsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-07-03T10:53:06.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ErrorHandler.cpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\handlers\\ErrorHandler.cpp",
               "RelativeDocumentMoniker": "app\\src\\handlers\\ErrorHandler.cpp",
@@ -73,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SmartArray.cpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\SmartArray.cpp",
               "RelativeDocumentMoniker": "app\\src\\SmartArray.cpp",
@@ -86,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\main.cpp",
               "RelativeDocumentMoniker": "app\\src\\main.cpp",

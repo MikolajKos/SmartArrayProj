@@ -7,6 +7,12 @@
 using namespace std;
 
 template <typename T>
+class SmartArray;
+
+template <typename T>
+ostream& operator<<(ostream& os, const SmartArray<T>& ob);
+
+template <typename T>
 class SmartArray {
 	T* dat_ = nullptr;
 	unsigned size_;
@@ -21,9 +27,12 @@ public:
 	// Methods
 	bool push(const T& elem);
 	T pop();
+	bool isFull();
+	bool isEmpty();
 
 	// Operators
 	SmartArray<T>& operator=(const SmartArray<T>& other);
+	friend ostream& operator<< <T>(ostream& os, const SmartArray<T>& ob);
 
 private:
 	void alloc();
@@ -58,6 +67,38 @@ template <typename T>
 SmartArray<T>::~SmartArray() {
 	delete[] dat_;
 	dat_ = nullptr;
+}
+
+template <typename T>
+bool SmartArray<T>::push(const T& elem) {
+	if (isFull()) {
+		reallocate(capacity_ * 2);
+	}
+
+	dat_[size_] = elem;
+	size_++;
+
+	return true;
+}
+
+template <typename T>
+T SmartArray<T>::pop() {
+	if (isEmpty()) {
+		ErrorHandler::handler(ErrorHandler::STACK_IS_EMPTY);
+		return T{};
+	}
+
+	return dat_[--size_];
+}
+
+template <typename T>
+bool SmartArray<T>::isFull() {
+	return size_ == capacity_;
+}
+
+template <typename T>
+bool SmartArray<T>::isEmpty() {
+	return size_ == 0;
 }
 
 template <typename T>
@@ -115,6 +156,14 @@ SmartArray<T>& SmartArray<T>::operator=(const SmartArray<T>& other) {
 	dat_ = new_dat;
 
 	return *this;
+}
+
+template <typename T>
+ostream& operator<<(ostream& os, const SmartArray<T>& ob) {
+	for (unsigned i = 0; i < ob.size_; ++i) {
+		os << ob.dat_[i] << std::endl;
+	}
+	return os;
 }
 
 #endif
