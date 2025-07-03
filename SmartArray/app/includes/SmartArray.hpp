@@ -1,9 +1,14 @@
-#ifndef SMARTARRAY_H
-#define SMARTARRAY_H
+#ifndef SMART_ARRAY_HPP
+#define SMART_ARRAY_HPP
+
+#include <iostream>
+#include <handlers\ErrorHandler.hpp>
+
+using namespace std;
 
 template <typename T>
 class SmartArray {
-	T* data_;
+	T* dat_ = nullptr;
 	unsigned size_;
 	unsigned capacity_;
 
@@ -21,5 +26,50 @@ private:
 	void alloc();
 	void realloc();
 };
+
+
+// Implementation
+
+template <typename T>
+SmartArray<T>::SmartArray() : size_(0), capacity_(5) {
+	alloc();
+}
+
+template <typename T>
+SmartArray<T>::SmartArray(unsigned cap) : size_(0), capacity_(cap) {
+	alloc();
+}
+
+template <typename T>
+SmartArray<T>::SmartArray(const SmartArray& ob) {
+	capacity_ = ob.capacity_;
+	size_ = ob.size_;
+	alloc();
+
+	for (unsigned i = 0; i < size_; ++i) {
+		dat_[i] = ob.dat_[i];
+	}
+}
+
+template <typename T>
+SmartArray<T>::~SmartArray() {
+	delete[] dat_;
+	dat_ = nullptr;
+}
+
+template <typename T>
+void SmartArray<T>::alloc() {
+	if (dat_) {
+		delete[] dat_;
+		dat_ = nullptr;
+	}
+
+	try {
+		dat_ = new T[capacity_];
+	}
+	catch (bad_alloc& ex) {
+		ErrorHandler::handler(ErrorHandler::MEM_ALLOC_ERROR, ex.what());
+	}
+}
 
 #endif

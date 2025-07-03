@@ -7,6 +7,6 @@ project(sa)
 add_executable(sa
 	app/src/main.cpp
 	app/src/SmartArray.cpp
-)
+  "app/src/handlers/ErrorHandler.cpp")
 
 target_include_directories(sa PUBLIC ${CMAKE_SOURCE_DIR}/app/includes)
