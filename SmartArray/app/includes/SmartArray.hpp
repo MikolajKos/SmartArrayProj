@@ -18,9 +18,12 @@ public:
 	SmartArray(const SmartArray& ob);
 	~SmartArray();
 
-	//Methods
+	// Methods
 	bool push(const T& elem);
 	T pop();
+
+	// Operators
+	SmartArray<T>& operator=(const SmartArray<T>& other);
 
 private:
 	void alloc();
@@ -70,6 +73,28 @@ void SmartArray<T>::alloc() {
 	catch (bad_alloc& ex) {
 		ErrorHandler::handler(ErrorHandler::MEM_ALLOC_ERROR, ex.what());
 	}
+}
+
+// Operators
+template <typename T>
+SmartArray<T>& SmartArray<T>::operator=(const SmartArray<T>& other) {
+	T* new_dat = nullptr;
+	
+	if (other.dat_) {
+		new_dat = new T[other.capacity_];
+
+		for (unsigned i = 0; i < size_; ++i) {
+			new_dat[i] = other.dat_[i];
+		}
+	}
+
+	delete[] dat_;
+
+	capacity_ = other.capacity_;
+	size_ = other.size_;
+	dat_ = new_dat;
+
+	return *this;
 }
 
 #endif
