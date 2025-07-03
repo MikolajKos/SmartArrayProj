@@ -27,7 +27,7 @@ public:
 
 private:
 	void alloc();
-	void realloc();
+	void reallocate(unsigned cap);
 };
 
 
@@ -75,6 +75,26 @@ void SmartArray<T>::alloc() {
 	}
 }
 
+template <typename T>
+void SmartArray<T>::reallocate(unsigned cap) {
+	T* new_dat = new T[cap];
+
+	for (unsigned i = 0; i < size_; ++i) {
+		if (i >= cap) {
+			break;
+		}
+		new_dat[i] = dat_[i];
+	}
+
+	delete[] dat_;
+
+	dat_ = new_dat;
+	capacity_ = cap;
+	if (cap < size_) {
+		size_ = cap;
+	}
+}
+
 // Operators
 template <typename T>
 SmartArray<T>& SmartArray<T>::operator=(const SmartArray<T>& other) {
@@ -83,7 +103,7 @@ SmartArray<T>& SmartArray<T>::operator=(const SmartArray<T>& other) {
 	if (other.dat_) {
 		new_dat = new T[other.capacity_];
 
-		for (unsigned i = 0; i < size_; ++i) {
+		for (unsigned i = 0; i < other.size_; ++i) {
 			new_dat[i] = other.dat_[i];
 		}
 	}

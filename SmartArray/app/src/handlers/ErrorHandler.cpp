@@ -11,7 +11,7 @@ const char* messages[] = {
 
 void ErrorHandler::handler(enum Errors error, const char* info) {
 	cout << messages[error] + 2 << endl;
-	
+
 	if (info != nullptr && info[0] != '\0') {
 		cerr << info << endl;
 	}
