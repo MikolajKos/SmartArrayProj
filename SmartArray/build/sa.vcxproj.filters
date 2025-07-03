@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\nikok\OneDrive\Dokumenty\STUDIA\SmartArray\app\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\nikok\OneDrive\Dokumenty\STUDIA\SmartArray\app\src\SmartArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\nikok\OneDrive\Dokumenty\STUDIA\SmartArray\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E304CEDF-4A93-3FB5-BFB7-AABD0FFE3AEB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

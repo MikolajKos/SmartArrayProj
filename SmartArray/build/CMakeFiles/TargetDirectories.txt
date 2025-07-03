@@ -1,0 +1,3 @@
+C:/Users/nikok/OneDrive/Dokumenty/STUDIA/SmartArray/build/CMakeFiles/sa.dir
+C:/Users/nikok/OneDrive/Dokumenty/STUDIA/SmartArray/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/nikok/OneDrive/Dokumenty/STUDIA/SmartArray/build/CMakeFiles/ZERO_CHECK.dir
