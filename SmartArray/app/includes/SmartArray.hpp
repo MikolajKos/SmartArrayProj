@@ -15,7 +15,7 @@ public:
 
 	//Methods
 	bool push(const T& elem);
-	T pop()
+	T pop();
 
 private:
 	void alloc();
