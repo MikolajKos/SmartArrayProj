@@ -7,7 +7,8 @@ const char* messages[] = {
 	"E Memory allocation Error",
 	"W Stack is full",
 	"W Stack is empty",
-	"E Error opening file"
+	"E Error opening file",
+	"E Index out of range"
 };
 
 void ErrorHandler::handler(enum Errors error, const char* info) {

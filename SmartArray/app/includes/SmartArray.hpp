@@ -5,7 +5,7 @@
 #include <iostream>
 #include <handlers\ErrorHandler.hpp>
 
-#define FILE_SOURCE "../files/array_data.bin"
+#define FILENAME "array_data_for_preload.bin"
 
 using namespace std;
 
@@ -45,6 +45,8 @@ public:
 	// Operators
 	SmartArray<T>& operator=(const SmartArray<T>& other);
 	friend ostream& operator<< <T>(ostream& os, const SmartArray<T>& ob);
+	T& operator[](unsigned index);
+	const T& operator[](unsigned index) const;
 
 private:
 	void alloc();
@@ -130,8 +132,7 @@ void SmartArray<T>::setSize(unsigned s) {
 
 template <typename T>
 void SmartArray<T>::clear() {
-	delete[] dat_;
-	dat_ = nullptr;
+	size_ = 0;
 }
 
 template <typename T>
@@ -210,19 +211,43 @@ ostream& operator<<(ostream& os, const SmartArray<T>& ob) {
 }
 
 template <typename T>
+T& SmartArray<T>::operator[](unsigned index) {
+	if (index >= size_) {
+		ErrorHandler::handler(ErrorHandler::INDEX_OUT_OF_RANGE);
+		static T dummy{};
+		return dummy;
+	}
+
+	return dat_[index];
+}
+
+template <typename T>
+const T& SmartArray<T>::operator[](unsigned index) const{
+	if (index >= size_) {
+		ErrorHandler::handler(ErrorHandler::INDEX_OUT_OF_RANGE);
+		static const T dummy{};
+		return dummy;
+	}
+
+	return dat_[index];
+}
+
+// File Methods
+template <typename T>
 inline static void save(const SmartArray<T>& ob) {
 	fstream file;
-	file.open(FILE_SOURCE, ios::out | ios::binary);
+	file.open(FILENAME, ios::out | ios::binary);
 
 	if (!file.is_open()) {
 		ErrorHandler::handler(ErrorHandler::OPENING_FILE_ERROR);
 	}
 
 	// Write array size
-	file.write(reinterpret_cast<const char*>(&ob.size()), sizeof(unsigned));
+	unsigned current_size = ob.size();
+	file.write(reinterpret_cast<const char*>(&current_size), sizeof(unsigned));
 	
 	for (unsigned i = 0; i < ob.size(); ++i) {
-		serialize(file, ob.get(i));
+		serialize(file, ob[i]);
 	}
 
 	file.close();
@@ -231,23 +256,21 @@ inline static void save(const SmartArray<T>& ob) {
 template <typename T>
 inline static void load(SmartArray<T>& ob) {
 	fstream file;
-	file.open(FILE_SOURCE, ios::in | ios::binary);
+	file.open(FILENAME, ios::in | ios::binary);
 
 	if (!file.is_open()) {
 		ErrorHandler::handler(ErrorHandler::OPENING_FILE_ERROR);
 	}
-
-	// Read array size and resize
+	
+	// Read array size
 	unsigned new_size = 0;
 	ob.clear();
-	is.read(reinterpret_cast<char*>(&new_size), sizeof(unsigned));
-	ob.resize(new_size);
-	ob.setSize(0); // For correct push size_++ operation
+	file.read(reinterpret_cast<char*>(&new_size), sizeof(unsigned));
 
 	// Read all data
-	for (unsigned i = 0; i < ob.size(); ++i) {
-		T temp
-		deserialize(file, T);
+	for (unsigned i = 0; i < new_size; ++i) {
+		T temp;
+		deserialize(file, temp);
 		ob.push(temp);
 	}
 

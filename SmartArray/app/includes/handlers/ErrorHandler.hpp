@@ -8,6 +8,7 @@ public:
 		STACK_IS_FULL,
 		STACK_IS_EMPTY,
 		OPENING_FILE_ERROR,
+		INDEX_OUT_OF_RANGE,
 		TOT_ERROR // Total number of errors 
 	};
 

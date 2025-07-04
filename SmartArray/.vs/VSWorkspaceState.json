@@ -12,11 +12,11 @@
     "\\app\\includes",
     "\\app\\includes\\handlers",
     "\\app\\src",
-    "\\build",
-    "\\build\\CMakeFiles",
+    "\\app\\src\\data",
+    "\\app\\src\\handlers",
     "\\build\\CMakeFiles\\4.0.0",
     "\\build\\CMakeFiles\\4.0.0\\CompilerIdC"
   ],
-  "SelectedNode": "\\app\\includes\\handlers\\ErrorHandler.hpp",
+  "SelectedNode": "\\app\\includes\\Employee.hpp",
   "PreviewInSolutionExplorer": false
 }
