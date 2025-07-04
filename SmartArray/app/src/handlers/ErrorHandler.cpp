@@ -6,7 +6,8 @@ using namespace std;
 const char* messages[] = {
 	"E Memory allocation Error",
 	"W Stack is full",
-	"W Stack is empty"
+	"W Stack is empty",
+	"E Error opening file"
 };
 
 void ErrorHandler::handler(enum Errors error, const char* info) {

@@ -7,6 +7,7 @@ public:
 		MEM_ALLOC_ERROR = 0,
 		STACK_IS_FULL,
 		STACK_IS_EMPTY,
+		OPENING_FILE_ERROR,
 		TOT_ERROR // Total number of errors 
 	};
 

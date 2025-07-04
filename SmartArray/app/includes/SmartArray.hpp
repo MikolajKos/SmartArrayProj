@@ -1,8 +1,11 @@
 #ifndef SMART_ARRAY_HPP
 #define SMART_ARRAY_HPP
 
+#include <fstream>
 #include <iostream>
 #include <handlers\ErrorHandler.hpp>
+
+#define FILE_SOURCE "../files/array_data.bin"
 
 using namespace std;
 
@@ -28,8 +31,16 @@ public:
 	bool push(const T& elem);
 	T pop();
 	void resize(unsigned cap);
-	bool isFull();
-	bool isEmpty();
+	bool isFull() const;
+	bool isEmpty() const;
+	
+	// Getters
+	unsigned size() const;
+	T& get(int index);
+
+	// Setters
+	void setSize(unsigned s);
+	void clear();
 
 	// Operators
 	SmartArray<T>& operator=(const SmartArray<T>& other);
@@ -93,13 +104,34 @@ T SmartArray<T>::pop() {
 }
 
 template <typename T>
-bool SmartArray<T>::isFull() {
+bool SmartArray<T>::isFull() const{
 	return size_ == capacity_;
 }
 
 template <typename T>
-bool SmartArray<T>::isEmpty() {
+bool SmartArray<T>::isEmpty() const{
 	return size_ == 0;
+}
+
+template <typename T>
+unsigned SmartArray<T>::size() const {
+	return size_;
+}
+
+template <typename T>
+T& SmartArray<T>::get(int index) {
+	return dat_[index];
+}
+
+template <typename T>
+void SmartArray<T>::setSize(unsigned s) {
+	size_ = s;
+}
+
+template <typename T>
+void SmartArray<T>::clear() {
+	delete[] dat_;
+	dat_ = nullptr;
 }
 
 template <typename T>
@@ -166,10 +198,60 @@ SmartArray<T>& SmartArray<T>::operator=(const SmartArray<T>& other) {
 
 template <typename T>
 ostream& operator<<(ostream& os, const SmartArray<T>& ob) {
+	if (ob.isEmpty()) {
+		ErrorHandler::handler(ErrorHandler::STACK_IS_EMPTY);
+		return os;
+	}
+	
 	for (unsigned i = 0; i < ob.size_; ++i) {
 		os << ob.dat_[i] << std::endl;
 	}
 	return os;
+}
+
+template <typename T>
+inline static void save(const SmartArray<T>& ob) {
+	fstream file;
+	file.open(FILE_SOURCE, ios::out | ios::binary);
+
+	if (!file.is_open()) {
+		ErrorHandler::handler(ErrorHandler::OPENING_FILE_ERROR);
+	}
+
+	// Write array size
+	file.write(reinterpret_cast<const char*>(&ob.size()), sizeof(unsigned));
+	
+	for (unsigned i = 0; i < ob.size(); ++i) {
+		serialize(file, ob.get(i));
+	}
+
+	file.close();
+}
+
+template <typename T>
+inline static void load(SmartArray<T>& ob) {
+	fstream file;
+	file.open(FILE_SOURCE, ios::in | ios::binary);
+
+	if (!file.is_open()) {
+		ErrorHandler::handler(ErrorHandler::OPENING_FILE_ERROR);
+	}
+
+	// Read array size and resize
+	unsigned new_size = 0;
+	ob.clear();
+	is.read(reinterpret_cast<char*>(&new_size), sizeof(unsigned));
+	ob.resize(new_size);
+	ob.setSize(0); // For correct push size_++ operation
+
+	// Read all data
+	for (unsigned i = 0; i < ob.size(); ++i) {
+		T temp
+		deserialize(file, T);
+		ob.push(temp);
+	}
+
+	file.close();
 }
 
 #endif

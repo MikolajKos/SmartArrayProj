@@ -8,11 +8,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\files",
     "\\app\\includes",
+    "\\app\\includes\\handlers",
     "\\app\\src",
-    "\\app\\src\\data",
-    "\\build\\Debug"
+    "\\build",
+    "\\build\\CMakeFiles",
+    "\\build\\CMakeFiles\\4.0.0",
+    "\\build\\CMakeFiles\\4.0.0\\CompilerIdC"
   ],
-  "SelectedNode": "\\app\\includes\\Employee.hpp",
+  "SelectedNode": "\\app\\includes\\handlers\\ErrorHandler.hpp",
   "PreviewInSolutionExplorer": false
 }

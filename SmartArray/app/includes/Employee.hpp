@@ -2,6 +2,7 @@
 #define EMPLOYEE_HPP
 
 #include <iostream>
+#include <fstream>
 #include <string>
 
 class Employee {
@@ -31,12 +32,25 @@ public:
 	void setPosition(std::string position);
 	void setSalary(double salary);
 	void setBirthYear(int birthYear);
+	// Set All
+	void setEmployee(
+		int id,
+		std::string name,
+		std::string surname,
+		std::string position,
+		double salary,
+		int birthYear
+	);
+
+	// Getters
 
 	// Methods
-
+	friend void serialize(std::fstream& os, const Employee& ob);
+	friend void deserialize(std::fstream& is, Employee& ob);
 
 	// Operators
 	friend std::ostream& operator<<(std::ostream& os, const Employee& ob);
 };
+
 
 #endif
