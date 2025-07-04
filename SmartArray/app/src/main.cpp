@@ -12,5 +12,7 @@ int main(int argc, char* argv[]) {
 	sa.push(e2);
 	sa.push(e3);
 
+	sa.resize(2);
+
 	std::cout << sa << std::endl;
 }

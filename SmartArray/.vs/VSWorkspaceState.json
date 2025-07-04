@@ -9,8 +9,10 @@
     "",
     "\\app",
     "\\app\\includes",
-    "\\app\\src"
+    "\\app\\src",
+    "\\app\\src\\data",
+    "\\build\\Debug"
   ],
-  "SelectedNode": "\\app\\src\\SmartArray.cpp",
+  "SelectedNode": "\\app\\includes\\Employee.hpp",
   "PreviewInSolutionExplorer": false
 }

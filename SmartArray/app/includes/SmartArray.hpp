@@ -27,6 +27,7 @@ public:
 	// Methods
 	bool push(const T& elem);
 	T pop();
+	void resize(unsigned cap);
 	bool isFull();
 	bool isEmpty();
 
@@ -99,6 +100,11 @@ bool SmartArray<T>::isFull() {
 template <typename T>
 bool SmartArray<T>::isEmpty() {
 	return size_ == 0;
+}
+
+template <typename T>
+void SmartArray<T>::resize(unsigned cap) {
+	reallocate(cap);
 }
 
 template <typename T>
