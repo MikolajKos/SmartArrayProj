@@ -7,16 +7,9 @@
   },
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\files",
-    "\\app\\includes",
-    "\\app\\includes\\handlers",
-    "\\app\\src",
-    "\\app\\src\\data",
-    "\\app\\src\\handlers",
-    "\\build\\CMakeFiles\\4.0.0",
-    "\\build\\CMakeFiles\\4.0.0\\CompilerIdC"
+    "\\build",
+    "\\build\\Debug"
   ],
-  "SelectedNode": "\\app\\includes\\Employee.hpp",
+  "SelectedNode": "\\build\\Debug\\array_data_for_preload.bin",
   "PreviewInSolutionExplorer": false
 }
