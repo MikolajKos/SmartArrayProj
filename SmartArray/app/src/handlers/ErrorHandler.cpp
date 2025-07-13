@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const char* messages[] = {
+const char* ErrorHandler::messages[] = {
 	"E Memory allocation Error",
 	"W Stack is full",
 	"W Stack is empty",

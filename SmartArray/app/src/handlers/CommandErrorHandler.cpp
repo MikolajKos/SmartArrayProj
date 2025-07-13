@@ -1,7 +1,7 @@
 #include <iostream>
 #include <handlers/CommandErrorHandler.hpp>
 
-char* CommandErrorHandler::messages[] = {
+const char* CommandErrorHandler::messages[] = {
 	"W Wrong argument list given",
 	"W Command not found, please try again or use \'help\' command"
 };

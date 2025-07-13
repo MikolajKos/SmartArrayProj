@@ -1,7 +1,9 @@
 #ifndef ERROR_HANDLER_HPP
 #define ERROR_HANDLER_HPP
 
+
 class ErrorHandler {
+	static const char* messages[];
 public:
 	enum Errors {
 		MEM_ALLOC_ERROR = 0,
@@ -15,4 +17,4 @@ public:
 	static void handler(enum Errors error, const char* info = "");
 };
 
-#endif 
+#endif
