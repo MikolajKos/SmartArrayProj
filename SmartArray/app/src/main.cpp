@@ -14,6 +14,18 @@ int main(int argc, char* argv[]) {
 	SmartArray<Employee> arr;
 	load(arr);
 
+	//Employee e1(1, "Miko³aj", "Kosiorek", "Senior C++ developer", 40000, 2004);
+	//Employee e2(1, "Piotr", "Kowalski", "Senior Java developer", 30000, 1998);
+	//Employee e3(1, "Kamil", "Nowak", "Junior Python developer", 8000, 2002);
+	//arr.push(e1);
+	//arr.push(e2);
+	//arr.push(e3);
+
 	CommandHandler handler(arr);
-	return handler.handle(argc, argv);
+	int result = handler.handle(argc, argv);
+	if (result == 0) {
+		save(arr);
+	}
+
+	return result;
 }

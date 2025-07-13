@@ -1,2 +1,3 @@
 #include <commands/PopCommand.hpp>
-#include <SmartArray.hpp>
+
+// Implementation in .hpp

@@ -2,7 +2,8 @@
 #include <handlers/CommandErrorHandler.hpp>
 
 char* CommandErrorHandler::messages[] = {
-	"W Wrong argument list given"
+	"W Wrong argument list given",
+	"W Command not found, please try again or use \'help\' command"
 };
 
 void CommandErrorHandler::cmd_handler(enum Errors error, const char* info) {

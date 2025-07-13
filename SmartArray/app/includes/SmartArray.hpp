@@ -69,6 +69,7 @@ public:
 	bool push(const T& elem);
 	T pop();
 	void resize(unsigned cap);
+	int printAll();
 	bool isFull() const;
 	bool isEmpty() const;
 	
@@ -141,6 +142,15 @@ T SmartArray<T>::pop() {
 	}
 
 	return dat_[--size_];
+}
+
+template <typename T>
+int SmartArray<T>::printAll() {
+	for (unsigned i = 0; i < size_; ++i) {
+		cout << dat_[i] << endl;
+	}
+
+	return 0;
 }
 
 template <typename T>

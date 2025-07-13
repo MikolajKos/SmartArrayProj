@@ -6,6 +6,7 @@ class CommandErrorHandler {
 public:
 	enum Errors {
 		ARGS_EXCEPTION,
+		CMD_NOT_FOUND,
 		TOT_ERROR // Total number of errors 
 	};
 

@@ -3,6 +3,7 @@
 
 #include <commands/Command.hpp>
 #include <SmartArray.hpp>
+#include <iostream>
 
 template <typename T>
 class PopCommand : public Command {
@@ -10,13 +11,13 @@ class PopCommand : public Command {
 public:
 	PopCommand(SmartArray<T>& ob) : array_(ob) {};
 
-	int PopCommand::execute(int argc, char* argv[]) override;
-	int PopCommand::expectedArgCount() override;
+	int execute(int argc, char* argv[]) override;
+	int expectedArgCount() override;
 };
 
 template <typename T>
 int PopCommand<T>::execute(int argc, char* argv[]) {
-
+	std::cout << array_.pop() << std::endl;
 	return 0;
 }
 
