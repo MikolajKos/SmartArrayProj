@@ -14,6 +14,6 @@ endif()
 add_executable(sa
 	app/src/main.cpp
 	app/src/SmartArray.cpp
-  "app/src/handlers/ErrorHandler.cpp" "app/src/data/Employee.cpp")
+  "app/src/handlers/ErrorHandler.cpp" "app/src/data/Employee.cpp" "app/src/commands/CommandHandler.cpp" "app/src/commands/PopCommand.cpp" "app/src/handlers/CommandErrorHandler.cpp")
 
 target_include_directories(sa PUBLIC ${CMAKE_SOURCE_DIR}/app/includes)

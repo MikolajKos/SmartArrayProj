@@ -7,9 +7,14 @@
   },
   "ExpandedNodes": [
     "",
-    "\\build",
-    "\\build\\Debug"
+    "\\app",
+    "\\app\\files",
+    "\\app\\includes",
+    "\\app\\includes\\commands",
+    "\\app\\includes\\handlers",
+    "\\app\\src",
+    "\\app\\src\\commands",
+    "\\app\\src\\handlers"
   ],
-  "SelectedNode": "\\build\\Debug\\array_data_for_preload.bin",
   "PreviewInSolutionExplorer": false
 }

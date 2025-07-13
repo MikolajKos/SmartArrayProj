@@ -1,29 +1,19 @@
 #include <iostream>
 #include <string>
-#include <SmartArray.hpp>
-#include <Employee.hpp>
 #include <crtdbg.h>
+#include <commands/CommandHandler.hpp>
+#include <Employee.hpp>
 
-#define DEBUG // Only for memory leaks
+#define DEBUG // Only for detecting memory leaks
 #define _CRTDBG_MAP_ALLOC
 
 int main(int argc, char* argv[]) {	
 #ifdef DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif // !DEBUG
-	SmartArray<Employee> sa;
-	//Employee e1(1, "Mikolaj", "Kosiorek", "Senior C++ Developer", 40000, 2004);
-	//Employee e2(2, "Piotr", "Kowalski", "Senior Java Developer", 20000, 2002);
+	SmartArray<Employee> arr;
+	load(arr);
 
-	//sa.push(e1);
-	//sa.push(e2);
-
-	//save(sa);
-
-	load(sa);
-
-	std::cout << sa;
-
-
-	return 0;
+	CommandHandler handler(arr);
+	return handler.handle(argc, argv);
 }

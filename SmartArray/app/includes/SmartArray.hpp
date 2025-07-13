@@ -3,7 +3,7 @@
 
 #include <fstream>
 #include <iostream>
-#include <handlers\ErrorHandler.hpp>
+#include <handlers/ErrorHandler.hpp>
 
 #include <filesystem>
 
