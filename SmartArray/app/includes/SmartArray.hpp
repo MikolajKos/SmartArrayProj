@@ -5,53 +5,11 @@
 #include <iostream>
 #include <handlers/ErrorHandler.hpp>
 
-#include <filesystem>
-
-#ifdef _WIN32
-#include <windows.h>
-#elif __APPLE__
-
-#include <mach-o/dyld.h>
-#include <climits>
-
-#elif
-#include <unistd.h>
-#endif
-	
-	inline std::filesystem::path GetExeDirectory() {
-#ifdef _WIN32
-	// Windows specific
-	wchar_t szPath[MAX_PATH];
-	DWORD length = GetModuleFileNameW(NULL, szPath, MAX_PATH);
-	if (length == 0 || length == MAX_PATH)
-		return {}; // some error
-
-	return std::filesystem::path(szPath).parent_path();
-#elif __APPLE__
-	char szPath[PATH_MAX];
-	uint32_t bufsize = PATH_MAX;
-	if (!_NSGetExecutablePath(szPath, &bufsize))
-		return std::filesystem::path{ szPath }.parent_path() / ""; // to finish the folder path with (back)slash
-	return {};  // some error
-#else
-	// Linux specific
-	char szPath[PATH_MAX];
-	ssize_t count = readlink("/proc/self/exe", szPath, PATH_MAX);
-	if (count < 0 || count >= PATH_MAX)
-		return {}; // some error
-	szPath[count] = '\0';
-#endif
-}
-
-#define FILENAME "preload_data.bin"
-
-using namespace std;
-
 template <typename T>
 class SmartArray;
 
 template <typename T>
-ostream& operator<<(ostream& os, const SmartArray<T>& ob);
+std::ostream& operator<<(std::ostream& os, const SmartArray<T>& ob);
 
 template <typename T>
 class SmartArray {
@@ -83,7 +41,7 @@ public:
 
 	// Operators
 	SmartArray<T>& operator=(const SmartArray<T>& other);
-	friend ostream& operator<< <T>(ostream& os, const SmartArray<T>& ob);
+	friend std::ostream& operator<< <T>(std::ostream& os, const SmartArray<T>& ob);
 	T& operator[](unsigned index);
 	const T& operator[](unsigned index) const;
 
@@ -146,8 +104,13 @@ T SmartArray<T>::pop() {
 
 template <typename T>
 int SmartArray<T>::printAll() {
+	if (isEmpty()) {
+		ErrorHandler::handler(ErrorHandler::STACK_IS_EMPTY);
+		return 1;
+	}
+
 	for (unsigned i = 0; i < size_; ++i) {
-		cout << dat_[i] << endl;
+		std::cout << dat_[i] << std::endl;
 	}
 
 	return 0;
@@ -198,7 +161,7 @@ void SmartArray<T>::alloc() {
 	try {
 		dat_ = new T[capacity_];
 	}
-	catch (bad_alloc& ex) {
+	catch (std::bad_alloc& ex) {
 		ErrorHandler::handler(ErrorHandler::MEM_ALLOC_ERROR, ex.what());
 	}
 }
@@ -246,7 +209,7 @@ SmartArray<T>& SmartArray<T>::operator=(const SmartArray<T>& other) {
 }
 
 template <typename T>
-ostream& operator<<(ostream& os, const SmartArray<T>& ob) {
+std::ostream& operator<<(std::ostream& os, const SmartArray<T>& ob) {
 	if (ob.isEmpty()) {
 		ErrorHandler::handler(ErrorHandler::STACK_IS_EMPTY);
 		return os;
@@ -281,61 +244,61 @@ const T& SmartArray<T>::operator[](unsigned index) const{
 }
 
 // File Methods
-inline static std::filesystem::path GetFileDirectory(std::string filename) {
-	std::filesystem::path exeDir = GetExeDirectory();
-	std::filesystem::path filePath = exeDir / ".." / ".." / "app" / "files" / filename;
-	filePath = std::filesystem::weakly_canonical(filePath);
-	
-	return filePath;
-}
-
-/*
-*	Writes arrays elements to a binary file
-*	@param ob - given array
-*	@param source - default file source for preloading data
-*/
-template <typename T>
-inline static void save(const SmartArray<T>& ob, string source = FILENAME) {
-	fstream file;
-	file.open(GetFileDirectory(source), ios::out | ios::binary);
-
-	if (!file.is_open()) {
-		ErrorHandler::handler(ErrorHandler::OPENING_FILE_ERROR);
-	}
-
-	// Write array size
-	unsigned current_size = ob.size();
-	file.write(reinterpret_cast<const char*>(&current_size), sizeof(unsigned));
-	
-	for (unsigned i = 0; i < ob.size(); ++i) {
-		serialize(file, ob[i]);
-	}
-
-	file.close();
-}
-
-template <typename T>
-inline static void load(SmartArray<T>& ob, string source = FILENAME) {
-	fstream file;
-	file.open(GetFileDirectory(source), ios::in | ios::binary);
-
-	if (!file.is_open()) {
-		ErrorHandler::handler(ErrorHandler::OPENING_FILE_ERROR);
-	}
-	
-	// Read array size
-	unsigned new_size = 0;
-	ob.clear();
-	file.read(reinterpret_cast<char*>(&new_size), sizeof(unsigned));
-
-	// Read all data
-	for (unsigned i = 0; i < new_size; ++i) {
-		T temp;
-		deserialize(file, temp);
-		ob.push(temp);
-	}
-
-	file.close();
-}
+//inline static std::filesystem::path GetFileDirectory(std::string filename) {
+//	std::filesystem::path exeDir = GetExeDirectory();
+//	std::filesystem::path filePath = exeDir / ".." / ".." / "app" / "files" / filename;
+//	filePath = std::filesystem::weakly_canonical(filePath);
+//	
+//	return filePath;
+//}
+//
+///*
+//*	Writes arrays elements to a binary file
+//*	@param ob - given array
+//*	@param source - default file source for preloading data
+//*/
+//template <typename T>
+//inline static void save(const SmartArray<T>& ob, string source = FILENAME) {
+//	fstream file;
+//	file.open(GetFileDirectory(source), ios::out | ios::binary);
+//
+//	if (!file.is_open()) {
+//		ErrorHandler::handler(ErrorHandler::OPENING_FILE_ERROR);
+//	}
+//
+//	// Write array size
+//	unsigned current_size = ob.size();
+//	file.write(reinterpret_cast<const char*>(&current_size), sizeof(unsigned));
+//	
+//	for (unsigned i = 0; i < ob.size(); ++i) {
+//		serialize(file, ob[i]);
+//	}
+//
+//	file.close();
+//}
+//
+//template <typename T>
+//inline static void load(SmartArray<T>& ob, string source = FILENAME) {
+//	fstream file;
+//	file.open(GetFileDirectory(source), ios::in | ios::binary);
+//
+//	if (!file.is_open()) {
+//		ErrorHandler::handler(ErrorHandler::OPENING_FILE_ERROR);
+//	}
+//	
+//	// Read array size
+//	unsigned new_size = 0;
+//	ob.clear();
+//	file.read(reinterpret_cast<char*>(&new_size), sizeof(unsigned));
+//
+//	// Read all data
+//	for (unsigned i = 0; i < new_size; ++i) {
+//		T temp;
+//		deserialize(file, temp);
+//		ob.push(temp);
+//	}
+//
+//	file.close();
+//}
 
 #endif
