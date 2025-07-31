@@ -3,6 +3,7 @@
 #include <crtdbg.h>
 #include <commands/CommandHandler.hpp>
 #include <Employee.hpp>
+#include <EmployeeParser.hpp>
 #include <SmartArray.hpp>
 #include <SmartArrayIO.hpp>
 
@@ -16,17 +17,13 @@ int main(int argc, char* argv[]) {
 	SmartArray<Employee> arr;
 	SmartArrayIO<Employee>::load(arr);
 
-	//Employee e1(1, "Mikolaj", "Kosiorek", "Senior C++ developer", 40000, 2004);
-	//Employee e2(1, "Piotr", "Kowalski", "Senior Java developer", 30000, 1998);
-	//Employee e3(1, "Kamil", "Nowak", "Junior Python developer", 8000, 2002);
-	//arr.push(e1);
-	//arr.push(e2);
-	//arr.push(e3);
-
-	CommandHandler handler(arr);
+	CommandHandler<Employee, EmployeeParser> handler(arr);
 	int result = handler.handle(argc, argv);
 	if (result == 0) {
 		SmartArrayIO<Employee>::save(arr);
+	}
+	else {
+		std::cout << "Something went wrong" << std::endl;
 	}
 
 	return result;

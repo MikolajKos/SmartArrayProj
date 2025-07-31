@@ -8,12 +8,10 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\files",
     "\\app\\includes",
-    "\\app\\includes\\handlers",
-    "\\app\\src",
-    "\\app\\src\\handlers"
+    "\\app\\includes\\commands",
+    "\\app\\includes\\handlers"
   ],
-  "SelectedNode": "\\app\\includes\\SmartArray.hpp",
+  "SelectedNode": "\\out",
   "PreviewInSolutionExplorer": false
 }

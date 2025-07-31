@@ -6,9 +6,10 @@
 #include <commands/CommandHandler.hpp>
 #include <commands/PopCommand.hpp>
 #include <commands/PrintCommand.hpp>
+#include <commands/AddCommand.hpp>
 #include <SmartArray.hpp>
 
-template <typename T>
+template <typename T, typename Parser>
 class CommandHandler {
 	SmartArray<T>& array_;
 public:
@@ -16,8 +17,8 @@ public:
 	int handle(int argc, char* argv[]);
 };
 
-template <typename T>
-int CommandHandler<T>::handle(int argc, char* argv[]) {
+template <typename T, typename Parser>
+int CommandHandler<T, Parser>::handle(int argc, char* argv[]) {
 	Command* command = nullptr;
 	
 	if (argv[1] == NULL)
@@ -25,25 +26,21 @@ int CommandHandler<T>::handle(int argc, char* argv[]) {
 	
 	std::string cmd = argv[1];
 
-	if (cmd == "pop") {
+	if (cmd == "pop")
 		command = new PopCommand<T>(array_);
-		if (command->expectedArgCount() != argc) {
-			CommandErrorHandler::cmd_handler(CommandErrorHandler::ARGS_EXCEPTION);
-			delete command;
-			return 1;
-		}
-	}
-	else if (cmd == "print") {
+	else if (cmd == "print")
 		command = new PrintCommand<T>(array_);
-		if (command->expectedArgCount() != argc) {
-			CommandErrorHandler::cmd_handler(CommandErrorHandler::ARGS_EXCEPTION);
-			delete command;
-			return 1;
-		}
-	}
+	else if (cmd == "add")
+		command = new AddCommand<T, Parser>(array_);
 	else
 	{
 		CommandErrorHandler::cmd_handler(CommandErrorHandler::CMD_NOT_FOUND);
+		return 1;
+	}
+
+	if (command->expectedArgCount() != argc) {
+		CommandErrorHandler::cmd_handler(CommandErrorHandler::ARGS_EXCEPTION);
+		delete command;
 		return 1;
 	}
 

@@ -24,7 +24,7 @@ public:
 	~SmartArray();
 
 	// Methods
-	bool push(const T& elem);
+	int push(const T& elem);
 	T pop();
 	void resize(unsigned cap);
 	int printAll();
@@ -81,7 +81,7 @@ SmartArray<T>::~SmartArray() {
 }
 
 template <typename T>
-bool SmartArray<T>::push(const T& elem) {
+int SmartArray<T>::push(const T& elem) {
 	if (isFull()) {
 		reallocate(capacity_ * 2);
 	}
@@ -89,7 +89,7 @@ bool SmartArray<T>::push(const T& elem) {
 	dat_[size_] = elem;
 	size_++;
 
-	return true;
+	return 0;
 }
 
 template <typename T>
