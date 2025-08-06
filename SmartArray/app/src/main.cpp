@@ -19,12 +19,27 @@ int main(int argc, char* argv[]) {
 
 	CommandHandler<Employee, EmployeeParser> handler(arr);
 	int result = handler.handle(argc, argv);
-	if (result == 0) {
+	
+	if (result == 0)
 		SmartArrayIO<Employee>::save(arr);
-	}
-	else {
+	else if (result == 1)
 		std::cout << "Something went wrong" << std::endl;
-	}
 
 	return result;
 }
+
+// GENERAL NOTES
+
+/*
+*	"add" command validation will be added
+*/
+
+
+// DOCUMENTATION NOTES
+
+/*
+*	Method return dictionary:
+*		0 - success
+*		1 - unknown error
+*		2 - error described in error handlers
+*/

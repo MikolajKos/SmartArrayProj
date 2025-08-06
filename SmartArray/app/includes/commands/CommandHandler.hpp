@@ -7,6 +7,7 @@
 #include <commands/PopCommand.hpp>
 #include <commands/PrintCommand.hpp>
 #include <commands/AddCommand.hpp>
+#include <commands/HelpCommand.hpp>
 #include <SmartArray.hpp>
 
 template <typename T, typename Parser>
@@ -21,8 +22,10 @@ template <typename T, typename Parser>
 int CommandHandler<T, Parser>::handle(int argc, char* argv[]) {
 	Command* command = nullptr;
 	
-	if (argv[1] == NULL)
-		return 1;
+	if (argv[1] == NULL) {
+		CommandErrorHandler::cmd_handler(CommandErrorHandler::ARGS_EXCEPTION);
+		return 2;
+	}
 	
 	std::string cmd = argv[1];
 
@@ -32,16 +35,19 @@ int CommandHandler<T, Parser>::handle(int argc, char* argv[]) {
 		command = new PrintCommand<T>(array_);
 	else if (cmd == "add")
 		command = new AddCommand<T, Parser>(array_);
+	else if (cmd == "help")
+		command = new HelpCommand();
 	else
 	{
 		CommandErrorHandler::cmd_handler(CommandErrorHandler::CMD_NOT_FOUND);
-		return 1;
+		return 2;
 	}
 
-	if (command->expectedArgCount() != argc) {
+	int expectedArgs = command->expectedArgCount();
+	if (expectedArgs != argc && expectedArgs != -1) {
 		CommandErrorHandler::cmd_handler(CommandErrorHandler::ARGS_EXCEPTION);
 		delete command;
-		return 1;
+		return 2;
 	}
 
 	int result = command->execute(argc, argv);
