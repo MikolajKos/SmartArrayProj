@@ -32,6 +32,7 @@ int main(int argc, char* argv[]) {
 
 /*
 *	"add" command validation will be added
+*	Factory pattern will be implemented for creating dynamic Command objects
 */
 
 
