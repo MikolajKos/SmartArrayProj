@@ -106,7 +106,7 @@ template <typename T>
 int SmartArray<T>::printAll() {
 	if (isEmpty()) {
 		ErrorHandler::handler(ErrorHandler::STACK_IS_EMPTY);
-		return 1;
+		return 2;
 	}
 
 	for (unsigned i = 0; i < size_; ++i) {

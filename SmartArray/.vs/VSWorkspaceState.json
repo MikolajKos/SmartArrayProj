@@ -11,12 +11,12 @@
     "\\app\\files",
     "\\app\\includes",
     "\\app\\includes\\commands",
+    "\\app\\includes\\handlers",
     "\\app\\src",
     "\\app\\src\\commands",
     "\\app\\src\\data",
-    "\\app\\src\\handlers",
-    "\\build\\Debug"
+    "\\app\\src\\handlers"
   ],
-  "SelectedNode": "\\app\\includes\\commands\\CommandHandler.hpp",
+  "SelectedNode": "\\app\\includes\\commands\\HelpCommand.hpp",
   "PreviewInSolutionExplorer": false
 }

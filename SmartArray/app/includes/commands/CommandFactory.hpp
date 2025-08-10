@@ -9,6 +9,7 @@
 #include <commands/HelpCommand.hpp>
 #include <commands/PopCommand.hpp>
 #include <commands/PrintCommand.hpp>
+#include <commands/ClearCommand.hpp>
 #include <SmartArray.hpp>
 
 template<typename T, typename Parser>
@@ -21,6 +22,7 @@ public:
 		cmdMap_["help"] = []() {return std::make_unique<HelpCommand>();};
 		cmdMap_["pop"] = [this]() {return std::make_unique<PopCommand<T>>(array_);};
 		cmdMap_["print"] = [this]() {return std::make_unique<PrintCommand<T>>(array_);};
+		cmdMap_["clear"] = [this]() {return std::make_unique<ClearCommand<T>>(array_);};
 	};
 
 	std::unique_ptr<Command> createCommand(std::string name);
