@@ -16,6 +16,7 @@ public:
 
 	int execute(int argc, char* argv[]) override;
 	int expectedArgCount() override;
+	std::string description() override;
 };
 
 template <typename T, typename Parser>
@@ -61,6 +62,11 @@ template <typename T, typename Parser>
 int HelpCommand<T, Parser>::expectedArgCount() {
 	// return -1 if expected argument count is undedined
 	return -1;
+}
+
+template <typename T, typename Parser>
+std::string HelpCommand<T, Parser>::description() {
+	return "I see you ask for a lot of help ;)\n";
 }
 
 #endif

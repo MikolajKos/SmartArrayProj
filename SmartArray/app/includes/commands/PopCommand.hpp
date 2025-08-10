@@ -13,6 +13,7 @@ public:
 
 	int execute(int argc, char* argv[]) override;
 	int expectedArgCount() override;
+	std::string description() override;
 };
 
 template <typename T>
@@ -24,6 +25,13 @@ int PopCommand<T>::execute(int argc, char* argv[]) {
 template <typename T>
 int PopCommand<T>::expectedArgCount() {
 	return 2;
+}
+
+template <typename T>
+std::string PopCommand<T>::description() {
+	return R"(Removes the last element from the collection.
+If the collection is empty, no action is performed.
+No additional arguments are required for this command.)";
 }
 
 #endif
