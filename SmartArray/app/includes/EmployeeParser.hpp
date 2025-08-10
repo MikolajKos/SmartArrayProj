@@ -21,6 +21,18 @@ struct EmployeeParser {
 	}
 
 	static int getArgCount() { return 8; }
+
+	static std::string description() {
+		return R"(Number of arguments: 8
+Arguments:
+1. ID (integer)
+2. First name (string)
+3. Last name (string)
+4. Position (string)
+5. Salary (double)
+6. Age (integer)
+)";
+	}
 };
 
 #endif

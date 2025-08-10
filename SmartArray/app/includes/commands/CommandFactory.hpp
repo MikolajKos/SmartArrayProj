@@ -19,7 +19,7 @@ class CommandFactory {
 public:
 	CommandFactory(SmartArray<T>& ob) : array_(ob) {
 		cmdMap_["add"] = [this]() {return std::make_unique<AddCommand<T, Parser>>(array_);};
-		cmdMap_["help"] = []() {return std::make_unique<HelpCommand>();};
+		cmdMap_["help"] = [this]() {return std::make_unique<HelpCommand<T, Parser>>(array_);};
 		cmdMap_["pop"] = [this]() {return std::make_unique<PopCommand<T>>(array_);};
 		cmdMap_["print"] = [this]() {return std::make_unique<PrintCommand<T>>(array_);};
 		cmdMap_["clear"] = [this]() {return std::make_unique<ClearCommand<T>>(array_);};
