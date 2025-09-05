@@ -8,15 +8,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\files",
     "\\app\\includes",
-    "\\app\\includes\\commands",
     "\\app\\includes\\handlers",
     "\\app\\src",
     "\\app\\src\\commands",
     "\\app\\src\\data",
-    "\\app\\src\\handlers"
+    "\\app\\src\\handlers",
+    "\\build",
+    "\\build\\Debug"
   ],
-  "SelectedNode": "\\app\\includes\\commands\\HelpCommand.hpp",
+  "SelectedNode": "\\app\\includes\\commands\\ClearCommand.hpp",
   "PreviewInSolutionExplorer": false
 }
