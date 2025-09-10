@@ -8,15 +8,9 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\includes",
-    "\\app\\includes\\handlers",
-    "\\app\\src",
-    "\\app\\src\\commands",
-    "\\app\\src\\data",
-    "\\app\\src\\handlers",
-    "\\build",
-    "\\build\\Debug"
+    "\\build\\Debug",
+    "\\docs"
   ],
-  "SelectedNode": "\\app\\includes\\commands\\ClearCommand.hpp",
+  "SelectedNode": "\\docs\\Doxyfile1",
   "PreviewInSolutionExplorer": false
 }
