@@ -1,0 +1,44 @@
+\doxysection{Employee\+Parser.\+hpp}
+\hypertarget{_employee_parser_8hpp_source}{}\label{_employee_parser_8hpp_source}\index{app/includes/EmployeeParser.hpp@{app/includes/EmployeeParser.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EMPLOYEE\_PARSER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EMPLOYEE\_PARSER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Employee.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Input\ validation\ will\ be\ implemented}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_employee_parser}{EmployeeParser}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_employee}{Employee}}\ parseData(\textcolor{keywordtype}{char}*\ args[])\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skip\ first\ two\ arguments}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_employee}{Employee}}\{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ std::stoi(args[2]),}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ args[3],}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ args[4],}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ args[5],}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ std::stod(args[6]),}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ std::stoi(args[7])}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ getArgCount()\ \{\ \textcolor{keywordflow}{return}\ 8;\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ description()\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ R\textcolor{stringliteral}{"{}(Number\ of\ arguments:\ 8}}
+\DoxyCodeLine{00027\ \textcolor{stringliteral}{Arguments:}}
+\DoxyCodeLine{00028\ \textcolor{stringliteral}{1.\ ID\ (integer)}}
+\DoxyCodeLine{00029\ \textcolor{stringliteral}{2.\ First\ name\ (string)}}
+\DoxyCodeLine{00030\ \textcolor{stringliteral}{3.\ Last\ name\ (string)}}
+\DoxyCodeLine{00031\ \textcolor{stringliteral}{4.\ Position\ (string)}}
+\DoxyCodeLine{00032\ \textcolor{stringliteral}{5.\ Salary\ (double)}}
+\DoxyCodeLine{00033\ \textcolor{stringliteral}{6.\ Age\ (integer)}}
+\DoxyCodeLine{00034\ \textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{00035\ \textcolor{stringliteral}{\ \ \ \ \}}}
+\DoxyCodeLine{00036\ \textcolor{stringliteral}{\};}}
+\DoxyCodeLine{00037\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00038\ \textcolor{stringliteral}{}\textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

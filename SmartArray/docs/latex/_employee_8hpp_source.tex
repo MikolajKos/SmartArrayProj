@@ -1,0 +1,111 @@
+\doxysection{Employee.\+hpp}
+\hypertarget{_employee_8hpp_source}{}\label{_employee_8hpp_source}\index{app/includes/Employee.hpp@{app/includes/Employee.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EMPLOYEE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EMPLOYEE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }Employee\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ id\_;}
+\DoxyCodeLine{00010\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00011\ \ \ \ \ std::string\ surname\_;}
+\DoxyCodeLine{00012\ \ \ \ \ std::string\ position\_;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ salary\_;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ birthYear\_;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ Employee();}
+\DoxyCodeLine{00018\ \ \ \ \ Employee(}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::string\ name,\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::string\ surname,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ position,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ salary,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ birthYear}
+\DoxyCodeLine{00025\ \ \ \ \ );}
+\DoxyCodeLine{00026\ \ \ \ \ \string~Employee();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setId(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setName(std::string\ name);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setSurname(std::string\ surname);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setPosition(std::string\ position);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ setSalary(\textcolor{keywordtype}{double}\ salary);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ setBirthYear(\textcolor{keywordtype}{int}\ birthYear);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Set\ All}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ setEmployee(}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::string\ name,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::string\ surname,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::string\ position,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ salary,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ birthYear}
+\DoxyCodeLine{00043\ \ \ \ \ );}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Methods}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{void}\ serialize(std::fstream\&\ os,\ \textcolor{keyword}{const}\ Employee\&\ ob);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{void}\ deserialize(std::fstream\&\ is,\ Employee\&\ ob);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Operators}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ Employee\&\ ob);}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ serialize(std::fstream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_employee}{Employee}}\&\ ob)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nameLen\ =\ ob.name\_.length()\ +\ 1;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ surnameLen\ =\ ob.surname\_.length()\ +\ 1;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ positionLen\ =\ ob.position\_.length()\ +\ 1;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Writing\ string\ lenghts}}
+\DoxyCodeLine{00061\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&nameLen),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00062\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&surnameLen),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00063\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&positionLen),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Write\ data}}
+\DoxyCodeLine{00066\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&ob.id\_),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00067\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(ob.name\_.c\_str()),\ nameLen);}
+\DoxyCodeLine{00068\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(ob.surname\_.c\_str()),\ surnameLen);}
+\DoxyCodeLine{00069\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(ob.position\_.c\_str()),\ positionLen);}
+\DoxyCodeLine{00070\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&ob.salary\_),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00071\ \ \ \ \ os.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&ob.birthYear\_),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ deserialize(std::fstream\&\ is,\ \mbox{\hyperlink{class_employee}{Employee}}\&\ ob)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nameLen,\ surnameLen,\ positionLen;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ Reading\ string\ length}}
+\DoxyCodeLine{00078\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&nameLen),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00079\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&surnameLen),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00080\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&positionLen),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Creating\ string\ buffors}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{char}*\ name\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[nameLen];}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{char}*\ surname\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[surnameLen];}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{char}*\ position\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[positionLen];}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ Reading\ data:\ id,\ name,\ surename,\ position,\ salary,\ birthYear}}
+\DoxyCodeLine{00088\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&ob.id\_),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00089\ \ \ \ \ is.read(name,\ nameLen);}
+\DoxyCodeLine{00090\ \ \ \ \ is.read(surname,\ surnameLen);}
+\DoxyCodeLine{00091\ \ \ \ \ is.read(position,\ positionLen);}
+\DoxyCodeLine{00092\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&ob.salary\_),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00093\ \ \ \ \ is.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&ob.birthYear\_),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Copy\ buffors\ to\ Employee\ fields}}
+\DoxyCodeLine{00096\ \ \ \ \ ob.name\_\ =\ name;}
+\DoxyCodeLine{00097\ \ \ \ \ ob.surname\_\ =\ surname;}
+\DoxyCodeLine{00098\ \ \ \ \ ob.position\_\ =\ position;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ Delete\ buffor\ memory}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{delete}[]\ name;\ \textcolor{keyword}{delete}[]\ surname;\ \textcolor{keyword}{delete}[]\ position;}
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -11,6 +11,14 @@ class SmartArray;
 template <typename T>
 std::ostream& operator<<(std::ostream& os, const SmartArray<T>& ob);
 
+/**
+ * @brief A dynamic array template class similar to std::vector.
+ *
+ * Provides methods to add, remove, access, and manipulate elements.
+ * Automatically manages memory and can grow when full.
+ *
+ * @tparam T Type of elements stored in the array.
+ */
 template <typename T>
 class SmartArray {
 	T* dat_ = nullptr;
@@ -18,9 +26,20 @@ class SmartArray {
 	unsigned capacity_;
 
 public:
+	/** @brief Default constructor. Initializes array with default capacity (5). */
 	SmartArray();
+
+	/** @brief Constructor with specified capacity.
+	*  @param cap Initial capacity of the array.
+	*/
 	SmartArray(unsigned cap);
+
+	/** @brief Copy constructor.
+	*  @param ob Another SmartArray to copy from.
+	*/
 	SmartArray(const SmartArray& ob);
+
+	/** @brief Destructor. Frees allocated memory. */
 	~SmartArray();
 
 	// Methods
@@ -30,7 +49,7 @@ public:
 	int printAll();
 	bool isFull() const;
 	bool isEmpty() const;
-	
+
 	// Getters
 	unsigned size() const;
 	T& get(int index);
@@ -117,12 +136,12 @@ int SmartArray<T>::printAll() {
 }
 
 template <typename T>
-bool SmartArray<T>::isFull() const{
+bool SmartArray<T>::isFull() const {
 	return size_ == capacity_;
 }
 
 template <typename T>
-bool SmartArray<T>::isEmpty() const{
+bool SmartArray<T>::isEmpty() const {
 	return size_ == 0;
 }
 
@@ -190,7 +209,7 @@ void SmartArray<T>::reallocate(unsigned cap) {
 template <typename T>
 SmartArray<T>& SmartArray<T>::operator=(const SmartArray<T>& other) {
 	T* new_dat = nullptr;
-	
+
 	if (other.dat_) {
 		new_dat = new T[other.capacity_];
 
@@ -214,7 +233,7 @@ std::ostream& operator<<(std::ostream& os, const SmartArray<T>& ob) {
 		ErrorHandler::handler(ErrorHandler::STACK_IS_EMPTY);
 		return os;
 	}
-	
+
 	for (unsigned i = 0; i < ob.size_; ++i) {
 		os << ob.dat_[i] << std::endl;
 	}
@@ -233,7 +252,7 @@ T& SmartArray<T>::operator[](unsigned index) {
 }
 
 template <typename T>
-const T& SmartArray<T>::operator[](unsigned index) const{
+const T& SmartArray<T>::operator[](unsigned index) const {
 	if (index >= size_) {
 		ErrorHandler::handler(ErrorHandler::INDEX_OUT_OF_RANGE);
 		static const T dummy{};

@@ -1,0 +1,78 @@
+\doxysection{Help\+Command.\+hpp}
+\hypertarget{_help_command_8hpp_source}{}\label{_help_command_8hpp_source}\index{app/includes/commands/HelpCommand.hpp@{app/includes/commands/HelpCommand.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ HELP\_COMMAND\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ HELP\_COMMAND\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <commands/Command.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <commands/CommandFactory.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SmartArray.hpp>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }HelpCommand\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ array\_;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ HelpCommand(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob):\ array\_(ob)\ \{\};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ execute(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ expectedArgCount()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ description()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{int}\ HelpCommand<T,\ Parser>::execute(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Gets\ help\ argument}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cmd\_name\ =\ argv[2];}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Execute\ when\ no\ command\ arguments\ were\ passed}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ <\ 3)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::cout\ <<}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Welcome\ to\ the\ SmartArray\ CLI\ Application.\(\backslash\)n"{}}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ command-\/line\ tool\ allows\ you\ to\ interact\ with\ and\ manage\ a\ dynamic\ array\ of\ elements.\(\backslash\)n"{}}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}It\ supports\ various\ operations\ such\ as\ adding,\ removing,\ and\ printing\ elements,\(\backslash\)n"{}}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}making\ it\ ideal\ for\ educational\ purposes,\ testing\ parsers,\ or\ experimenting\ with\ templated\ containers.\(\backslash\)n"{}}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}You\ are\ currently\ viewing\ the\ help\ system.\(\backslash\)n"{}}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}To\ learn\ more\ about\ a\ specific\ command,\ you\ can\ pass\ its\ name\ as\ an\ argument\ to\ the\ help\ command.\(\backslash\)n"{}}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example:\(\backslash\)n"{}}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ help\ add\(\backslash\)n"{}}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ will\ display\ detailed\ usage\ information\ and\ available\ options\ for\ the\ 'add'\ command.\(\backslash\)n"{}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Command\ argument\ was\ given}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_command_factory}{CommandFactory<T,\ Parser>}}\ factory(array\_);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ std::unique\_ptr<Command>\ command\ =\ factory.createCommand(cmd\_name);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (!command)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ CommandErrorHandler::cmd\_handler(CommandErrorHandler::CMD\_NOT\_FOUND);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ std::cout\ <<\ command-\/>description();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{int}\ HelpCommand<T,\ Parser>::expectedArgCount()\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ return\ -\/1\ if\ expected\ argument\ count\ is\ undedined}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00068\ std::string\ HelpCommand<T,\ Parser>::description()\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}I\ see\ you\ ask\ for\ a\ lot\ of\ help\ ;)\(\backslash\)n"{}};}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

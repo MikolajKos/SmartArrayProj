@@ -1,0 +1,47 @@
+\doxysection{Command\+Factory.\+hpp}
+\hypertarget{_command_factory_8hpp_source}{}\label{_command_factory_8hpp_source}\index{app/includes/commands/CommandFactory.hpp@{app/includes/commands/CommandFactory.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMMAND\_FACTORY\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COMMAND\_FACTORY\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <commands/Command.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <commands/AddCommand.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <commands/HelpCommand.hpp>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <commands/PopCommand.hpp>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <commands/PrintCommand.hpp>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <commands/ClearCommand.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <SmartArray.hpp>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }CommandFactory\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ std::unordered\_map<std::string,\ std::function<std::unique\_ptr<Command>()>>\ cmdMap\_;}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ array\_;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ CommandFactory(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob)\ :\ array\_(ob)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ cmdMap\_[\textcolor{stringliteral}{"{}add"{}}]\ =\ [\textcolor{keyword}{this}]()\ \{\textcolor{keywordflow}{return}\ std::make\_unique<AddCommand<T,\ Parser>>(array\_);\};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ cmdMap\_[\textcolor{stringliteral}{"{}help"{}}]\ =\ [\textcolor{keyword}{this}]()\ \{\textcolor{keywordflow}{return}\ std::make\_unique<HelpCommand<T,\ Parser>>(array\_);\};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ cmdMap\_[\textcolor{stringliteral}{"{}pop"{}}]\ =\ [\textcolor{keyword}{this}]()\ \{\textcolor{keywordflow}{return}\ std::make\_unique<PopCommand<T>>(array\_);\};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ cmdMap\_[\textcolor{stringliteral}{"{}print"{}}]\ =\ [\textcolor{keyword}{this}]()\ \{\textcolor{keywordflow}{return}\ std::make\_unique<PrintCommand<T>>(array\_);\};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ cmdMap\_[\textcolor{stringliteral}{"{}clear"{}}]\ =\ [\textcolor{keyword}{this}]()\ \{\textcolor{keywordflow}{return}\ std::make\_unique<ClearCommand<T>>(array\_);\};}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::unique\_ptr<Command>\ createCommand(std::string\ name);}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00033\ std::unique\_ptr<Command>\ CommandFactory<T,\ Parser>::createCommand(std::string\ name)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ cmdMap\_.find(name);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ cmdMap\_.end())\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (it-\/>second)();}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

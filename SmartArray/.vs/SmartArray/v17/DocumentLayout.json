@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\docs\\Doxyfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\Doxyfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\SmartArray.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\SmartArray.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\SmartArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\src\\SmartArray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,13 +34,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SmartArray.hpp",
+              "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\SmartArray.hpp",
+              "RelativeDocumentMoniker": "app\\includes\\SmartArray.hpp",
+              "ToolTip": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\SmartArray.hpp",
+              "RelativeToolTip": "app\\includes\\SmartArray.hpp",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACUAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-10T17:41:10.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SmartArray.cpp",
+              "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\SmartArray.cpp",
+              "RelativeDocumentMoniker": "app\\src\\SmartArray.cpp",
+              "ToolTip": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\SmartArray.cpp",
+              "RelativeToolTip": "app\\src\\SmartArray.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-10T17:41:05.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Doxyfile",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\docs\\Doxyfile",
               "RelativeDocumentMoniker": "docs\\Doxyfile",
               "ToolTip": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\docs\\Doxyfile",
               "RelativeToolTip": "docs\\Doxyfile",
-              "ViewState": "AQIAACoEAAAAAAAAAAAwwEAEAAAcAAAA",
+              "ViewState": "AQIAABACAAAAAAAAAAAQwDACAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-09-10T16:24:07.476Z",
               "EditorCaption": ""

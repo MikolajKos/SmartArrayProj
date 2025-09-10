@@ -1,0 +1,26 @@
+\doxysection{Error\+Handler.\+hpp}
+\hypertarget{_error_handler_8hpp_source}{}\label{_error_handler_8hpp_source}\index{app/includes/handlers/ErrorHandler.hpp@{app/includes/handlers/ErrorHandler.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ERROR\_HANDLER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ERROR\_HANDLER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_error_handler}{ErrorHandler}}\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ messages[];}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{enum}\ Errors\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ MEM\_ALLOC\_ERROR\ =\ 0,}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ STACK\_IS\_FULL,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ STACK\_IS\_EMPTY,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ OPENING\_FILE\_ERROR,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ INDEX\_OUT\_OF\_RANGE,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ TOT\_ERROR\ \textcolor{comment}{//\ Total\ number\ of\ errors\ }}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ handler(\textcolor{keyword}{enum}\ Errors\ error,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ info\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

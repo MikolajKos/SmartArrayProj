@@ -1,0 +1,125 @@
+\doxysection{Smart\+Array\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_smart_array}{}\label{class_smart_array}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+
+
+A dynamic array template class similar to std\+::vector.  
+
+
+
+
+{\ttfamily \#include $<$Smart\+Array.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}\label{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a} 
+{\bfseries Smart\+Array} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes array with default capacity (5). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_smart_array_a695ccf5274ebe802847ab723f936120a}{Smart\+Array}} (unsigned cap)
+\begin{DoxyCompactList}\small\item\em Constructor with specified capacity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_smart_array_a7b3c305502d6b16e4e92039573827579}{Smart\+Array}} (const \mbox{\hyperlink{class_smart_array}{Smart\+Array}} \&ob)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_smart_array_af7af9518754f2bbc3eb7523f00ef3be8}\label{class_smart_array_af7af9518754f2bbc3eb7523f00ef3be8} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Smart\+Array} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Frees allocated memory. \end{DoxyCompactList}\item 
+\Hypertarget{class_smart_array_a20cf2b29f213e4a9367289b611a21845}\label{class_smart_array_a20cf2b29f213e4a9367289b611a21845} 
+int {\bfseries push} (const T \&elem)
+\item 
+\Hypertarget{class_smart_array_a5a796ef3048abcabdc04b011263b505f}\label{class_smart_array_a5a796ef3048abcabdc04b011263b505f} 
+T {\bfseries pop} ()
+\item 
+\Hypertarget{class_smart_array_a586d5241d72371658f450d458029b3aa}\label{class_smart_array_a586d5241d72371658f450d458029b3aa} 
+void {\bfseries resize} (unsigned cap)
+\item 
+\Hypertarget{class_smart_array_a853c970d278b70688061a172cb532bfc}\label{class_smart_array_a853c970d278b70688061a172cb532bfc} 
+int {\bfseries print\+All} ()
+\item 
+\Hypertarget{class_smart_array_a7455d353176a1b35fee43e6cd7704965}\label{class_smart_array_a7455d353176a1b35fee43e6cd7704965} 
+bool {\bfseries is\+Full} () const
+\item 
+\Hypertarget{class_smart_array_aa3251f665fb665a32411b3116ec2d913}\label{class_smart_array_aa3251f665fb665a32411b3116ec2d913} 
+bool {\bfseries is\+Empty} () const
+\item 
+\Hypertarget{class_smart_array_ab87cb8259db23121020d5255ccf56c94}\label{class_smart_array_ab87cb8259db23121020d5255ccf56c94} 
+unsigned {\bfseries size} () const
+\item 
+\Hypertarget{class_smart_array_a4da54c90e859d8ef228403929b759820}\label{class_smart_array_a4da54c90e859d8ef228403929b759820} 
+T \& {\bfseries get} (int index)
+\item 
+\Hypertarget{class_smart_array_a25751c0ed414113351ed28e68057f8c8}\label{class_smart_array_a25751c0ed414113351ed28e68057f8c8} 
+void {\bfseries set\+Size} (unsigned s)
+\item 
+\Hypertarget{class_smart_array_a3c01debdf5b0f95c484a0190baf72886}\label{class_smart_array_a3c01debdf5b0f95c484a0190baf72886} 
+void {\bfseries clear} ()
+\item 
+\Hypertarget{class_smart_array_af4e3765b9043e39f868a82528196ae8c}\label{class_smart_array_af4e3765b9043e39f868a82528196ae8c} 
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&other)
+\item 
+\Hypertarget{class_smart_array_afce638d7827fa4032cfe627345f8201a}\label{class_smart_array_afce638d7827fa4032cfe627345f8201a} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (unsigned index)
+\item 
+\Hypertarget{class_smart_array_a634a70fa833351129d20c937b1df451a}\label{class_smart_array_a634a70fa833351129d20c937b1df451a} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (unsigned index) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_smart_array_a2d6144ec060c9531784e28e852279f90}\label{class_smart_array_a2d6144ec060c9531784e28e852279f90} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Smart\+Array$<$ T $>$}
+A dynamic array template class similar to std\+::vector. 
+
+Provides methods to add, remove, access, and manipulate elements. Automatically manages memory and can grow when full.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of elements stored in the array. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\Hypertarget{class_smart_array_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_smart_array_a695ccf5274ebe802847ab723f936120a}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!SmartArray@{SmartArray}}
+\index{SmartArray@{SmartArray}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SmartArray()}{SmartArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_smart_array_a695ccf5274ebe802847ab723f936120a} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\mbox{\hyperlink{class_smart_array}{\+::\+Smart\+Array}} (\begin{DoxyParamCaption}\item[{unsigned}]{cap}{}\end{DoxyParamCaption})}
+
+
+
+Constructor with specified capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap} & Initial capacity of the array. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_smart_array_a7b3c305502d6b16e4e92039573827579}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!SmartArray@{SmartArray}}
+\index{SmartArray@{SmartArray}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SmartArray()}{SmartArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_smart_array_a7b3c305502d6b16e4e92039573827579} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\mbox{\hyperlink{class_smart_array}{\+::\+Smart\+Array}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&}]{ob}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ob} & Another \doxylink{class_smart_array}{Smart\+Array} to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/includes/Smart\+Array.\+hpp\end{DoxyCompactItemize}

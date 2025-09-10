@@ -1,0 +1,255 @@
+\doxysection{Smart\+Array.\+hpp}
+\hypertarget{_smart_array_8hpp_source}{}\label{_smart_array_8hpp_source}\index{app/includes/SmartArray.hpp@{app/includes/SmartArray.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SMART\_ARRAY\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SMART\_ARRAY\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <handlers/ErrorHandler.hpp>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_smart_array}{SmartArray}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00012\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ T*\ dat\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ size\_;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ capacity\_;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray}}(\textcolor{keywordtype}{unsigned}\ cap);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray}}\&\ ob);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_smart_array_af7af9518754f2bbc3eb7523f00ef3be8}{\string~SmartArray}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Methods}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ push(\textcolor{keyword}{const}\ T\&\ elem);}
+\DoxyCodeLine{00047\ \ \ \ \ T\ pop();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ resize(\textcolor{keywordtype}{unsigned}\ cap);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ printAll();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ isFull()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEmpty()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ size()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ \ \ T\&\ get(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ setSize(\textcolor{keywordtype}{unsigned}\ s);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Operators}}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray<T>}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray<T>}}\&\ other);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<\ <T>(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray<T>}}\&\ ob);}
+\DoxyCodeLine{00064\ \ \ \ \ T\&\ operator[](\textcolor{keywordtype}{unsigned}\ index);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ T\&\ operator[](\textcolor{keywordtype}{unsigned}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ alloc();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ reallocate(\textcolor{keywordtype}{unsigned}\ cap);}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00076\ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray<T>::SmartArray}}()\ :\ size\_(0),\ capacity\_(5)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ alloc();}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00081\ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray<T>::SmartArray}}(\textcolor{keywordtype}{unsigned}\ cap)\ :\ size\_(0),\ capacity\_(cap)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ alloc();}
+\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00086\ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray<T>::SmartArray}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{SmartArray}}\&\ ob)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ capacity\_\ =\ ob.capacity\_;}
+\DoxyCodeLine{00088\ \ \ \ \ size\_\ =\ ob.size\_;}
+\DoxyCodeLine{00089\ \ \ \ \ alloc();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ size\_;\ ++i)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ dat\_[i]\ =\ ob.dat\_[i];}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00097\ \mbox{\hyperlink{class_smart_array_af7af9518754f2bbc3eb7523f00ef3be8}{SmartArray<T>::\string~SmartArray}}()\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{delete}[]\ dat\_;}
+\DoxyCodeLine{00099\ \ \ \ \ dat\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{int}\ SmartArray<T>::push(\textcolor{keyword}{const}\ T\&\ elem)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{if}\ (isFull())\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ reallocate(capacity\_\ *\ 2);}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ dat\_[size\_]\ =\ elem;}
+\DoxyCodeLine{00109\ \ \ \ \ size\_++;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00115\ T\ SmartArray<T>::pop()\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{if}\ (isEmpty())\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ ErrorHandler::handler(ErrorHandler::STACK\_IS\_EMPTY);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T\{\};}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ dat\_[-\/-\/size\_];}
+\DoxyCodeLine{00122\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{int}\ SmartArray<T>::printAll()\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{if}\ (isEmpty())\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ ErrorHandler::handler(ErrorHandler::STACK\_IS\_EMPTY);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ size\_;\ ++i)\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ std::cout\ <<\ dat\_[i]\ <<\ std::endl;}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{bool}\ SmartArray<T>::isFull()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{return}\ size\_\ ==\ capacity\_;}
+\DoxyCodeLine{00141\ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00144\ \textcolor{keywordtype}{bool}\ SmartArray<T>::isEmpty()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{return}\ size\_\ ==\ 0;}
+\DoxyCodeLine{00146\ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{unsigned}\ SmartArray<T>::size()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{return}\ size\_;}
+\DoxyCodeLine{00151\ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00154\ T\&\ SmartArray<T>::get(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{return}\ dat\_[index];}
+\DoxyCodeLine{00156\ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00159\ \textcolor{keywordtype}{void}\ SmartArray<T>::setSize(\textcolor{keywordtype}{unsigned}\ s)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ size\_\ =\ s;}
+\DoxyCodeLine{00161\ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00164\ \textcolor{keywordtype}{void}\ SmartArray<T>::clear()\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ size\_\ =\ 0;}
+\DoxyCodeLine{00166\ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00169\ \textcolor{keywordtype}{void}\ SmartArray<T>::resize(\textcolor{keywordtype}{unsigned}\ cap)\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ reallocate(cap);}
+\DoxyCodeLine{00171\ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00174\ \textcolor{keywordtype}{void}\ SmartArray<T>::alloc()\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{if}\ (dat\_)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ dat\_;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ dat\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ dat\_\ =\ \textcolor{keyword}{new}\ T[capacity\_];}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::bad\_alloc\&\ ex)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ ErrorHandler::handler(ErrorHandler::MEM\_ALLOC\_ERROR,\ ex.what());}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00189\ \textcolor{keywordtype}{void}\ SmartArray<T>::reallocate(\textcolor{keywordtype}{unsigned}\ cap)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ T*\ new\_dat\ =\ \textcolor{keyword}{new}\ T[cap];}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ size\_;\ ++i)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ cap)\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ new\_dat[i]\ =\ dat\_[i];}
+\DoxyCodeLine{00197\ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{delete}[]\ dat\_;}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ dat\_\ =\ new\_dat;}
+\DoxyCodeLine{00202\ \ \ \ \ capacity\_\ =\ cap;}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{if}\ (cap\ <\ size\_)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ size\_\ =\ cap;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{comment}{//\ Operators}}
+\DoxyCodeLine{00209\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00210\ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ SmartArray<T>::operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ other)\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ T*\ new\_dat\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordflow}{if}\ (other.dat\_)\ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ new\_dat\ =\ \textcolor{keyword}{new}\ T[other.capacity\_];}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ other.size\_;\ ++i)\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ new\_dat[i]\ =\ other.dat\_[i];}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{delete}[]\ dat\_;}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ capacity\_\ =\ other.capacity\_;}
+\DoxyCodeLine{00224\ \ \ \ \ size\_\ =\ other.size\_;}
+\DoxyCodeLine{00225\ \ \ \ \ dat\_\ =\ new\_dat;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00228\ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00231\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob)\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (ob.isEmpty())\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ ErrorHandler::handler(ErrorHandler::STACK\_IS\_EMPTY);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ ob.size\_;\ ++i)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ os\ <<\ ob.dat\_[i]\ <<\ std::endl;}
+\DoxyCodeLine{00239\ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00241\ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00244\ T\&\ SmartArray<T>::operator[](\textcolor{keywordtype}{unsigned}\ index)\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ size\_)\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ ErrorHandler::handler(ErrorHandler::INDEX\_OUT\_OF\_RANGE);}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ T\ dummy\{\};}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dummy;}
+\DoxyCodeLine{00249\ \ \ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{return}\ dat\_[index];}
+\DoxyCodeLine{00252\ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00255\ \textcolor{keyword}{const}\ T\&\ SmartArray<T>::operator[](\textcolor{keywordtype}{unsigned}\ index)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ size\_)\ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ ErrorHandler::handler(ErrorHandler::INDEX\_OUT\_OF\_RANGE);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ T\ dummy\{\};}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dummy;}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{return}\ dat\_[index];}
+\DoxyCodeLine{00263\ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
