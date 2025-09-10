@@ -1,16 +1,109 @@
 \doxysection{Command\+Handler\texorpdfstring{$<$}{<} T, Parser \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{class_command_handler}{}\label{class_command_handler}\index{CommandHandler$<$ T, Parser $>$@{CommandHandler$<$ T, Parser $>$}}
+
+
+Handles commands for a \doxylink{class_smart_array}{Smart\+Array} using a specified parser.  
+
+
+
+
+{\ttfamily \#include $<$Command\+Handler.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_command_handler_a31d942dbf6eeb6cb3bc9ffd27391942c}\label{class_command_handler_a31d942dbf6eeb6cb3bc9ffd27391942c} 
-{\bfseries Command\+Handler} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
+\mbox{\hyperlink{class_command_handler_a31d942dbf6eeb6cb3bc9ffd27391942c}{Command\+Handler}} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_command_handler}{Command\+Handler}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_command_handler_a442d81ce5e5d8d6626980da9efaeaa1d}{handle}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Handle command-\/line arguments and execute the corresponding command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_command_handler_a442d81ce5e5d8d6626980da9efaeaa1d}\label{class_command_handler_a442d81ce5e5d8d6626980da9efaeaa1d} 
-int {\bfseries handle} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \& \mbox{\hyperlink{class_command_handler_af95ca482584e648cf47bec9b4b931ed2}{array\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_smart_array}{Smart\+Array} being manipulated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename Parser$>$\newline
+class Command\+Handler$<$ T, Parser $>$}
+Handles commands for a \doxylink{class_smart_array}{Smart\+Array} using a specified parser. 
+
+This template class is responsible for processing command-\/line arguments, creating the appropriate command via \doxylink{class_command_factory}{Command\+Factory}, and executing it.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of elements stored in \doxylink{class_smart_array}{Smart\+Array} \\
+\hline
+{\em Parser} & Parser type used to parse input arguments into objects of type T \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\Hypertarget{class_command_handler_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_command_handler_a31d942dbf6eeb6cb3bc9ffd27391942c}\index{CommandHandler$<$ T, Parser $>$@{CommandHandler$<$ T, Parser $>$}!CommandHandler@{CommandHandler}}
+\index{CommandHandler@{CommandHandler}!CommandHandler$<$ T, Parser $>$@{CommandHandler$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{CommandHandler()}{CommandHandler()}}
+{\footnotesize\ttfamily \label{class_command_handler_a31d942dbf6eeb6cb3bc9ffd27391942c} 
+template$<$typename T, typename Parser$>$ \\
+\mbox{\hyperlink{class_command_handler}{Command\+Handler}}$<$ T, Parser $>$\mbox{\hyperlink{class_command_handler}{\+::\+Command\+Handler}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&}]{ob}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_command_handler}{Command\+Handler}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ob} & Reference to the \doxylink{class_smart_array}{Smart\+Array} object to manage \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_command_handler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_handler_a442d81ce5e5d8d6626980da9efaeaa1d}\index{CommandHandler$<$ T, Parser $>$@{CommandHandler$<$ T, Parser $>$}!handle@{handle}}
+\index{handle@{handle}!CommandHandler$<$ T, Parser $>$@{CommandHandler$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \label{class_command_handler_a442d81ce5e5d8d6626980da9efaeaa1d} 
+template$<$typename T, typename Parser$>$ \\
+int \mbox{\hyperlink{class_command_handler}{Command\+Handler}}$<$ T, Parser $>$\+::handle (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Handle command-\/line arguments and execute the corresponding command. 
+
+This function checks for argument validity, uses \doxylink{class_command_factory}{Command\+Factory} to create the command object, verifies the expected number of arguments, and executes it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments \\
+\hline
+{\em argv} & Array of command-\/line arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Execution result code (0 on success, non-\/zero on error) 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_command_handler_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_command_handler_af95ca482584e648cf47bec9b4b931ed2}\index{CommandHandler$<$ T, Parser $>$@{CommandHandler$<$ T, Parser $>$}!array\_@{array\_}}
+\index{array\_@{array\_}!CommandHandler$<$ T, Parser $>$@{CommandHandler$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{array\_}{array\_}}
+{\footnotesize\ttfamily \label{class_command_handler_af95ca482584e648cf47bec9b4b931ed2} 
+template$<$typename T, typename Parser$>$ \\
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$T$>$\& \mbox{\hyperlink{class_command_handler}{Command\+Handler}}$<$ T, Parser $>$\+::array\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the \doxylink{class_smart_array}{Smart\+Array} being manipulated. 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/commands/Command\+Handler.\+hpp\end{DoxyCompactItemize}
+app/includes/commands/\mbox{\hyperlink{_command_handler_8hpp}{Command\+Handler.\+hpp}}\end{DoxyCompactItemize}

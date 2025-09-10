@@ -91,36 +91,53 @@ $(function(){initNavTree('_error_handler_8hpp_source.html','',''); });
   <div class="headertitle"><div class="title">ErrorHandler.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ERROR_HANDLER_HPP</span></div>
+<a href="_error_handler_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ERROR_HANDLER_HPP</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ERROR_HANDLER_HPP</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_error_handler.html">    5</a></span><span class="keyword">class </span><a class="code hl_class" href="class_error_handler.html">ErrorHandler</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* messages[];</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">enum</span> Errors {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        MEM_ALLOC_ERROR = 0,</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        STACK_IS_FULL,</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        STACK_IS_EMPTY,</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        OPENING_FILE_ERROR,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        INDEX_OUT_OF_RANGE,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        TOT_ERROR <span class="comment">// Total number of errors </span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    };</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> handler(<span class="keyword">enum</span> Errors error, <span class="keyword">const</span> <span class="keywordtype">char</span>* info = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_error_handler.html#a23305b5c34caa5c937c0682947ae9f04">    6</a></span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * This class provides static methods and predefined error messages to handle</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * common runtime errors such as memory allocation failures, stack overflows,</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * empty collections, file access errors, or out-of-range indices.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_error_handler.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_error_handler.html">ErrorHandler</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="class_error_handler.html#a23305b5c34caa5c937c0682947ae9f04">messages</a>[]; </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729a">   17</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729a">Errors</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65">   18</a></span>        <a class="code hl_enumvalue" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65">MEM_ALLOC_ERROR</a>,   </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd">   19</a></span>        <a class="code hl_enumvalue" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd">STACK_IS_FULL</a>,     </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5">   20</a></span>        <a class="code hl_enumvalue" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5">STACK_IS_EMPTY</a>,    </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc">   21</a></span>        <a class="code hl_enumvalue" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc">OPENING_FILE_ERROR</a>,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8">   22</a></span>        <a class="code hl_enumvalue" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8">INDEX_OUT_OF_RANGE</a>,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb">   23</a></span>        <a class="code hl_enumvalue" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb">TOT_ERROR</a>          </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    };</div>
 </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_error_handler_html"><div class="ttname"><a href="class_error_handler.html">ErrorHandler</a></div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:5</div></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_error_handler.html#a2b1665ccd5e35806754eefdb633c1bd9">handler</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729a">Errors</a> error, <span class="keyword">const</span> <span class="keywordtype">char</span>* info = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
+</div>
+<div class="ttc" id="aclass_error_handler_html"><div class="ttname"><a href="class_error_handler.html">ErrorHandler</a></div><div class="ttdoc">Handles general runtime errors in the SmartArray project.</div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:11</div></div>
+<div class="ttc" id="aclass_error_handler_html_a23305b5c34caa5c937c0682947ae9f04"><div class="ttname"><a href="class_error_handler.html#a23305b5c34caa5c937c0682947ae9f04">ErrorHandler::messages</a></div><div class="ttdeci">static const char * messages[]</div><div class="ttdoc">Array of predefined error messages.</div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:6</div></div>
+<div class="ttc" id="aclass_error_handler_html_a2b1665ccd5e35806754eefdb633c1bd9"><div class="ttname"><a href="class_error_handler.html#a2b1665ccd5e35806754eefdb633c1bd9">ErrorHandler::handler</a></div><div class="ttdeci">static void handler(enum Errors error, const char *info=&quot;&quot;)</div><div class="ttdoc">Handle a runtime error.</div><div class="ttdef"><b>Definition</b> ErrorHandler.cpp:14</div></div>
+<div class="ttc" id="aclass_error_handler_html_ae638861bcc34c854854c23ad2ff9729a"><div class="ttname"><a href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729a">ErrorHandler::Errors</a></div><div class="ttdeci">Errors</div><div class="ttdoc">Enumeration of possible runtime errors.</div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:17</div></div>
+<div class="ttc" id="aclass_error_handler_html_ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd"><div class="ttname"><a href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd">ErrorHandler::STACK_IS_FULL</a></div><div class="ttdeci">@ STACK_IS_FULL</div><div class="ttdoc">Attempt to push element into a full stack/array.</div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:19</div></div>
+<div class="ttc" id="aclass_error_handler_html_ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8"><div class="ttname"><a href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8">ErrorHandler::INDEX_OUT_OF_RANGE</a></div><div class="ttdeci">@ INDEX_OUT_OF_RANGE</div><div class="ttdoc">Index accessed is out of valid range.</div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:22</div></div>
+<div class="ttc" id="aclass_error_handler_html_ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb"><div class="ttname"><a href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb">ErrorHandler::TOT_ERROR</a></div><div class="ttdeci">@ TOT_ERROR</div><div class="ttdoc">Total number of errors defined.</div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:23</div></div>
+<div class="ttc" id="aclass_error_handler_html_ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5"><div class="ttname"><a href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5">ErrorHandler::STACK_IS_EMPTY</a></div><div class="ttdeci">@ STACK_IS_EMPTY</div><div class="ttdoc">Attempt to pop or print from an empty stack/array.</div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:20</div></div>
+<div class="ttc" id="aclass_error_handler_html_ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc"><div class="ttname"><a href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc">ErrorHandler::OPENING_FILE_ERROR</a></div><div class="ttdeci">@ OPENING_FILE_ERROR</div><div class="ttdoc">Error opening a file for read/write.</div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:21</div></div>
+<div class="ttc" id="aclass_error_handler_html_ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65"><div class="ttname"><a href="class_error_handler.html#ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65">ErrorHandler::MEM_ALLOC_ERROR</a></div><div class="ttdeci">@ MEM_ALLOC_ERROR</div><div class="ttdoc">Memory allocation failure.</div><div class="ttdef"><b>Definition</b> ErrorHandler.hpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a href="dir_1c5c03227cca0102ee47bee331c2b55d.html">includes</a></li><li class="navelem"><a href="dir_f6c4874d6cefada8c7dce13465f3917d.html">handlers</a></li><li class="navelem"><b>ErrorHandler.hpp</b></li>
+    <li class="navelem"><a href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a href="dir_1c5c03227cca0102ee47bee331c2b55d.html">includes</a></li><li class="navelem"><a href="dir_f6c4874d6cefada8c7dce13465f3917d.html">handlers</a></li><li class="navelem"><a href="_error_handler_8hpp.html">ErrorHandler.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

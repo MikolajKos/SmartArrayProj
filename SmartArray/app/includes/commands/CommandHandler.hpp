@@ -11,11 +11,36 @@
 #include <SmartArray.hpp>
 #include <commands/CommandFactory.hpp>
 
+/**
+ * @brief Handles commands for a SmartArray using a specified parser.
+ *
+ * This template class is responsible for processing command-line arguments,
+ * creating the appropriate command via CommandFactory, and executing it.
+ *
+ * @tparam T Type of elements stored in SmartArray
+ * @tparam Parser Parser type used to parse input arguments into objects of type T
+ */
 template <typename T, typename Parser>
 class CommandHandler {
-	SmartArray<T>& array_;
+	SmartArray<T>& array_;	///< Reference to the SmartArray being manipulated
 public:
+	/**
+	* @brief Construct a new CommandHandler.
+	*
+	* @param ob Reference to the SmartArray object to manage
+	*/
 	CommandHandler(SmartArray<T>& ob) : array_(ob) {};
+
+	/**
+	* @brief Handle command-line arguments and execute the corresponding command.
+	*
+	* This function checks for argument validity, uses CommandFactory to create
+	* the command object, verifies the expected number of arguments, and executes it.
+	*
+	* @param argc Number of command-line arguments
+	* @param argv Array of command-line arguments
+	* @return int Execution result code (0 on success, non-zero on error)
+	*/
 	int handle(int argc, char* argv[]);
 };
 

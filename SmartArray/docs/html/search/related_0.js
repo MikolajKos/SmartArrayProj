@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3c_3c_0',['operator&lt;&lt;',['../class_smart_array.html#a2d6144ec060c9531784e28e852279f90',1,'SmartArray']]]
+  ['deserialize_0',['deserialize',['../class_employee.html#a181d9d1962fb2edf980797cc5288528e',1,'Employee']]]
 ];

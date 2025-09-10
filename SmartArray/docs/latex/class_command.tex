@@ -1,5 +1,14 @@
 \doxysection{Command Class Reference}
 \hypertarget{class_command}{}\label{class_command}\index{Command@{Command}}
+
+
+Abstract base class for all commands.  
+
+
+
+
+{\ttfamily \#include $<$Command.\+hpp$>$}
+
 Inheritance diagram for Command\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,17 +18,105 @@ Inheritance diagram for Command\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_command_ab37f624bfa17ab524c83b6f17931359b}\label{class_command_ab37f624bfa17ab524c83b6f17931359b} 
-virtual int {\bfseries execute} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})=0
-\item 
-\Hypertarget{class_command_a8a12c681e4fcd3b2b5c6dc7342556399}\label{class_command_a8a12c681e4fcd3b2b5c6dc7342556399} 
-virtual int {\bfseries expected\+Arg\+Count} ()=0
-\item 
-\Hypertarget{class_command_aeb531b2696ec5a067dfa80d30e653cdb}\label{class_command_aeb531b2696ec5a067dfa80d30e653cdb} 
-virtual std\+::string {\bfseries description} ()
-\end{DoxyCompactItemize}
+virtual int \mbox{\hyperlink{class_command_ab37f624bfa17ab524c83b6f17931359b}{execute}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})=0
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_command_a8a12c681e4fcd3b2b5c6dc7342556399}{expected\+Arg\+Count}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the expected number of arguments for this command. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_command_aeb531b2696ec5a067dfa80d30e653cdb}{description}} ()
+\begin{DoxyCompactList}\small\item\em Get a textual description of the command. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_command_aa545a53d35818f9efb936daf3fa16c61}{\texorpdfstring{$\sim$}{\string~}\+Command}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for all commands. 
+
+Defines the interface for commands that can be executed by \doxylink{class_command_handler}{Command\+Handler}. All concrete command classes should inherit from this class and implement the pure virtual methods. 
+
+\label{doc-constructors}
+\Hypertarget{class_command_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_command_aa545a53d35818f9efb936daf3fa16c61}\index{Command@{Command}!````~Command@{\texorpdfstring{$\sim$}{\string~}Command}}
+\index{````~Command@{\texorpdfstring{$\sim$}{\string~}Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Command()}{\string~Command()}}
+{\footnotesize\ttfamily \label{class_command_aa545a53d35818f9efb936daf3fa16c61} 
+virtual Command\+::\texorpdfstring{$\sim$}{\string~}\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_command_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_aeb531b2696ec5a067dfa80d30e653cdb}\index{Command@{Command}!description@{description}}
+\index{description@{description}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily \label{class_command_aeb531b2696ec5a067dfa80d30e653cdb} 
+virtual std\+::string Command\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get a textual description of the command. 
+
+Can be overridden by derived classes to provide detailed instructions for using the command. Default implementation returns a placeholder string.
+
+\begin{DoxyReturn}{Returns}
+std\+::string \doxylink{class_command}{Command} description 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_add_command_a533ca89310451e80e0e18419b5bc796b}{Add\+Command$<$ T, Parser $>$}}, \mbox{\hyperlink{class_clear_command_a173d1c84b8d6bb217881ef81ad73674e}{Clear\+Command$<$ T $>$}}, \mbox{\hyperlink{class_help_command_afc7db3202df626e359a57e43df90d2bf}{Help\+Command$<$ T, Parser $>$}}, \mbox{\hyperlink{class_pop_command_a07e9bdf9c72bb1b5380cf81f46fa2bb7}{Pop\+Command$<$ T $>$}}, and \mbox{\hyperlink{class_print_command_a9fef62a117e60d48dff74b5c9ff01f3e}{Print\+Command$<$ T $>$}}.
+
+\Hypertarget{class_command_ab37f624bfa17ab524c83b6f17931359b}\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_command_ab37f624bfa17ab524c83b6f17931359b} 
+virtual int Command\+::execute (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Execute the command. 
+
+This is a pure virtual method that must be implemented by derived classes. It performs the command\textquotesingle{}s main action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments \\
+\hline
+{\em argv} & Array of command-\/line arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Result code (0 on success, non-\/zero on error) 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_add_command_a0b222ed96a96728d64b861fe8511027a}{Add\+Command$<$ T, Parser $>$}}, \mbox{\hyperlink{class_clear_command_a97a2ea36275332ac4923b4151dcc710f}{Clear\+Command$<$ T $>$}}, \mbox{\hyperlink{class_help_command_a8afb79b89f79989c5c70cecd4912c870}{Help\+Command$<$ T, Parser $>$}}, \mbox{\hyperlink{class_pop_command_a6be6f4dd65a0005bdc24e8792c64360e}{Pop\+Command$<$ T $>$}}, and \mbox{\hyperlink{class_print_command_a16f912b4b0dc03bc9deabf9175b9fbb5}{Print\+Command$<$ T $>$}}.
+
+\Hypertarget{class_command_a8a12c681e4fcd3b2b5c6dc7342556399}\index{Command@{Command}!expectedArgCount@{expectedArgCount}}
+\index{expectedArgCount@{expectedArgCount}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{expectedArgCount()}{expectedArgCount()}}
+{\footnotesize\ttfamily \label{class_command_a8a12c681e4fcd3b2b5c6dc7342556399} 
+virtual int Command\+::expected\+Arg\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the expected number of arguments for this command. 
+
+This is a pure virtual method that must be implemented by derived classes. It returns the number of arguments the command expects. A return value of -\/1 indicates that the command can accept an arbitrary number of arguments.
+
+\begin{DoxyReturn}{Returns}
+int Expected argument count, or -\/1 if the number of arguments is not fixed 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_add_command_a409439b43702d9fae603d3739ed76b32}{Add\+Command$<$ T, Parser $>$}}, \mbox{\hyperlink{class_clear_command_aaca369a274f48a1ac08e05db304f9be7}{Clear\+Command$<$ T $>$}}, \mbox{\hyperlink{class_help_command_a5013e0a13bdc2eafcb3f1752a72699f9}{Help\+Command$<$ T, Parser $>$}}, \mbox{\hyperlink{class_pop_command_ad2b066f81b8c1a3e7a8aeee1cb6fe24f}{Pop\+Command$<$ T $>$}}, and \mbox{\hyperlink{class_print_command_a7a0801bdbe5bcf949a79ecc9c55f21dd}{Print\+Command$<$ T $>$}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/commands/Command.\+hpp\end{DoxyCompactItemize}
+app/includes/commands/\mbox{\hyperlink{_command_8hpp}{Command.\+hpp}}\end{DoxyCompactItemize}

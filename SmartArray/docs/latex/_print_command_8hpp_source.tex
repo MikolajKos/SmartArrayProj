@@ -1,41 +1,43 @@
 \doxysection{Print\+Command.\+hpp}
 \hypertarget{_print_command_8hpp_source}{}\label{_print_command_8hpp_source}\index{app/includes/commands/PrintCommand.hpp@{app/includes/commands/PrintCommand.hpp}}
-
+\mbox{\hyperlink{_print_command_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PRINT\_COMMAND\_HPP}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PRINT\_COMMAND\_HPP}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <commands/Command.hpp>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SmartArray.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_command_8hpp}{commands/Command.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_smart_array_8hpp}{SmartArray.hpp}}>}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }PrintCommand\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ array\_;}
-\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00011\ \ \ \ \ PrintCommand(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob)\ :\ array\_(ob)\ \{\};}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ execute(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ expectedArgCount()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00015\ \ \ \ \ std::string\ description()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00016\ \};}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00019\ \textcolor{keywordtype}{int}\ PrintCommand<T>::execute(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ array\_.printAll();}
-\DoxyCodeLine{00021\ \}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00024\ \textcolor{keywordtype}{int}\ PrintCommand<T>::expectedArgCount()\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
-\DoxyCodeLine{00026\ \}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00029\ std::string\ PrintCommand<T>::description()\ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ R\textcolor{stringliteral}{"{}(Prints\ all\ elements\ currently\ stored\ in\ the\ collection.}}
-\DoxyCodeLine{00031\ \textcolor{stringliteral}{Displays\ the\ elements\ in\ the\ order\ they\ were\ added.}}
-\DoxyCodeLine{00032\ \textcolor{stringliteral}{No\ additional\ arguments\ are\ required\ for\ this\ command.)"{};}}
-\DoxyCodeLine{00033\ \textcolor{stringliteral}{\}}}
-\DoxyCodeLine{00034\ \textcolor{stringliteral}{}}
-\DoxyCodeLine{00035\ \textcolor{stringliteral}{}\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_print_command_aadd34f8fad2a7595bb2e6b8f19ffedf2}{PrintCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ \mbox{\hyperlink{class_print_command_a27c9883fd4933abdabda6727622975da}{array\_}};\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_print_command_aadd34f8fad2a7595bb2e6b8f19ffedf2}{PrintCommand}}(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob)\ :\ \mbox{\hyperlink{class_print_command_a27c9883fd4933abdabda6727622975da}{array\_}}(ob)\ \{\};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_print_command_a16f912b4b0dc03bc9deabf9175b9fbb5}{execute}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_print_command_a7a0801bdbe5bcf949a79ecc9c55f21dd}{expectedArgCount}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::string\ \mbox{\hyperlink{class_print_command_a9fef62a117e60d48dff74b5c9ff01f3e}{description}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_print_command_a16f912b4b0dc03bc9deabf9175b9fbb5}{PrintCommand<T>::execute}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_print_command_a27c9883fd4933abdabda6727622975da}{array\_}}.printAll();}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_print_command_a7a0801bdbe5bcf949a79ecc9c55f21dd}{PrintCommand<T>::expectedArgCount}}()\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00066\ std::string\ \mbox{\hyperlink{class_print_command_a9fef62a117e60d48dff74b5c9ff01f3e}{PrintCommand<T>::description}}()\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ R\textcolor{stringliteral}{"{}(Prints\ all\ elements\ currently\ stored\ in\ the\ collection.}}
+\DoxyCodeLine{00068\ \textcolor{stringliteral}{Displays\ the\ elements\ in\ the\ order\ they\ were\ added.}}
+\DoxyCodeLine{00069\ \textcolor{stringliteral}{No\ additional\ arguments\ are\ required\ for\ this\ command.)"{};}}
+\DoxyCodeLine{00070\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{00071\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00072\ \textcolor{stringliteral}{}\textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

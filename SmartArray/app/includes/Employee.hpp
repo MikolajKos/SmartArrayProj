@@ -5,16 +5,33 @@
 #include <fstream>
 #include <string>
 
+/**
+ * @brief Represents an employee with personal and job-related information.
+ */
 class Employee {
-	int id_;
-	std::string name_;
-	std::string surname_;
-	std::string position_;
-	double salary_;
-	int birthYear_;
+	int id_;            /**< Employee ID */
+	std::string name_;   /**< First name of the employee */
+	std::string surname_;/**< Surname of the employee */
+	std::string position_;/**< Job position/title */
+	double salary_;     /**< Salary of the employee */
+	int birthYear_;     /**< Year of birth */
 
 public:
+	/**
+	* @brief Default constructor. Initializes empty employee.
+	*/
 	Employee();
+	
+	/**
+	* @brief Parameterized constructor.
+	* @param id Employee ID
+	* @param name First name
+	* @param surname Surname
+	* @param position Job position/title
+	* @param salary Employee salary
+	* @param birthYear Year of birth
+	*/
+
 	Employee(
 		int id, 
 		std::string name, 
@@ -23,16 +40,60 @@ public:
 		double salary,
 		int birthYear
 	);
+
+	/**
+	* @brief Destructor
+	*/
 	~Employee();
 
-	// Setters
+	// SETTERS
+	/**
+	* @brief Set the employee ID.
+	* @param id New ID
+	*/
 	void setId(int id);
+
+	/**
+	* @brief Set the first name.
+	* @param name New first name
+	*/
 	void setName(std::string name);
+
+	/**
+	* @brief Set the surname.
+	* @param surname New surname
+	*/
 	void setSurname(std::string surname);
+
+	/**
+	* @brief Set the job position/title.
+	* @param position New position
+	*/
 	void setPosition(std::string position);
+
+	/**
+	* @brief Set the employee salary.
+	* @param salary New salary
+	*/
 	void setSalary(double salary);
+
+	/**
+	* @brief Set the birth year.
+	* @param birthYear New birth year
+	*/
 	void setBirthYear(int birthYear);
-	// Set All
+	
+
+	/**
+	 * @brief Set all employee data at once.
+	 *
+	 * @param id Employee ID
+	 * @param name First name
+	 * @param surname Surname
+	 * @param position Job position/title
+	 * @param salary Employee salary
+	 * @param birthYear Year of birth
+	 */
 	void setEmployee(
 		int id,
 		std::string name,
@@ -42,13 +103,28 @@ public:
 		int birthYear
 	);
 
-	// Getters
-
-	// Methods
+	// METHODS
+	/**
+	* @brief Serialize the employee to a file stream.
+	* @param os Output file stream
+	* @param ob Employee to serialize
+	*/
 	friend void serialize(std::fstream& os, const Employee& ob);
+
+	/**
+	* @brief Deserialize the employee from a file stream.
+	* @param is Input file stream
+	* @param ob Employee to fill
+	*/
 	friend void deserialize(std::fstream& is, Employee& ob);
 
-	// Operators
+	// OPERATORS
+	/**
+	* @brief Stream output operator for Employee.
+	* @param os Output stream
+	* @param ob Employee to print
+	* @return Reference to the output stream
+	*/
 	friend std::ostream& operator<<(std::ostream& os, const Employee& ob);
 };
 

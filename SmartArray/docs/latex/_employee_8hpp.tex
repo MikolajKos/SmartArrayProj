@@ -1,0 +1,48 @@
+\doxysection{app/includes/\+Employee.hpp File Reference}
+\hypertarget{_employee_8hpp}{}\label{_employee_8hpp}\index{app/includes/Employee.hpp@{app/includes/Employee.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_employee}{Employee}}
+\begin{DoxyCompactList}\small\item\em Represents an employee with personal and job-\/related information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_employee_8hpp_a3fe4523b1090fcb620508c7bfa888911}{serialize}} (std\+::fstream \&os, const \mbox{\hyperlink{class_employee}{Employee}} \&ob)
+\item 
+void \mbox{\hyperlink{_employee_8hpp_a181d9d1962fb2edf980797cc5288528e}{deserialize}} (std\+::fstream \&is, \mbox{\hyperlink{class_employee}{Employee}} \&ob)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_employee_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_employee_8hpp_a181d9d1962fb2edf980797cc5288528e}\index{Employee.hpp@{Employee.hpp}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Employee.hpp@{Employee.hpp}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{_employee_8hpp_a181d9d1962fb2edf980797cc5288528e} 
+void deserialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{is}{, }\item[{\mbox{\hyperlink{class_employee}{Employee}} \&}]{ob}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input file stream \\
+\hline
+{\em ob} & \doxylink{class_employee}{Employee} to fill \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_employee_8hpp_a3fe4523b1090fcb620508c7bfa888911}\index{Employee.hpp@{Employee.hpp}!serialize@{serialize}}
+\index{serialize@{serialize}!Employee.hpp@{Employee.hpp}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{_employee_8hpp_a3fe4523b1090fcb620508c7bfa888911} 
+void serialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_employee}{Employee}} \&}]{ob}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output file stream \\
+\hline
+{\em ob} & \doxylink{class_employee}{Employee} to serialize \\
+\hline
+\end{DoxyParams}

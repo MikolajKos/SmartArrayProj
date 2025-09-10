@@ -1,43 +1,45 @@
 \doxysection{Pop\+Command.\+hpp}
 \hypertarget{_pop_command_8hpp_source}{}\label{_pop_command_8hpp_source}\index{app/includes/commands/PopCommand.hpp@{app/includes/commands/PopCommand.hpp}}
-
+\mbox{\hyperlink{_pop_command_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POP\_COMMAND\_HPP}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POP\_COMMAND\_HPP}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <commands/Command.hpp>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SmartArray.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_command_8hpp}{commands/Command.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_smart_array_8hpp}{SmartArray.hpp}}>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }PopCommand\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ \{}
-\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ array\_;}
-\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00012\ \ \ \ \ PopCommand(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob)\ :\ array\_(ob)\ \{\};}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ execute(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ expectedArgCount()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00016\ \ \ \ \ std::string\ description()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00017\ \};}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00020\ \textcolor{keywordtype}{int}\ PopCommand<T>::execute(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ std::cout\ <<\ array\_.pop()\ <<\ std::endl;}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00023\ \}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00026\ \textcolor{keywordtype}{int}\ PopCommand<T>::expectedArgCount()\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
-\DoxyCodeLine{00028\ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00031\ std::string\ PopCommand<T>::description()\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ R\textcolor{stringliteral}{"{}(Removes\ the\ last\ element\ from\ the\ collection.}}
-\DoxyCodeLine{00033\ \textcolor{stringliteral}{If\ the\ collection\ is\ empty,\ no\ action\ is\ performed.}}
-\DoxyCodeLine{00034\ \textcolor{stringliteral}{No\ additional\ arguments\ are\ required\ for\ this\ command.)"{};}}
-\DoxyCodeLine{00035\ \textcolor{stringliteral}{\}}}
-\DoxyCodeLine{00036\ \textcolor{stringliteral}{}}
-\DoxyCodeLine{00037\ \textcolor{stringliteral}{}\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pop_command_a29d1e243fef4ead0f579ee256902b356}{PopCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ \mbox{\hyperlink{class_pop_command_ab14d2efb754d173e10197ea398c7b310}{array\_}};\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_pop_command_a29d1e243fef4ead0f579ee256902b356}{PopCommand}}(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob)\ :\ \mbox{\hyperlink{class_pop_command_ab14d2efb754d173e10197ea398c7b310}{array\_}}(ob)\ \{\};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pop_command_a6be6f4dd65a0005bdc24e8792c64360e}{execute}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pop_command_ad2b066f81b8c1a3e7a8aeee1cb6fe24f}{expectedArgCount}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00053\ \ \ \ \ std::string\ \mbox{\hyperlink{class_pop_command_a07e9bdf9c72bb1b5380cf81f46fa2bb7}{description}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pop_command_a6be6f4dd65a0005bdc24e8792c64360e}{PopCommand<T>::execute}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{class_pop_command_ab14d2efb754d173e10197ea398c7b310}{array\_}}.pop()\ <<\ std::endl;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pop_command_ad2b066f81b8c1a3e7a8aeee1cb6fe24f}{PopCommand<T>::expectedArgCount}}()\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00068\ std::string\ \mbox{\hyperlink{class_pop_command_a07e9bdf9c72bb1b5380cf81f46fa2bb7}{PopCommand<T>::description}}()\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ R\textcolor{stringliteral}{"{}(Removes\ the\ last\ element\ from\ the\ collection.}}
+\DoxyCodeLine{00070\ \textcolor{stringliteral}{If\ the\ collection\ is\ empty,\ no\ action\ is\ performed.}}
+\DoxyCodeLine{00071\ \textcolor{stringliteral}{No\ additional\ arguments\ are\ required\ for\ this\ command.)"{};}}
+\DoxyCodeLine{00072\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{00073\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00074\ \textcolor{stringliteral}{}\textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

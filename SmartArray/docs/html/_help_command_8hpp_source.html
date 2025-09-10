@@ -91,82 +91,101 @@ $(function(){initNavTree('_help_command_8hpp_source.html','',''); });
   <div class="headertitle"><div class="title">HelpCommand.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef HELP_COMMAND_HPP</span></div>
+<a href="_help_command_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef HELP_COMMAND_HPP</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define HELP_COMMAND_HPP</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;commands/Command.hpp&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;commands/CommandFactory.hpp&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="_command_8hpp.html">commands/Command.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="_command_factory_8hpp.html">commands/CommandFactory.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;SmartArray.hpp&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_help_command.html">   12</a></span><span class="keyword">class </span>HelpCommand : <span class="keyword">public</span> <a class="code hl_class" href="class_command.html">Command</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="class_smart_array.html">SmartArray&lt;T&gt;</a>&amp; array_;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    HelpCommand(<a class="code hl_class" href="class_smart_array.html">SmartArray&lt;T&gt;</a>&amp; ob): array_(ob) {};</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> execute(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> expectedArgCount() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    std::string description() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="_smart_array_8hpp.html">SmartArray.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_help_command.html">   22</a></span><span class="keyword">class </span><a class="code hl_function" href="class_help_command.html#a8c14ebf4f6970fed40e6e0b5ff5a81ec">HelpCommand</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_command.html">Command</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_help_command.html#aad76832fd98df31bab09bfa7bc5562c2">   23</a></span>    <a class="code hl_class" href="class_smart_array.html">SmartArray&lt;T&gt;</a>&amp; <a class="code hl_variable" href="class_help_command.html#aad76832fd98df31bab09bfa7bc5562c2">array_</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_help_command.html#a8c14ebf4f6970fed40e6e0b5ff5a81ec">   30</a></span>    <a class="code hl_function" href="class_help_command.html#a8c14ebf4f6970fed40e6e0b5ff5a81ec">HelpCommand</a>(<a class="code hl_class" href="class_smart_array.html">SmartArray&lt;T&gt;</a>&amp; ob): <a class="code hl_variable" href="class_help_command.html#aad76832fd98df31bab09bfa7bc5562c2">array_</a>(ob) {};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_help_command.html#a8afb79b89f79989c5c70cecd4912c870">execute</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_help_command.html#a5013e0a13bdc2eafcb3f1752a72699f9">expectedArgCount</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    std::string <a class="code hl_function" href="class_help_command.html#afc7db3202df626e359a57e43df90d2bf">description</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">int</span> HelpCommand&lt;T, Parser&gt;::execute(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// Gets help argument</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* cmd_name = argv[2];</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Execute when no command arguments were passed</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (argc &lt; 3) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        std::cout &lt;&lt;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="stringliteral">&quot;Welcome to the SmartArray CLI Application.\n&quot;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="stringliteral">&quot;This command-line tool allows you to interact with and manage a dynamic array of elements.\n&quot;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="stringliteral">&quot;It supports various operations such as adding, removing, and printing elements,\n&quot;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="stringliteral">&quot;making it ideal for educational purposes, testing parsers, or experimenting with templated containers.\n&quot;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="stringliteral">&quot;You are currently viewing the help system.\n&quot;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="stringliteral">&quot;To learn more about a specific command, you can pass its name as an argument to the help command.\n&quot;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="stringliteral">&quot;Example:\n&quot;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="stringliteral">&quot;  help add\n&quot;</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="stringliteral">&quot;This will display detailed usage information and available options for the &#39;add&#39; command.\n&quot;</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// Command argument was given</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_class" href="class_command_factory.html">CommandFactory&lt;T, Parser&gt;</a> factory(array_);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::unique_ptr&lt;Command&gt; command = factory.createCommand(cmd_name);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (!command) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        CommandErrorHandler::cmd_handler(CommandErrorHandler::CMD_NOT_FOUND);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    std::cout &lt;&lt; command-&gt;description();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">int</span> HelpCommand&lt;T, Parser&gt;::expectedArgCount() {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// return -1 if expected argument count is undedined</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>std::string HelpCommand&lt;T, Parser&gt;::description() {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;I see you ask for a lot of help ;)\n&quot;</span>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_command_factory_html"><div class="ttname"><a href="class_command_factory.html">CommandFactory</a></div><div class="ttdef"><b>Definition</b> CommandFactory.hpp:16</div></div>
-<div class="ttc" id="aclass_command_html"><div class="ttname"><a href="class_command.html">Command</a></div><div class="ttdef"><b>Definition</b> Command.hpp:6</div></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_help_command.html#a8afb79b89f79989c5c70cecd4912c870">   66</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_help_command.html#a8afb79b89f79989c5c70cecd4912c870">HelpCommand&lt;T, Parser&gt;::execute</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">// Gets help argument</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* cmd_name = argv[2];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Execute when no command arguments were passed</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (argc &lt; 3) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        std::cout &lt;&lt;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="stringliteral">&quot;Welcome to the SmartArray CLI Application.\n&quot;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="stringliteral">&quot;This command-line tool allows you to interact with and manage a dynamic array of elements.\n&quot;</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="stringliteral">&quot;It supports various operations such as adding, removing, and printing elements,\n&quot;</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="stringliteral">&quot;making it ideal for educational purposes, testing parsers, or experimenting with templated containers.\n&quot;</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="stringliteral">&quot;You are currently viewing the help system.\n&quot;</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="stringliteral">&quot;To learn more about a specific command, you can pass its name as an argument to the help command.\n&quot;</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="stringliteral">&quot;Example:\n&quot;</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="stringliteral">&quot;  help add\n&quot;</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="stringliteral">&quot;This will display detailed usage information and available options for the &#39;add&#39; command.\n&quot;</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// Command argument was given</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_class" href="class_command_factory.html">CommandFactory&lt;T, Parser&gt;</a> factory(<a class="code hl_variable" href="class_help_command.html#aad76832fd98df31bab09bfa7bc5562c2">array_</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    std::unique_ptr&lt;Command&gt; command = factory.<a class="code hl_function" href="class_command_factory.html#ae6efd9704642ffb7cce9d0e47b7b7930">createCommand</a>(cmd_name);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span> (!command) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_function" href="class_command_error_handler.html#a1a7c4454a0c2e40614cb0eb2d71b6d52">CommandErrorHandler::cmd_handler</a>(<a class="code hl_enumvalue" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8">CommandErrorHandler::CMD_NOT_FOUND</a>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    std::cout &lt;&lt; command-&gt;description();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_help_command.html#a5013e0a13bdc2eafcb3f1752a72699f9">  105</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_help_command.html#a5013e0a13bdc2eafcb3f1752a72699f9">HelpCommand&lt;T, Parser&gt;::expectedArgCount</a>() {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// return -1 if expected argument count is undedined</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_help_command.html#afc7db3202df626e359a57e43df90d2bf">  111</a></span>std::string <a class="code hl_function" href="class_help_command.html#afc7db3202df626e359a57e43df90d2bf">HelpCommand&lt;T, Parser&gt;::description</a>() {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;I see you ask for a lot of help ;)\n&quot;</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_command_8hpp_html"><div class="ttname"><a href="_command_8hpp.html">Command.hpp</a></div></div>
+<div class="ttc" id="a_command_factory_8hpp_html"><div class="ttname"><a href="_command_factory_8hpp.html">CommandFactory.hpp</a></div></div>
+<div class="ttc" id="a_smart_array_8hpp_html"><div class="ttname"><a href="_smart_array_8hpp.html">SmartArray.hpp</a></div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a1a7c4454a0c2e40614cb0eb2d71b6d52"><div class="ttname"><a href="class_command_error_handler.html#a1a7c4454a0c2e40614cb0eb2d71b6d52">CommandErrorHandler::cmd_handler</a></div><div class="ttdeci">static void cmd_handler(enum Errors error, const char *info=&quot;&quot;)</div><div class="ttdoc">Handle a command-related error.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.cpp:9</div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8"><div class="ttname"><a href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8">CommandErrorHandler::CMD_NOT_FOUND</a></div><div class="ttdeci">@ CMD_NOT_FOUND</div><div class="ttdoc">Thrown when the specified command does not exist.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:18</div></div>
+<div class="ttc" id="aclass_command_factory_html"><div class="ttname"><a href="class_command_factory.html">CommandFactory</a></div><div class="ttdoc">Factory class to create command objects.</div><div class="ttdef"><b>Definition</b> CommandFactory.hpp:25</div></div>
+<div class="ttc" id="aclass_command_factory_html_ae6efd9704642ffb7cce9d0e47b7b7930"><div class="ttname"><a href="class_command_factory.html#ae6efd9704642ffb7cce9d0e47b7b7930">CommandFactory::createCommand</a></div><div class="ttdeci">std::unique_ptr&lt; Command &gt; createCommand(std::string name)</div><div class="ttdoc">Create a command object based on the command name.</div><div class="ttdef"><b>Definition</b> CommandFactory.hpp:59</div></div>
+<div class="ttc" id="aclass_command_html"><div class="ttname"><a href="class_command.html">Command</a></div><div class="ttdoc">Abstract base class for all commands.</div><div class="ttdef"><b>Definition</b> Command.hpp:13</div></div>
+<div class="ttc" id="aclass_help_command_html_a5013e0a13bdc2eafcb3f1752a72699f9"><div class="ttname"><a href="class_help_command.html#a5013e0a13bdc2eafcb3f1752a72699f9">HelpCommand::expectedArgCount</a></div><div class="ttdeci">int expectedArgCount() override</div><div class="ttdoc">Get the expected number of arguments for the help command.</div><div class="ttdef"><b>Definition</b> HelpCommand.hpp:105</div></div>
+<div class="ttc" id="aclass_help_command_html_a8afb79b89f79989c5c70cecd4912c870"><div class="ttname"><a href="class_help_command.html#a8afb79b89f79989c5c70cecd4912c870">HelpCommand::execute</a></div><div class="ttdeci">int execute(int argc, char *argv[]) override</div><div class="ttdoc">Execute the help command.</div><div class="ttdef"><b>Definition</b> HelpCommand.hpp:66</div></div>
+<div class="ttc" id="aclass_help_command_html_a8c14ebf4f6970fed40e6e0b5ff5a81ec"><div class="ttname"><a href="class_help_command.html#a8c14ebf4f6970fed40e6e0b5ff5a81ec">HelpCommand::HelpCommand</a></div><div class="ttdeci">HelpCommand(SmartArray&lt; T &gt; &amp;ob)</div><div class="ttdoc">Construct a new HelpCommand.</div><div class="ttdef"><b>Definition</b> HelpCommand.hpp:30</div></div>
+<div class="ttc" id="aclass_help_command_html_aad76832fd98df31bab09bfa7bc5562c2"><div class="ttname"><a href="class_help_command.html#aad76832fd98df31bab09bfa7bc5562c2">HelpCommand::array_</a></div><div class="ttdeci">SmartArray&lt; T &gt; &amp; array_</div><div class="ttdoc">Reference to the SmartArray used by commands.</div><div class="ttdef"><b>Definition</b> HelpCommand.hpp:23</div></div>
+<div class="ttc" id="aclass_help_command_html_afc7db3202df626e359a57e43df90d2bf"><div class="ttname"><a href="class_help_command.html#afc7db3202df626e359a57e43df90d2bf">HelpCommand::description</a></div><div class="ttdeci">std::string description() override</div><div class="ttdoc">Get a textual description of the help command.</div><div class="ttdef"><b>Definition</b> HelpCommand.hpp:111</div></div>
 <div class="ttc" id="aclass_smart_array_html"><div class="ttname"><a href="class_smart_array.html">SmartArray</a></div><div class="ttdoc">A dynamic array template class similar to std::vector.</div><div class="ttdef"><b>Definition</b> SmartArray.hpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -174,7 +193,7 @@ $(function(){initNavTree('_help_command_8hpp_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a href="dir_1c5c03227cca0102ee47bee331c2b55d.html">includes</a></li><li class="navelem"><a href="dir_bc8d970148ce4b2a97cc4f30e81f9493.html">commands</a></li><li class="navelem"><b>HelpCommand.hpp</b></li>
+    <li class="navelem"><a href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a href="dir_1c5c03227cca0102ee47bee331c2b55d.html">includes</a></li><li class="navelem"><a href="dir_bc8d970148ce4b2a97cc4f30e81f9493.html">commands</a></li><li class="navelem"><a href="_help_command_8hpp.html">HelpCommand.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

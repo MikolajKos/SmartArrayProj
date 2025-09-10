@@ -1,5 +1,14 @@
 \doxysection{Help\+Command\texorpdfstring{$<$}{<} T, Parser \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{class_help_command}{}\label{class_help_command}\index{HelpCommand$<$ T, Parser $>$@{HelpCommand$<$ T, Parser $>$}}
+
+
+\doxylink{class_command}{Command} to display help information for \doxylink{class_smart_array}{Smart\+Array} CLI commands.  
+
+
+
+
+{\ttfamily \#include $<$Help\+Command.\+hpp$>$}
+
 Inheritance diagram for Help\+Command\texorpdfstring{$<$}{<} T, Parser \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +18,61 @@ Inheritance diagram for Help\+Command\texorpdfstring{$<$}{<} T, Parser \texorpdf
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_help_command_a8c14ebf4f6970fed40e6e0b5ff5a81ec}\label{class_help_command_a8c14ebf4f6970fed40e6e0b5ff5a81ec} 
-{\bfseries Help\+Command} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
-\item 
+\mbox{\hyperlink{class_help_command_a8c14ebf4f6970fed40e6e0b5ff5a81ec}{Help\+Command}} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_help_command}{Help\+Command}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_help_command_a8afb79b89f79989c5c70cecd4912c870}{execute}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}) override
-\item 
+\begin{DoxyCompactList}\small\item\em Execute the help command. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_help_command_a5013e0a13bdc2eafcb3f1752a72699f9}{expected\+Arg\+Count}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Get the expected number of arguments for the help command. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_help_command_afc7db3202df626e359a57e43df90d2bf}{description}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get a textual description of the help command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_command}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_command_aa545a53d35818f9efb936daf3fa16c61}{\texorpdfstring{$\sim$}{\string~}\+Command}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \& \mbox{\hyperlink{class_help_command_aad76832fd98df31bab09bfa7bc5562c2}{array\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_smart_array}{Smart\+Array} used by commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename Parser$>$\newline
+class Help\+Command$<$ T, Parser $>$}
+\doxylink{class_command}{Command} to display help information for \doxylink{class_smart_array}{Smart\+Array} CLI commands. 
+
+This template class implements the \doxylink{class_command}{Command} interface and provides detailed usage instructions for all commands, or for a specific command if a name is passed as an argument.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of elements stored in \doxylink{class_smart_array}{Smart\+Array} \\
+\hline
+{\em Parser} & Parser type used to provide description of the element type T \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\Hypertarget{class_help_command_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_help_command_a8c14ebf4f6970fed40e6e0b5ff5a81ec}\index{HelpCommand$<$ T, Parser $>$@{HelpCommand$<$ T, Parser $>$}!HelpCommand@{HelpCommand}}
+\index{HelpCommand@{HelpCommand}!HelpCommand$<$ T, Parser $>$@{HelpCommand$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{HelpCommand()}{HelpCommand()}}
+{\footnotesize\ttfamily \label{class_help_command_a8c14ebf4f6970fed40e6e0b5ff5a81ec} 
+template$<$typename T, typename Parser$>$ \\
+\mbox{\hyperlink{class_help_command}{Help\+Command}}$<$ T, Parser $>$\mbox{\hyperlink{class_help_command}{\+::\+Help\+Command}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&}]{ob}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_help_command}{Help\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ob} & Reference to the \doxylink{class_smart_array}{Smart\+Array} to operate on \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
@@ -32,7 +87,16 @@ std\+::string \mbox{\hyperlink{class_help_command}{Help\+Command}}$<$ T, Parser 
 
 
 
-Reimplemented from \mbox{\hyperlink{class_command}{Command}}.
+Get a textual description of the help command. 
+
+Provides a brief message about the purpose of the help command.
+
+\begin{DoxyReturn}{Returns}
+std\+::string Description of the command 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_command_aeb531b2696ec5a067dfa80d30e653cdb}{Command}}.
 
 \Hypertarget{class_help_command_a8afb79b89f79989c5c70cecd4912c870}\index{HelpCommand$<$ T, Parser $>$@{HelpCommand$<$ T, Parser $>$}!execute@{execute}}
 \index{execute@{execute}!HelpCommand$<$ T, Parser $>$@{HelpCommand$<$ T, Parser $>$}}
@@ -43,7 +107,23 @@ int \mbox{\hyperlink{class_help_command}{Help\+Command}}$<$ T, Parser $>$\+::exe
 
 
 
-Implements \mbox{\hyperlink{class_command}{Command}}.
+Execute the help command. 
+
+If no command name is provided, displays general help information for the \doxylink{class_smart_array}{Smart\+Array} CLI application. If a command name is given, displays the description for that specific command.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments \\
+\hline
+{\em argv} & Array of command-\/line arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Result code (0 on success, non-\/zero on error) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_ab37f624bfa17ab524c83b6f17931359b}{Command}}.
 
 \Hypertarget{class_help_command_a5013e0a13bdc2eafcb3f1752a72699f9}\index{HelpCommand$<$ T, Parser $>$@{HelpCommand$<$ T, Parser $>$}!expectedArgCount@{expectedArgCount}}
 \index{expectedArgCount@{expectedArgCount}!HelpCommand$<$ T, Parser $>$@{HelpCommand$<$ T, Parser $>$}}
@@ -54,10 +134,35 @@ int \mbox{\hyperlink{class_help_command}{Help\+Command}}$<$ T, Parser $>$\+::exp
 
 
 
-Implements \mbox{\hyperlink{class_command}{Command}}.
+Get the expected number of arguments for the help command. 
+
+A return value of -\/1 indicates that the command can accept an arbitrary number of arguments.
+
+\begin{DoxyReturn}{Returns}
+int Expected argument count (-\/1 for undefined) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a8a12c681e4fcd3b2b5c6dc7342556399}{Command}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_help_command_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_help_command_aad76832fd98df31bab09bfa7bc5562c2}\index{HelpCommand$<$ T, Parser $>$@{HelpCommand$<$ T, Parser $>$}!array\_@{array\_}}
+\index{array\_@{array\_}!HelpCommand$<$ T, Parser $>$@{HelpCommand$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{array\_}{array\_}}
+{\footnotesize\ttfamily \label{class_help_command_aad76832fd98df31bab09bfa7bc5562c2} 
+template$<$typename T, typename Parser$>$ \\
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$T$>$\& \mbox{\hyperlink{class_help_command}{Help\+Command}}$<$ T, Parser $>$\+::array\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the \doxylink{class_smart_array}{Smart\+Array} used by commands. 
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/commands/Help\+Command.\+hpp\end{DoxyCompactItemize}
+app/includes/commands/\mbox{\hyperlink{_help_command_8hpp}{Help\+Command.\+hpp}}\end{DoxyCompactItemize}

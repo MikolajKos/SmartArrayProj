@@ -1,53 +1,54 @@
 \doxysection{Command\+Handler.\+hpp}
 \hypertarget{_command_handler_8hpp_source}{}\label{_command_handler_8hpp_source}\index{app/includes/commands/CommandHandler.hpp@{app/includes/commands/CommandHandler.hpp}}
-
+\mbox{\hyperlink{_command_handler_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMMAND\_HANDLER\_HPP}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COMMAND\_HANDLER\_HPP}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <handlers/CommandErrorHandler.hpp>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <commands/CommandHandler.hpp>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <commands/PopCommand.hpp>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <commands/PrintCommand.hpp>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <commands/AddCommand.hpp>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <commands/HelpCommand.hpp>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <SmartArray.hpp>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <commands/CommandFactory.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_command_error_handler_8hpp}{handlers/CommandErrorHandler.hpp}}>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_command_handler_8hpp}{commands/CommandHandler.hpp}}>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_pop_command_8hpp}{commands/PopCommand.hpp}}>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_print_command_8hpp}{commands/PrintCommand.hpp}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_add_command_8hpp}{commands/AddCommand.hpp}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_help_command_8hpp}{commands/HelpCommand.hpp}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_smart_array_8hpp}{SmartArray.hpp}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_command_factory_8hpp}{commands/CommandFactory.hpp}}>}}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
-\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }CommandHandler\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ array\_;}
-\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \ \ CommandHandler(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob)\ :\ array\_(ob)\ \{\};}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ handle(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[]);}
-\DoxyCodeLine{00020\ \};}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
-\DoxyCodeLine{00023\ \textcolor{keywordtype}{int}\ CommandHandler<T,\ Parser>::handle(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (argv[1]\ ==\ NULL)\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ CommandErrorHandler::cmd\_handler(CommandErrorHandler::ARGS\_EXCEPTION);}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
-\DoxyCodeLine{00027\ \ \ \ \ \}}
-\DoxyCodeLine{00028\ \ \ \ \ }
-\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_command_factory}{CommandFactory<T,\ Parser>}}\ factory(array\_);}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Pass\ command\ name\ as\ a\ parameter}}
-\DoxyCodeLine{00031\ \ \ \ \ std::unique\_ptr<Command>\ command\ =\ factory.createCommand(argv[1]);}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (!command)\ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ CommandErrorHandler::cmd\_handler(CommandErrorHandler::CMD\_NOT\_FOUND);}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
-\DoxyCodeLine{00035\ \ \ \ \ \}}
-\DoxyCodeLine{00036\ \ \ \ \ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ expectedArgs\ =\ command-\/>expectedArgCount();}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (expectedArgs\ !=\ argc\ \&\&\ expectedArgs\ !=\ -\/1)\ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ CommandErrorHandler::cmd\_handler(CommandErrorHandler::ARGS\_EXCEPTION);}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ command-\/>execute(argc,\ argv);}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
-\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_command_handler_a31d942dbf6eeb6cb3bc9ffd27391942c}{CommandHandler}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ \mbox{\hyperlink{class_command_handler_af95ca482584e648cf47bec9b4b931ed2}{array\_}};\ \ \ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_command_handler_a31d942dbf6eeb6cb3bc9ffd27391942c}{CommandHandler}}(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob)\ :\ \mbox{\hyperlink{class_command_handler_af95ca482584e648cf47bec9b4b931ed2}{array\_}}(ob)\ \{\};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_command_handler_a442d81ce5e5d8d6626980da9efaeaa1d}{handle}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[]);}
+\DoxyCodeLine{00045\ \};}
 \DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_command_handler_a442d81ce5e5d8d6626980da9efaeaa1d}{CommandHandler<T,\ Parser>::handle}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (argv[1]\ ==\ NULL)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_error_handler_a1a7c4454a0c2e40614cb0eb2d71b6d52}{CommandErrorHandler::cmd\_handler}}(\mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863}{CommandErrorHandler::ARGS\_EXCEPTION}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_command_factory}{CommandFactory<T,\ Parser>}}\ factory(\mbox{\hyperlink{class_command_handler_af95ca482584e648cf47bec9b4b931ed2}{array\_}});}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Pass\ command\ name\ as\ a\ parameter}}
+\DoxyCodeLine{00056\ \ \ \ \ std::unique\_ptr<Command>\ command\ =\ factory.\mbox{\hyperlink{class_command_factory_ae6efd9704642ffb7cce9d0e47b7b7930}{createCommand}}(argv[1]);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!command)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_error_handler_a1a7c4454a0c2e40614cb0eb2d71b6d52}{CommandErrorHandler::cmd\_handler}}(\mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8}{CommandErrorHandler::CMD\_NOT\_FOUND}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ expectedArgs\ =\ command-\/>expectedArgCount();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (expectedArgs\ !=\ argc\ \&\&\ expectedArgs\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_error_handler_a1a7c4454a0c2e40614cb0eb2d71b6d52}{CommandErrorHandler::cmd\_handler}}(\mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863}{CommandErrorHandler::ARGS\_EXCEPTION}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ command-\/>execute(argc,\ argv);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

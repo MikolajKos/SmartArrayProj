@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['isempty_0',['isEmpty',['../class_smart_array.html#aa3251f665fb665a32411b3116ec2d913',1,'SmartArray']]],
-  ['isfull_1',['isFull',['../class_smart_array.html#a7455d353176a1b35fee43e6cd7704965',1,'SmartArray']]]
+  ['description_0',['description',['../class_add_command.html#a533ca89310451e80e0e18419b5bc796b',1,'AddCommand::description()'],['../class_clear_command.html#a173d1c84b8d6bb217881ef81ad73674e',1,'ClearCommand::description()'],['../class_command.html#aeb531b2696ec5a067dfa80d30e653cdb',1,'Command::description()'],['../class_help_command.html#afc7db3202df626e359a57e43df90d2bf',1,'HelpCommand::description()'],['../class_pop_command.html#a07e9bdf9c72bb1b5380cf81f46fa2bb7',1,'PopCommand::description()'],['../class_print_command.html#a9fef62a117e60d48dff74b5c9ff01f3e',1,'PrintCommand::description()'],['../struct_employee_parser.html#a43166550f4b2e5a16f660547be37dba9',1,'EmployeeParser::description()']]],
+  ['deserialize_1',['deserialize',['../_employee_8hpp.html#a181d9d1962fb2edf980797cc5288528e',1,'Employee.hpp']]]
 ];

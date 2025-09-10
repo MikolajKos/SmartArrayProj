@@ -91,32 +91,48 @@ $(function(){initNavTree('_command_error_handler_8hpp_source.html','',''); });
   <div class="headertitle"><div class="title">CommandErrorHandler.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef COMMAND_ERROR_HANDLER_HPP</span></div>
+<a href="_command_error_handler_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef COMMAND_ERROR_HANDLER_HPP</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define COMMAND_ERROR_HANDLER_HPP</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
 <div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_command_error_handler.html">    4</a></span><span class="keyword">class </span><a class="code hl_class" href="class_command_error_handler.html">CommandErrorHandler</a> {</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* messages[];</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">enum</span> Errors {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        ARGS_EXCEPTION,</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        CMD_NOT_FOUND,</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        TOT_ERROR <span class="comment">// Total number of errors </span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    };</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> cmd_handler(<span class="keyword">enum</span> Errors error, <span class="keyword">const</span> <span class="keywordtype">char</span>* info = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_command_error_handler.html#ada3765fba069f67f91eb35faa3b4dfad">    4</a></span><span class="comment">/**</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @brief Handles errors related to command execution in the SmartArray CLI.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * This class provides static methods and predefined error messages to handle</span></div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_command_error_handler_html"><div class="ttname"><a href="class_command_error_handler.html">CommandErrorHandler</a></div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:4</div></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * situations such as incorrect arguments or unknown commands.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_command_error_handler.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_command_error_handler.html">CommandErrorHandler</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="class_command_error_handler.html#ada3765fba069f67f91eb35faa3b4dfad">messages</a>[]; </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92">   16</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92">Errors</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863">   17</a></span>        <a class="code hl_enumvalue" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863">ARGS_EXCEPTION</a>, </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8">   18</a></span>        <a class="code hl_enumvalue" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8">CMD_NOT_FOUND</a>,  </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3">   19</a></span>        <a class="code hl_enumvalue" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3">TOT_ERROR</a>       </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    };</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_command_error_handler.html#a1a7c4454a0c2e40614cb0eb2d71b6d52">cmd_handler</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92">Errors</a> error, <span class="keyword">const</span> <span class="keywordtype">char</span>* info = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_command_error_handler_html"><div class="ttname"><a href="class_command_error_handler.html">CommandErrorHandler</a></div><div class="ttdoc">Handles errors related to command execution in the SmartArray CLI.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:10</div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a1a7c4454a0c2e40614cb0eb2d71b6d52"><div class="ttname"><a href="class_command_error_handler.html#a1a7c4454a0c2e40614cb0eb2d71b6d52">CommandErrorHandler::cmd_handler</a></div><div class="ttdeci">static void cmd_handler(enum Errors error, const char *info=&quot;&quot;)</div><div class="ttdoc">Handle a command-related error.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.cpp:9</div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a570c43c4da0e5d857eeb658316bc0a92"><div class="ttname"><a href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92">CommandErrorHandler::Errors</a></div><div class="ttdeci">Errors</div><div class="ttdoc">Enumeration of possible command errors.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:16</div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8"><div class="ttname"><a href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8">CommandErrorHandler::CMD_NOT_FOUND</a></div><div class="ttdeci">@ CMD_NOT_FOUND</div><div class="ttdoc">Thrown when the specified command does not exist.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:18</div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863"><div class="ttname"><a href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863">CommandErrorHandler::ARGS_EXCEPTION</a></div><div class="ttdeci">@ ARGS_EXCEPTION</div><div class="ttdoc">Thrown when the number of arguments is incorrect.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:17</div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3"><div class="ttname"><a href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3">CommandErrorHandler::TOT_ERROR</a></div><div class="ttdeci">@ TOT_ERROR</div><div class="ttdoc">Total number of errors defined.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:19</div></div>
+<div class="ttc" id="aclass_command_error_handler_html_ada3765fba069f67f91eb35faa3b4dfad"><div class="ttname"><a href="class_command_error_handler.html#ada3765fba069f67f91eb35faa3b4dfad">CommandErrorHandler::messages</a></div><div class="ttdeci">static const char * messages[]</div><div class="ttdoc">Array of predefined error messages.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a href="dir_1c5c03227cca0102ee47bee331c2b55d.html">includes</a></li><li class="navelem"><a href="dir_f6c4874d6cefada8c7dce13465f3917d.html">handlers</a></li><li class="navelem"><b>CommandErrorHandler.hpp</b></li>
+    <li class="navelem"><a href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a href="dir_1c5c03227cca0102ee47bee331c2b55d.html">includes</a></li><li class="navelem"><a href="dir_f6c4874d6cefada8c7dce13465f3917d.html">handlers</a></li><li class="navelem"><a href="_command_error_handler_8hpp.html">CommandErrorHandler.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

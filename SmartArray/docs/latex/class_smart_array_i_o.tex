@@ -1,16 +1,102 @@
 \doxysection{Smart\+Array\+IO\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{class_smart_array_i_o}{}\label{class_smart_array_i_o}\index{SmartArrayIO$<$ T $>$@{SmartArrayIO$<$ T $>$}}
+
+
+Template class for saving and loading \doxylink{class_smart_array}{Smart\+Array} objects to/from binary files.  
+
+
+
+
+{\ttfamily \#include $<$Smart\+Array\+IO.\+hpp$>$}
+
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_smart_array_i_o_ab03801b0d487fb8a9e68b8f26910c4a0}\label{class_smart_array_i_o_ab03801b0d487fb8a9e68b8f26910c4a0} 
-static void {\bfseries save} (const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob, std\+::string source=FILENAME)
+static void \mbox{\hyperlink{class_smart_array_i_o_ab03801b0d487fb8a9e68b8f26910c4a0}{save}} (const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob, std\+::string source=\mbox{\hyperlink{_smart_array_i_o_8hpp_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}})
+\begin{DoxyCompactList}\small\item\em Save a \doxylink{class_smart_array}{Smart\+Array} to a binary file. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_smart_array_i_o_a4169689e3e9eac8886f205c771f07337}{load}} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob, std\+::string source=\mbox{\hyperlink{_smart_array_i_o_8hpp_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}})
+\begin{DoxyCompactList}\small\item\em Load a \doxylink{class_smart_array}{Smart\+Array} from a binary file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_smart_array_i_o_a4169689e3e9eac8886f205c771f07337}\label{class_smart_array_i_o_a4169689e3e9eac8886f205c771f07337} 
-static void {\bfseries load} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob, std\+::string source=FILENAME)
-\end{DoxyCompactItemize}
+static std\+::filesystem\+::path \mbox{\hyperlink{class_smart_array_i_o_ab0934c8ca2d4de121f7a89d4da405770}{Get\+File\+Directory}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Get the full path for a given filename relative to the executable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Smart\+Array\+IO$<$ T $>$}
+Template class for saving and loading \doxylink{class_smart_array}{Smart\+Array} objects to/from binary files. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of elements stored in \doxylink{class_smart_array}{Smart\+Array}. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_smart_array_i_o_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_smart_array_i_o_ab0934c8ca2d4de121f7a89d4da405770}\index{SmartArrayIO$<$ T $>$@{SmartArrayIO$<$ T $>$}!GetFileDirectory@{GetFileDirectory}}
+\index{GetFileDirectory@{GetFileDirectory}!SmartArrayIO$<$ T $>$@{SmartArrayIO$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetFileDirectory()}{GetFileDirectory()}}
+{\footnotesize\ttfamily \label{class_smart_array_i_o_ab0934c8ca2d4de121f7a89d4da405770} 
+template$<$typename T$>$ \\
+std\+::filesystem\+::path \mbox{\hyperlink{class_smart_array_i_o}{Smart\+Array\+IO}}$<$ T $>$\+::\+Get\+File\+Directory (\begin{DoxyParamCaption}\item[{std\+::string}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Get the full path for a given filename relative to the executable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::filesystem\+::path Full path to the file 
+\end{DoxyReturn}
+\Hypertarget{class_smart_array_i_o_a4169689e3e9eac8886f205c771f07337}\index{SmartArrayIO$<$ T $>$@{SmartArrayIO$<$ T $>$}!load@{load}}
+\index{load@{load}!SmartArrayIO$<$ T $>$@{SmartArrayIO$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{class_smart_array_i_o_a4169689e3e9eac8886f205c771f07337} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_smart_array_i_o}{Smart\+Array\+IO}}$<$ T $>$\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&}]{ob}{, }\item[{std\+::string}]{source}{ = {\ttfamily \mbox{\hyperlink{_smart_array_i_o_8hpp_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Load a \doxylink{class_smart_array}{Smart\+Array} from a binary file. 
+
+Clears the current array and fills it with data from the file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ob} & \doxylink{class_smart_array}{Smart\+Array} object to load data into \\
+\hline
+{\em source} & Filename to load from (default\+: "{}preload\+\_\+data.\+bin"{}) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_smart_array_i_o_ab03801b0d487fb8a9e68b8f26910c4a0}\index{SmartArrayIO$<$ T $>$@{SmartArrayIO$<$ T $>$}!save@{save}}
+\index{save@{save}!SmartArrayIO$<$ T $>$@{SmartArrayIO$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{class_smart_array_i_o_ab03801b0d487fb8a9e68b8f26910c4a0} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_smart_array_i_o}{Smart\+Array\+IO}}$<$ T $>$\+::save (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&}]{ob}{, }\item[{std\+::string}]{source}{ = {\ttfamily \mbox{\hyperlink{_smart_array_i_o_8hpp_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Save a \doxylink{class_smart_array}{Smart\+Array} to a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ob} & \doxylink{class_smart_array}{Smart\+Array} object to save \\
+\hline
+{\em source} & Filename to save to (default\+: "{}preload\+\_\+data.\+bin"{}) \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/Smart\+Array\+IO.\+hpp\end{DoxyCompactItemize}
+app/includes/\mbox{\hyperlink{_smart_array_i_o_8hpp}{Smart\+Array\+IO.\+hpp}}\end{DoxyCompactItemize}

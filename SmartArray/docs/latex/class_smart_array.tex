@@ -12,15 +12,13 @@ A dynamic array template class similar to std\+::vector.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}\label{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a} 
-{\bfseries Smart\+Array} ()
+\mbox{\hyperlink{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}{Smart\+Array}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. Initializes array with default capacity (5). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_smart_array_a695ccf5274ebe802847ab723f936120a}{Smart\+Array}} (unsigned cap)
 \begin{DoxyCompactList}\small\item\em Constructor with specified capacity. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_smart_array_a7b3c305502d6b16e4e92039573827579}{Smart\+Array}} (const \mbox{\hyperlink{class_smart_array}{Smart\+Array}} \&ob)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
-\Hypertarget{class_smart_array_af7af9518754f2bbc3eb7523f00ef3be8}\label{class_smart_array_af7af9518754f2bbc3eb7523f00ef3be8} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Smart\+Array} ()
+\mbox{\hyperlink{class_smart_array_af7af9518754f2bbc3eb7523f00ef3be8}{\texorpdfstring{$\sim$}{\string~}\+Smart\+Array}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. Frees allocated memory. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_smart_array_a20cf2b29f213e4a9367289b611a21845}{push}} (const T \&elem)
 \begin{DoxyCompactList}\small\item\em Adds an element to the end of the array, reallocates if full. \end{DoxyCompactList}\item 
@@ -40,8 +38,7 @@ T \& \mbox{\hyperlink{class_smart_array_a4da54c90e859d8ef228403929b759820}{get}}
 \begin{DoxyCompactList}\small\item\em Returns reference to element at specified index. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_smart_array_a25751c0ed414113351ed28e68057f8c8}{set\+Size}} (unsigned s)
 \begin{DoxyCompactList}\small\item\em Sets the size of the array manually. \end{DoxyCompactList}\item 
-\Hypertarget{class_smart_array_a3c01debdf5b0f95c484a0190baf72886}\label{class_smart_array_a3c01debdf5b0f95c484a0190baf72886} 
-void {\bfseries clear} ()
+void \mbox{\hyperlink{class_smart_array_a3c01debdf5b0f95c484a0190baf72886}{clear}} ()
 \begin{DoxyCompactList}\small\item\em Clears all elements from the array. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \& \mbox{\hyperlink{class_smart_array_af4e3765b9043e39f868a82528196ae8c}{operator=}} (const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&other)
 \begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
@@ -49,6 +46,22 @@ T \& \mbox{\hyperlink{class_smart_array_afce638d7827fa4032cfe627345f8201a}{opera
 \begin{DoxyCompactList}\small\item\em Access element by index (non-\/const). \end{DoxyCompactList}\item 
 const T \& \mbox{\hyperlink{class_smart_array_a634a70fa833351129d20c937b1df451a}{operator\mbox{[}$\,$\mbox{]}}} (unsigned index) const
 \begin{DoxyCompactList}\small\item\em Access element by index (const). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_smart_array_a3ffc2b7c8c0c78fcbeaba106bbc547d4}{alloc}} ()
+\begin{DoxyCompactList}\small\item\em Allocates memory for the array based on current capacity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_smart_array_a091543e7b114aec309c17dbc135f1c5a}{reallocate}} (unsigned cap)
+\begin{DoxyCompactList}\small\item\em Reallocates array to new capacity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_smart_array_aad8ce003621b7b8334b51e7154ef8d93}{dat\+\_\+}} = nullptr
+\item 
+unsigned \mbox{\hyperlink{class_smart_array_ac0b7d8c0ffb883c27e3fedc2b274b926}{size\+\_\+}}
+\item 
+unsigned \mbox{\hyperlink{class_smart_array_a0e8fff270d6ea5cb7d1da55ac8b436cc}{capacity\+\_\+}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -73,9 +86,20 @@ Provides methods to add, remove, access, and manipulate elements. Automatically 
 \label{doc-constructors}
 \Hypertarget{class_smart_array_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!SmartArray@{SmartArray}}
+\index{SmartArray@{SmartArray}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SmartArray()}{SmartArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_smart_array_a28ee1e59ee1f9268663fa1f81a45319a} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\mbox{\hyperlink{class_smart_array}{\+::\+Smart\+Array}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. Initializes array with default capacity (5). 
+
 \Hypertarget{class_smart_array_a695ccf5274ebe802847ab723f936120a}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!SmartArray@{SmartArray}}
 \index{SmartArray@{SmartArray}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{SmartArray()}{SmartArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{SmartArray()}{SmartArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily \label{class_smart_array_a695ccf5274ebe802847ab723f936120a} 
 template$<$typename T$>$ \\
 \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\mbox{\hyperlink{class_smart_array}{\+::\+Smart\+Array}} (\begin{DoxyParamCaption}\item[{unsigned}]{cap}{}\end{DoxyParamCaption})}
@@ -91,7 +115,7 @@ Constructor with specified capacity.
 \end{DoxyParams}
 \Hypertarget{class_smart_array_a7b3c305502d6b16e4e92039573827579}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!SmartArray@{SmartArray}}
 \index{SmartArray@{SmartArray}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{SmartArray()}{SmartArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{SmartArray()}{SmartArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily \label{class_smart_array_a7b3c305502d6b16e4e92039573827579} 
 template$<$typename T$>$ \\
 \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\mbox{\hyperlink{class_smart_array}{\+::\+Smart\+Array}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&}]{ob}{}\end{DoxyParamCaption})}
@@ -105,11 +129,44 @@ Copy constructor.
 {\em ob} & Another \doxylink{class_smart_array}{Smart\+Array} to copy from. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_smart_array_af7af9518754f2bbc3eb7523f00ef3be8}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!````~SmartArray@{\texorpdfstring{$\sim$}{\string~}SmartArray}}
+\index{````~SmartArray@{\texorpdfstring{$\sim$}{\string~}SmartArray}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SmartArray()}{\string~SmartArray()}}
+{\footnotesize\ttfamily \label{class_smart_array_af7af9518754f2bbc3eb7523f00ef3be8} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_smart_array}{Smart\+Array}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. Frees allocated memory. 
+
 
 
 \label{doc-func-members}
 \Hypertarget{class_smart_array_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_smart_array_a3ffc2b7c8c0c78fcbeaba106bbc547d4}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!alloc@{alloc}}
+\index{alloc@{alloc}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{alloc()}{alloc()}}
+{\footnotesize\ttfamily \label{class_smart_array_a3ffc2b7c8c0c78fcbeaba106bbc547d4} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\+::alloc (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Allocates memory for the array based on current capacity. 
+
+\Hypertarget{class_smart_array_a3c01debdf5b0f95c484a0190baf72886}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_smart_array_a3c01debdf5b0f95c484a0190baf72886} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all elements from the array. 
+
 \Hypertarget{class_smart_array_a4da54c90e859d8ef228403929b759820}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!get@{get}}
 \index{get@{get}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
@@ -261,6 +318,22 @@ Adds an element to the end of the array, reallocates if full.
 \begin{DoxyReturn}{Returns}
 0 on success. 
 \end{DoxyReturn}
+\Hypertarget{class_smart_array_a091543e7b114aec309c17dbc135f1c5a}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!reallocate@{reallocate}}
+\index{reallocate@{reallocate}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reallocate()}{reallocate()}}
+{\footnotesize\ttfamily \label{class_smart_array_a091543e7b114aec309c17dbc135f1c5a} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\+::reallocate (\begin{DoxyParamCaption}\item[{unsigned}]{cap}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reallocates array to new capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap} & New capacity. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_smart_array_a586d5241d72371658f450d458029b3aa}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!resize@{resize}}
 \index{resize@{resize}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{resize()}{resize()}}
@@ -335,6 +408,32 @@ Reference to the output stream.
 \end{DoxyReturn}
 
 
+\label{doc-variable-members}
+\Hypertarget{class_smart_array_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_smart_array_a0e8fff270d6ea5cb7d1da55ac8b436cc}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!capacity\_@{capacity\_}}
+\index{capacity\_@{capacity\_}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{capacity\_}{capacity\_}}
+{\footnotesize\ttfamily \label{class_smart_array_a0e8fff270d6ea5cb7d1da55ac8b436cc} 
+template$<$typename T$>$ \\
+unsigned \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\+::capacity\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_smart_array_aad8ce003621b7b8334b51e7154ef8d93}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!dat\_@{dat\_}}
+\index{dat\_@{dat\_}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{dat\_}{dat\_}}
+{\footnotesize\ttfamily \label{class_smart_array_aad8ce003621b7b8334b51e7154ef8d93} 
+template$<$typename T$>$ \\
+T\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\+::dat\+\_\+ = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_smart_array_ac0b7d8c0ffb883c27e3fedc2b274b926}\index{SmartArray$<$ T $>$@{SmartArray$<$ T $>$}!size\_@{size\_}}
+\index{size\_@{size\_}!SmartArray$<$ T $>$@{SmartArray$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size\_}{size\_}}
+{\footnotesize\ttfamily \label{class_smart_array_ac0b7d8c0ffb883c27e3fedc2b274b926} 
+template$<$typename T$>$ \\
+unsigned \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$\+::size\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/Smart\+Array.\+hpp\end{DoxyCompactItemize}
+app/includes/\mbox{\hyperlink{_smart_array_8hpp}{Smart\+Array.\+hpp}}\end{DoxyCompactItemize}

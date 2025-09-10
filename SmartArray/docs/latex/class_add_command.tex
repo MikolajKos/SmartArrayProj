@@ -1,5 +1,14 @@
 \doxysection{Add\+Command\texorpdfstring{$<$}{<} T, Parser \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{class_add_command}{}\label{class_add_command}\index{AddCommand$<$ T, Parser $>$@{AddCommand$<$ T, Parser $>$}}
+
+
+\doxylink{class_command}{Command} to add a new element to a \doxylink{class_smart_array}{Smart\+Array}.  
+
+
+
+
+{\ttfamily \#include $<$Add\+Command.\+hpp$>$}
+
 Inheritance diagram for Add\+Command\texorpdfstring{$<$}{<} T, Parser \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +18,61 @@ Inheritance diagram for Add\+Command\texorpdfstring{$<$}{<} T, Parser \texorpdfs
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_add_command_a2f59e03c7c721b7f82a8693fa7093153}\label{class_add_command_a2f59e03c7c721b7f82a8693fa7093153} 
-{\bfseries Add\+Command} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
-\item 
+\mbox{\hyperlink{class_add_command_a2f59e03c7c721b7f82a8693fa7093153}{Add\+Command}} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_add_command}{Add\+Command}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_add_command_a0b222ed96a96728d64b861fe8511027a}{execute}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}) override
-\item 
+\begin{DoxyCompactList}\small\item\em Execute the add command. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_add_command_a409439b43702d9fae603d3739ed76b32}{expected\+Arg\+Count}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Get the expected number of arguments for this command. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_add_command_a533ca89310451e80e0e18419b5bc796b}{description}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get a textual description of the add command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_command}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_command_aa545a53d35818f9efb936daf3fa16c61}{\texorpdfstring{$\sim$}{\string~}\+Command}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \& \mbox{\hyperlink{class_add_command_ab887aa8b8ccb6d4f6a77a3cda963fe98}{array\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_smart_array}{Smart\+Array} to add elements to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename Parser$>$\newline
+class Add\+Command$<$ T, Parser $>$}
+\doxylink{class_command}{Command} to add a new element to a \doxylink{class_smart_array}{Smart\+Array}. 
+
+This template class implements the \doxylink{class_command}{Command} interface and allows adding elements to a \doxylink{class_smart_array}{Smart\+Array} using a specified parser for input arguments.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of elements stored in \doxylink{class_smart_array}{Smart\+Array} \\
+\hline
+{\em Parser} & Parser type used to parse command-\/line arguments into objects of type T \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\Hypertarget{class_add_command_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_add_command_a2f59e03c7c721b7f82a8693fa7093153}\index{AddCommand$<$ T, Parser $>$@{AddCommand$<$ T, Parser $>$}!AddCommand@{AddCommand}}
+\index{AddCommand@{AddCommand}!AddCommand$<$ T, Parser $>$@{AddCommand$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{AddCommand()}{AddCommand()}}
+{\footnotesize\ttfamily \label{class_add_command_a2f59e03c7c721b7f82a8693fa7093153} 
+template$<$typename T, typename Parser$>$ \\
+\mbox{\hyperlink{class_add_command}{Add\+Command}}$<$ T, Parser $>$\mbox{\hyperlink{class_add_command}{\+::\+Add\+Command}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&}]{ob}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_add_command}{Add\+Command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ob} & Reference to the \doxylink{class_smart_array}{Smart\+Array} to operate on \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
@@ -32,7 +87,16 @@ std\+::string \mbox{\hyperlink{class_add_command}{Add\+Command}}$<$ T, Parser $>
 
 
 
-Reimplemented from \mbox{\hyperlink{class_command}{Command}}.
+Get a textual description of the add command. 
+
+Provides instructions for using the command and the expected argument format.
+
+\begin{DoxyReturn}{Returns}
+std\+::string Description of the command 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_command_aeb531b2696ec5a067dfa80d30e653cdb}{Command}}.
 
 \Hypertarget{class_add_command_a0b222ed96a96728d64b861fe8511027a}\index{AddCommand$<$ T, Parser $>$@{AddCommand$<$ T, Parser $>$}!execute@{execute}}
 \index{execute@{execute}!AddCommand$<$ T, Parser $>$@{AddCommand$<$ T, Parser $>$}}
@@ -43,7 +107,23 @@ int \mbox{\hyperlink{class_add_command}{Add\+Command}}$<$ T, Parser $>$\+::execu
 
 
 
-Implements \mbox{\hyperlink{class_command}{Command}}.
+Execute the add command. 
+
+Parses the input arguments using the Parser and adds the resulting object to the \doxylink{class_smart_array}{Smart\+Array}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments \\
+\hline
+{\em argv} & Array of command-\/line arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Result code (0 on success, non-\/zero on error) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_ab37f624bfa17ab524c83b6f17931359b}{Command}}.
 
 \Hypertarget{class_add_command_a409439b43702d9fae603d3739ed76b32}\index{AddCommand$<$ T, Parser $>$@{AddCommand$<$ T, Parser $>$}!expectedArgCount@{expectedArgCount}}
 \index{expectedArgCount@{expectedArgCount}!AddCommand$<$ T, Parser $>$@{AddCommand$<$ T, Parser $>$}}
@@ -54,10 +134,33 @@ int \mbox{\hyperlink{class_add_command}{Add\+Command}}$<$ T, Parser $>$\+::expec
 
 
 
-Implements \mbox{\hyperlink{class_command}{Command}}.
+Get the expected number of arguments for this command. 
+
+\begin{DoxyReturn}{Returns}
+int Expected argument count 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_a8a12c681e4fcd3b2b5c6dc7342556399}{Command}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_add_command_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_add_command_ab887aa8b8ccb6d4f6a77a3cda963fe98}\index{AddCommand$<$ T, Parser $>$@{AddCommand$<$ T, Parser $>$}!array\_@{array\_}}
+\index{array\_@{array\_}!AddCommand$<$ T, Parser $>$@{AddCommand$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{array\_}{array\_}}
+{\footnotesize\ttfamily \label{class_add_command_ab887aa8b8ccb6d4f6a77a3cda963fe98} 
+template$<$typename T, typename Parser$>$ \\
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$T$>$\& \mbox{\hyperlink{class_add_command}{Add\+Command}}$<$ T, Parser $>$\+::array\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the \doxylink{class_smart_array}{Smart\+Array} to add elements to. 
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/commands/Add\+Command.\+hpp\end{DoxyCompactItemize}
+app/includes/commands/\mbox{\hyperlink{_add_command_8hpp}{Add\+Command.\+hpp}}\end{DoxyCompactItemize}

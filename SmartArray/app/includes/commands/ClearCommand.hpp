@@ -5,14 +5,52 @@
 #include <SmartArray.hpp>
 #include <iostream>
 
+/**
+ * @brief Command to clear all elements from a SmartArray.
+ *
+ * This template class implements the Command interface and allows clearing
+ * all elements from a SmartArray after user confirmation.
+ *
+ * @tparam T Type of elements stored in SmartArray
+ */
 template <typename T>
 class ClearCommand : public Command {
-	SmartArray<T>& array_;
+	SmartArray<T>& array_;	///< Reference to the SmartArray to clear
 public:
+	/**
+	* @brief Construct a new ClearCommand.
+	*
+	* @param ob Reference to the SmartArray to operate on
+	*/
 	ClearCommand(SmartArray<T>& ob) : array_(ob) {};
 
+	/**
+	* @brief Execute the clear command.
+	*
+	* Asks the user for confirmation before clearing all elements.
+	* If the user confirms, all elements in the SmartArray are removed.
+	*
+	* @param argc Number of command-line arguments
+	* @param argv Array of command-line arguments
+	* @return int Result code (0 on success, non-zero on error)
+	*/
 	int execute(int argc, char* argv[]) override;
+
+	/**
+	* @brief Get the expected number of arguments for this command.
+	*
+	* @return int Expected argument count (always 2 for this command)
+	*/
 	int expectedArgCount() override;
+
+	/**
+	* @brief Get a textual description of the clear command.
+	*
+	* Provides instructions for using the command and notes that no additional
+	* arguments are required.
+	*
+	* @return std::string Description of the command
+	*/
 	std::string description() override;
 };
 

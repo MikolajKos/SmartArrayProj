@@ -91,16 +91,117 @@ $(function(){initNavTree('struct_employee_parser.html','','struct_employee_parse
   <div class="headertitle"><div class="title">EmployeeParser Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Utility structure for parsing <a class="el" href="class_employee.html" title="Represents an employee with personal and job-related information.">Employee</a> data from command-line arguments.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_employee_parser_8hpp_source.html">EmployeeParser.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa2d0c9504a02b124708f32c2ff36ebdb" id="r_aa2d0c9504a02b124708f32c2ff36ebdb"><td class="memItemLeft" align="right" valign="top"><a id="aa2d0c9504a02b124708f32c2ff36ebdb" name="aa2d0c9504a02b124708f32c2ff36ebdb"></a>
-static <a class="el" href="class_employee.html">Employee</a>&#160;</td><td class="memItemRight" valign="bottom"><b>parseData</b> (char *args[])</td></tr>
-<tr class="memitem:a26f2774c44baf34ffebd5b12070a827b" id="r_a26f2774c44baf34ffebd5b12070a827b"><td class="memItemLeft" align="right" valign="top"><a id="a26f2774c44baf34ffebd5b12070a827b" name="a26f2774c44baf34ffebd5b12070a827b"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>getArgCount</b> ()</td></tr>
-<tr class="memitem:a43166550f4b2e5a16f660547be37dba9" id="r_a43166550f4b2e5a16f660547be37dba9"><td class="memItemLeft" align="right" valign="top"><a id="a43166550f4b2e5a16f660547be37dba9" name="a43166550f4b2e5a16f660547be37dba9"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>description</b> ()</td></tr>
+<tr class="memitem:aa2d0c9504a02b124708f32c2ff36ebdb" id="r_aa2d0c9504a02b124708f32c2ff36ebdb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_employee.html">Employee</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2d0c9504a02b124708f32c2ff36ebdb">parseData</a> (char *args[])</td></tr>
+<tr class="memdesc:aa2d0c9504a02b124708f32c2ff36ebdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an <a class="el" href="class_employee.html" title="Represents an employee with personal and job-related information.">Employee</a> from command-line arguments.  <br /></td></tr>
+<tr class="memitem:a26f2774c44baf34ffebd5b12070a827b" id="r_a26f2774c44baf34ffebd5b12070a827b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f2774c44baf34ffebd5b12070a827b">getArgCount</a> ()</td></tr>
+<tr class="memdesc:a26f2774c44baf34ffebd5b12070a827b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the expected number of command-line arguments.  <br /></td></tr>
+<tr class="memitem:a43166550f4b2e5a16f660547be37dba9" id="r_a43166550f4b2e5a16f660547be37dba9"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43166550f4b2e5a16f660547be37dba9">description</a> ()</td></tr>
+<tr class="memdesc:a43166550f4b2e5a16f660547be37dba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a description of the expected command-line arguments.  <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Utility structure for parsing <a class="el" href="class_employee.html" title="Represents an employee with personal and job-related information.">Employee</a> data from command-line arguments. </p>
+<p>This struct provides static methods to parse <a class="el" href="class_employee.html" title="Represents an employee with personal and job-related information.">Employee</a> objects, retrieve expected argument count, and get a description of arguments. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a43166550f4b2e5a16f660547be37dba9" name="a43166550f4b2e5a16f660547be37dba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43166550f4b2e5a16f660547be37dba9">&#9670;&#160;</a></span>description()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string EmployeeParser::description </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a description of the expected command-line arguments. </p>
+<p>Returns a multi-line string explaining the number and type of arguments.</p>
+<dl class="section return"><dt>Returns</dt><dd>std::string containing the description </dd></dl>
+
+</div>
+</div>
+<a id="a26f2774c44baf34ffebd5b12070a827b" name="a26f2774c44baf34ffebd5b12070a827b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26f2774c44baf34ffebd5b12070a827b">&#9670;&#160;</a></span>getArgCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EmployeeParser::getArgCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the expected number of command-line arguments. </p>
+<dl class="section return"><dt>Returns</dt><dd>Integer representing the number of expected arguments </dd></dl>
+
+</div>
+</div>
+<a id="aa2d0c9504a02b124708f32c2ff36ebdb" name="aa2d0c9504a02b124708f32c2ff36ebdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d0c9504a02b124708f32c2ff36ebdb">&#9670;&#160;</a></span>parseData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_employee.html">Employee</a> EmployeeParser::parseData </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>args</em></span>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse an <a class="el" href="class_employee.html" title="Represents an employee with personal and job-related information.">Employee</a> from command-line arguments. </p>
+<p>Skips the first two arguments (program and command name parameter) and reads the next arguments to create an <a class="el" href="class_employee.html" title="Represents an employee with personal and job-related information.">Employee</a> object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Array of C-style strings representing command-line arguments </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_employee.html" title="Represents an employee with personal and job-related information.">Employee</a> object constructed from arguments </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>app/includes/<a class="el" href="_employee_parser_8hpp_source.html">EmployeeParser.hpp</a></li>
 </ul>

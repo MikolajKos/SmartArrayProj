@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7esmartarray_0',['~SmartArray',['../class_smart_array.html#af7af9518754f2bbc3eb7523f00ef3be8',1,'SmartArray']]]
+  ['load_0',['load',['../class_smart_array_i_o.html#a4169689e3e9eac8886f205c771f07337',1,'SmartArrayIO']]]
 ];

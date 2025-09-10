@@ -20,6 +20,16 @@
 #include <unistd.h>
 #endif
 
+/**
+ * @brief Get the directory of the currently running executable.
+ *
+ * Works for Windows, macOS, and Linux platforms.
+ *
+ * @note This implementation is based on a solution from YouTube:
+ *       https://www.youtube.com/watch?v=5ZADZsAH7XI&ab_channel=vlogize
+ *
+ * @return std::filesystem::path Path to the executable's directory.
+ */
 inline std::filesystem::path GetExeDirectory() {
 #ifdef _WIN32
 	// Windows specific
@@ -47,11 +57,37 @@ inline std::filesystem::path GetExeDirectory() {
 
 #define FILENAME "preload_data.bin"
 
+/**
+ * @brief Template class for saving and loading SmartArray objects to/from binary files.
+ *
+ * @tparam T Type of elements stored in SmartArray.
+ */
 template <typename T>
 class SmartArrayIO {
+	/**
+	* @brief Get the full path for a given filename relative to the executable.
+	*
+	* @param filename Name of the file
+	* @return std::filesystem::path Full path to the file
+	*/
 	static std::filesystem::path GetFileDirectory(std::string filename);
 public:
+	/**
+	* @brief Save a SmartArray to a binary file.
+	*
+	* @param ob SmartArray object to save
+	* @param source Filename to save to (default: "preload_data.bin")
+	*/
 	static void save(const SmartArray<T>& ob, std::string source = FILENAME);
+
+	/**
+	* @brief Load a SmartArray from a binary file.
+	*
+	* Clears the current array and fills it with data from the file.
+	*
+	* @param ob SmartArray object to load data into
+	* @param source Filename to load from (default: "preload_data.bin")
+	*/
 	static void load(SmartArray<T>& ob, std::string source = FILENAME);
 };
 

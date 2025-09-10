@@ -4,6 +4,7 @@ var class_smart_array =
     [ "SmartArray", "class_smart_array.html#a695ccf5274ebe802847ab723f936120a", null ],
     [ "SmartArray", "class_smart_array.html#a7b3c305502d6b16e4e92039573827579", null ],
     [ "~SmartArray", "class_smart_array.html#af7af9518754f2bbc3eb7523f00ef3be8", null ],
+    [ "alloc", "class_smart_array.html#a3ffc2b7c8c0c78fcbeaba106bbc547d4", null ],
     [ "clear", "class_smart_array.html#a3c01debdf5b0f95c484a0190baf72886", null ],
     [ "get", "class_smart_array.html#a4da54c90e859d8ef228403929b759820", null ],
     [ "isEmpty", "class_smart_array.html#aa3251f665fb665a32411b3116ec2d913", null ],
@@ -14,8 +15,12 @@ var class_smart_array =
     [ "pop", "class_smart_array.html#a5a796ef3048abcabdc04b011263b505f", null ],
     [ "printAll", "class_smart_array.html#a853c970d278b70688061a172cb532bfc", null ],
     [ "push", "class_smart_array.html#a20cf2b29f213e4a9367289b611a21845", null ],
+    [ "reallocate", "class_smart_array.html#a091543e7b114aec309c17dbc135f1c5a", null ],
     [ "resize", "class_smart_array.html#a586d5241d72371658f450d458029b3aa", null ],
     [ "setSize", "class_smart_array.html#a25751c0ed414113351ed28e68057f8c8", null ],
     [ "size", "class_smart_array.html#ab87cb8259db23121020d5255ccf56c94", null ],
-    [ "operator<<", "class_smart_array.html#a2d6144ec060c9531784e28e852279f90", null ]
+    [ "operator<<", "class_smart_array.html#a2d6144ec060c9531784e28e852279f90", null ],
+    [ "capacity_", "class_smart_array.html#a0e8fff270d6ea5cb7d1da55ac8b436cc", null ],
+    [ "dat_", "class_smart_array.html#aad8ce003621b7b8334b51e7154ef8d93", null ],
+    [ "size_", "class_smart_array.html#ac0b7d8c0ffb883c27e3fedc2b274b926", null ]
 ];

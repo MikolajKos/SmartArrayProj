@@ -1,0 +1,57 @@
+\doxysection{app/includes/\+Smart\+Array\+IO.hpp File Reference}
+\hypertarget{_smart_array_i_o_8hpp}{}\label{_smart_array_i_o_8hpp}\index{app/includes/SmartArrayIO.hpp@{app/includes/SmartArrayIO.hpp}}
+{\ttfamily \#include $<$Smart\+Array.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$handlers/\+Error\+Handler.\+hpp$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_smart_array_i_o}{Smart\+Array\+IO$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Template class for saving and loading \doxylink{class_smart_array}{Smart\+Array} objects to/from binary files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_smart_array_i_o_8hpp_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}}~"{}preload\+\_\+data.\+bin"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::filesystem\+::path \mbox{\hyperlink{_smart_array_i_o_8hpp_afb5987469f43e590fbb25e8190c5bc34}{Get\+Exe\+Directory}} ()
+\begin{DoxyCompactList}\small\item\em Get the directory of the currently running executable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{_smart_array_i_o_8hpp_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_smart_array_i_o_8hpp_a8de29f7c8bbf1a81cc6e71ac602032d3}\index{SmartArrayIO.hpp@{SmartArrayIO.hpp}!FILENAME@{FILENAME}}
+\index{FILENAME@{FILENAME}!SmartArrayIO.hpp@{SmartArrayIO.hpp}}
+\doxysubsubsection{\texorpdfstring{FILENAME}{FILENAME}}
+{\footnotesize\ttfamily \label{_smart_array_i_o_8hpp_a8de29f7c8bbf1a81cc6e71ac602032d3} 
+\#define FILENAME~"{}preload\+\_\+data.\+bin"{}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{_smart_array_i_o_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_smart_array_i_o_8hpp_afb5987469f43e590fbb25e8190c5bc34}\index{SmartArrayIO.hpp@{SmartArrayIO.hpp}!GetExeDirectory@{GetExeDirectory}}
+\index{GetExeDirectory@{GetExeDirectory}!SmartArrayIO.hpp@{SmartArrayIO.hpp}}
+\doxysubsubsection{\texorpdfstring{GetExeDirectory()}{GetExeDirectory()}}
+{\footnotesize\ttfamily \label{_smart_array_i_o_8hpp_afb5987469f43e590fbb25e8190c5bc34} 
+std\+::filesystem\+::path Get\+Exe\+Directory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the directory of the currently running executable. 
+
+Works for Windows, mac\+OS, and Linux platforms.
+
+\begin{DoxyNote}{Note}
+This implementation is based on a solution from You\+Tube\+: \href{https://www.youtube.com/watch?v=5ZADZsAH7XI&ab_channel=vlogize}{\texttt{https\+://www.\+youtube.\+com/watch?v=5\+ZADZs\+AH7\+XI\&ab\+\_\+channel=vlogize}}
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+std\+::filesystem\+::path Path to the executable\textquotesingle{}s directory. 
+\end{DoxyReturn}

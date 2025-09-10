@@ -91,22 +91,130 @@ $(function(){initNavTree('class_command_error_handler.html','','class_command_er
   <div class="headertitle"><div class="title">CommandErrorHandler Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Handles errors related to command execution in the <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> CLI.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_command_error_handler_8hpp_source.html">CommandErrorHandler.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a570c43c4da0e5d857eeb658316bc0a92" id="r_a570c43c4da0e5d857eeb658316bc0a92"><td class="memItemLeft" align="right" valign="top"><a id="a570c43c4da0e5d857eeb658316bc0a92" name="a570c43c4da0e5d857eeb658316bc0a92"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Errors</b> { <b>ARGS_EXCEPTION</b>
-, <b>CMD_NOT_FOUND</b>
-, <b>TOT_ERROR</b>
+<tr class="memitem:a570c43c4da0e5d857eeb658316bc0a92" id="r_a570c43c4da0e5d857eeb658316bc0a92"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a570c43c4da0e5d857eeb658316bc0a92">Errors</a> { <a class="el" href="#a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863">ARGS_EXCEPTION</a>
+, <a class="el" href="#a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8">CMD_NOT_FOUND</a>
+, <a class="el" href="#a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3">TOT_ERROR</a>
  }</td></tr>
+<tr class="memdesc:a570c43c4da0e5d857eeb658316bc0a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of possible command errors.  <a href="#a570c43c4da0e5d857eeb658316bc0a92">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1a7c4454a0c2e40614cb0eb2d71b6d52" id="r_a1a7c4454a0c2e40614cb0eb2d71b6d52"><td class="memItemLeft" align="right" valign="top"><a id="a1a7c4454a0c2e40614cb0eb2d71b6d52" name="a1a7c4454a0c2e40614cb0eb2d71b6d52"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>cmd_handler</b> (enum Errors error, const char *info=&quot;&quot;)</td></tr>
+<tr class="memitem:a1a7c4454a0c2e40614cb0eb2d71b6d52" id="r_a1a7c4454a0c2e40614cb0eb2d71b6d52"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a7c4454a0c2e40614cb0eb2d71b6d52">cmd_handler</a> (enum <a class="el" href="#a570c43c4da0e5d857eeb658316bc0a92">Errors</a> error, const char *info=&quot;&quot;)</td></tr>
+<tr class="memdesc:a1a7c4454a0c2e40614cb0eb2d71b6d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a command-related error.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ada3765fba069f67f91eb35faa3b4dfad" id="r_ada3765fba069f67f91eb35faa3b4dfad"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada3765fba069f67f91eb35faa3b4dfad">messages</a> []</td></tr>
+<tr class="memdesc:ada3765fba069f67f91eb35faa3b4dfad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of predefined error messages.  <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Handles errors related to command execution in the <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> CLI. </p>
+<p>This class provides static methods and predefined error messages to handle situations such as incorrect arguments or unknown commands. </p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="a570c43c4da0e5d857eeb658316bc0a92" name="a570c43c4da0e5d857eeb658316bc0a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570c43c4da0e5d857eeb658316bc0a92">&#9670;&#160;</a></span>Errors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a570c43c4da0e5d857eeb658316bc0a92">CommandErrorHandler::Errors</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeration of possible command errors. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863" name="a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863"></a>ARGS_EXCEPTION&#160;</td><td class="fielddoc"><p>Thrown when the number of arguments is incorrect. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8" name="a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8"></a>CMD_NOT_FOUND&#160;</td><td class="fielddoc"><p>Thrown when the specified command does not exist. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3" name="a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3"></a>TOT_ERROR&#160;</td><td class="fielddoc"><p>Total number of errors defined. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a1a7c4454a0c2e40614cb0eb2d71b6d52" name="a1a7c4454a0c2e40614cb0eb2d71b6d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a7c4454a0c2e40614cb0eb2d71b6d52">&#9670;&#160;</a></span>cmd_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandErrorHandler::cmd_handler </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="#a570c43c4da0e5d857eeb658316bc0a92">Errors</a></td>          <td class="paramname"><span class="paramname"><em>error</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>info</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle a command-related error. </p>
+<p>Prints or logs the appropriate error message based on the error type. An optional info string can provide additional context.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>The type of error (from <a class="el" href="#a570c43c4da0e5d857eeb658316bc0a92" title="Enumeration of possible command errors.">Errors</a> enum) </td></tr>
+    <tr><td class="paramname">info</td><td>Optional additional information about the error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ada3765fba069f67f91eb35faa3b4dfad" name="ada3765fba069f67f91eb35faa3b4dfad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada3765fba069f67f91eb35faa3b4dfad">&#9670;&#160;</a></span>messages</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * CommandErrorHandler::messages</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="stringliteral">&quot;W Wrong argument list given&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;W Command not found, please try again or use \&#39;help\&#39; command.&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Array of predefined error messages. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>app/includes/handlers/<a class="el" href="_command_error_handler_8hpp_source.html">CommandErrorHandler.hpp</a></li>
-<li>app/src/handlers/<b>CommandErrorHandler.cpp</b></li>
+<li>app/src/handlers/<a class="el" href="_command_error_handler_8cpp.html">CommandErrorHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

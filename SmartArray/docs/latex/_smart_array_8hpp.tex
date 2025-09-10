@@ -1,0 +1,37 @@
+\doxysection{app/includes/\+Smart\+Array.hpp File Reference}
+\hypertarget{_smart_array_8hpp}{}\label{_smart_array_8hpp}\index{app/includes/SmartArray.hpp@{app/includes/SmartArray.hpp}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$handlers/\+Error\+Handler.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_smart_array}{Smart\+Array$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em A dynamic array template class similar to std\+::vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::ostream \& \mbox{\hyperlink{_smart_array_8hpp_a826cffa7ae4fc3148620e487e5ba00fc}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_smart_array_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_smart_array_8hpp_a826cffa7ae4fc3148620e487e5ba00fc}\index{SmartArray.hpp@{SmartArray.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!SmartArray.hpp@{SmartArray.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{_smart_array_8hpp_a826cffa7ae4fc3148620e487e5ba00fc} 
+template$<$typename T$>$ \\
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&}]{ob}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream. \\
+\hline
+{\em ob} & \doxylink{class_smart_array}{Smart\+Array} to print. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the output stream. 
+\end{DoxyReturn}

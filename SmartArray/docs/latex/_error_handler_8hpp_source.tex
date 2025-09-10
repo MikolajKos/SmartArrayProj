@@ -1,26 +1,25 @@
 \doxysection{Error\+Handler.\+hpp}
 \hypertarget{_error_handler_8hpp_source}{}\label{_error_handler_8hpp_source}\index{app/includes/handlers/ErrorHandler.hpp@{app/includes/handlers/ErrorHandler.hpp}}
-
+\mbox{\hyperlink{_error_handler_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ERROR\_HANDLER\_HPP}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ERROR\_HANDLER\_HPP}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_error_handler}{ErrorHandler}}\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ messages[];}
-\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{enum}\ Errors\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ MEM\_ALLOC\_ERROR\ =\ 0,}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ STACK\_IS\_FULL,}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ STACK\_IS\_EMPTY,}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ OPENING\_FILE\_ERROR,}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ INDEX\_OUT\_OF\_RANGE,}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ TOT\_ERROR\ \textcolor{comment}{//\ Total\ number\ of\ errors\ }}
-\DoxyCodeLine{00015\ \ \ \ \ \};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ handler(\textcolor{keyword}{enum}\ Errors\ error,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ info\ =\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00018\ \};}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_error_handler}{ErrorHandler}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_error_handler_a23305b5c34caa5c937c0682947ae9f04}{messages}}[];\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729a}{Errors}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65}{MEM\_ALLOC\_ERROR}},\ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd}{STACK\_IS\_FULL}},\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5}{STACK\_IS\_EMPTY}},\ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc}{OPENING\_FILE\_ERROR}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8}{INDEX\_OUT\_OF\_RANGE}},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb}{TOT\_ERROR}}\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_error_handler_a2b1665ccd5e35806754eefdb633c1bd9}{handler}}(\textcolor{keyword}{enum}\ \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729a}{Errors}}\ error,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ info\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

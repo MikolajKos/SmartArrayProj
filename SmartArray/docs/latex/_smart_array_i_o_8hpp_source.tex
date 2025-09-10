@@ -1,15 +1,15 @@
 \doxysection{Smart\+Array\+IO.\+hpp}
 \hypertarget{_smart_array_i_o_8hpp_source}{}\label{_smart_array_i_o_8hpp_source}\index{app/includes/SmartArrayIO.hpp@{app/includes/SmartArrayIO.hpp}}
-
+\mbox{\hyperlink{_smart_array_i_o_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SMART\_ARRAY\_IO\_HPP}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SMART\_ARRAY\_IO\_HPP}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SmartArray.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_smart_array_8hpp}{SmartArray.hpp}}>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <handlers/ErrorHandler.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_error_handler_8hpp}{handlers/ErrorHandler.hpp}}>}}
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <filesystem>}}
 \DoxyCodeLine{00011\ }
@@ -24,94 +24,95 @@
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{inline}\ std::filesystem::path\ GetExeDirectory()\ \{}
-\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Windows\ specific}}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{wchar\_t}\ szPath[MAX\_PATH];}
-\DoxyCodeLine{00027\ \ \ \ \ DWORD\ length\ =\ GetModuleFileNameW(NULL,\ szPath,\ MAX\_PATH);}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ ==\ 0\ ||\ length\ ==\ MAX\_PATH)}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};\ \textcolor{comment}{//\ some\ error}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ std::filesystem::path(szPath).parent\_path();}
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{char}\ szPath[PATH\_MAX];}
-\DoxyCodeLine{00034\ \ \ \ \ uint32\_t\ bufsize\ =\ PATH\_MAX;}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_NSGetExecutablePath(szPath,\ \&bufsize))}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::filesystem::path\{\ szPath\ \}.parent\_path()\ /\ \textcolor{stringliteral}{"{}"{}};\ \textcolor{comment}{//\ to\ finish\ the\ folder\ path\ with\ (back)slash}}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};\ \ \textcolor{comment}{//\ some\ error}}
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Linux\ specific}}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{char}\ szPath[PATH\_MAX];}
-\DoxyCodeLine{00041\ \ \ \ \ ssize\_t\ count\ =\ readlink(\textcolor{stringliteral}{"{}/proc/self/exe"{}},\ szPath,\ PATH\_MAX);}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ <\ 0\ ||\ count\ >=\ PATH\_MAX)}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};\ \textcolor{comment}{//\ some\ error}}
-\DoxyCodeLine{00044\ \ \ \ \ szPath[count]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00046\ \}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ FILENAME\ "{}preload\_data.bin"{}}}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_smart_array_i_o}{SmartArrayIO}}\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ std::filesystem::path\ GetFileDirectory(std::string\ filename);}
-\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ save(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob,\ std::string\ source\ =\ FILENAME);}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ load(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob,\ std::string\ source\ =\ FILENAME);}
-\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00033\ \textcolor{keyword}{inline}\ std::filesystem::path\ \mbox{\hyperlink{_smart_array_i_o_8hpp_afb5987469f43e590fbb25e8190c5bc34}{GetExeDirectory}}()\ \{}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Windows\ specific}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{wchar\_t}\ szPath[MAX\_PATH];}
+\DoxyCodeLine{00037\ \ \ \ \ DWORD\ length\ =\ GetModuleFileNameW(NULL,\ szPath,\ MAX\_PATH);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ ==\ 0\ ||\ length\ ==\ MAX\_PATH)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};\ \textcolor{comment}{//\ some\ error}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ std::filesystem::path(szPath).parent\_path();}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{char}\ szPath[PATH\_MAX];}
+\DoxyCodeLine{00044\ \ \ \ \ uint32\_t\ bufsize\ =\ PATH\_MAX;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_NSGetExecutablePath(szPath,\ \&bufsize))}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::filesystem::path\{\ szPath\ \}.parent\_path()\ /\ \textcolor{stringliteral}{"{}"{}};\ \textcolor{comment}{//\ to\ finish\ the\ folder\ path\ with\ (back)slash}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};\ \ \textcolor{comment}{//\ some\ error}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Linux\ specific}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{char}\ szPath[PATH\_MAX];}
+\DoxyCodeLine{00051\ \ \ \ \ ssize\_t\ count\ =\ readlink(\textcolor{stringliteral}{"{}/proc/self/exe"{}},\ szPath,\ PATH\_MAX);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ <\ 0\ ||\ count\ >=\ PATH\_MAX)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};\ \textcolor{comment}{//\ some\ error}}
+\DoxyCodeLine{00054\ \ \ \ \ szPath[count]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ \}}
 \DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00059\ std::filesystem::path\ SmartArrayIO<T>::GetFileDirectory(std::string\ filename)\ \{}
-\DoxyCodeLine{00060\ \ \ \ \ std::filesystem::path\ exeDir\ =\ GetExeDirectory();}
-\DoxyCodeLine{00061\ \ \ \ \ std::filesystem::path\ filePath\ =\ exeDir\ /\ \textcolor{stringliteral}{"{}.."{}}\ /\ \textcolor{stringliteral}{"{}.."{}}\ /\ \textcolor{stringliteral}{"{}app"{}}\ /\ \textcolor{stringliteral}{"{}files"{}}\ /\ filename;}
-\DoxyCodeLine{00062\ \ \ \ \ filePath\ =\ std::filesystem::weakly\_canonical(filePath);}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ filePath;}
-\DoxyCodeLine{00065\ \}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ SmartArrayIO<T>::save(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob,\ std::string\ source)\ \{}
-\DoxyCodeLine{00069\ \ \ \ \ std::fstream\ file;}
-\DoxyCodeLine{00070\ \ \ \ \ file.open(GetFileDirectory(source),\ std::ios::out\ |\ std::ios::binary);}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ ErrorHandler::handler(ErrorHandler::OPENING\_FILE\_ERROR);}
-\DoxyCodeLine{00074\ \ \ \ \ \}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ Write\ array\ size}}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ current\_size\ =\ ob.\mbox{\hyperlink{class_smart_array_ab87cb8259db23121020d5255ccf56c94}{size}}();}
-\DoxyCodeLine{00078\ \ \ \ \ file.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&current\_size),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}));}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ ob.\mbox{\hyperlink{class_smart_array_ab87cb8259db23121020d5255ccf56c94}{size}}();\ ++i)\ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ serialize(file,\ ob[i]);}
-\DoxyCodeLine{00082\ \ \ \ \ \}}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ file.close();}
-\DoxyCodeLine{00085\ \}}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ SmartArrayIO<T>::load(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob,\ std::string\ source)\ \{}
-\DoxyCodeLine{00089\ \ \ \ \ std::fstream\ file;}
-\DoxyCodeLine{00090\ \ \ \ \ file.open(GetFileDirectory(source),\ std::ios::in\ |\ std::ios::binary);}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ ErrorHandler::handler(ErrorHandler::OPENING\_FILE\_ERROR);}
-\DoxyCodeLine{00094\ \ \ \ \ \}}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Read\ array\ size}}
-\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ new\_size\ =\ 0;}
-\DoxyCodeLine{00098\ \ \ \ \ ob.\mbox{\hyperlink{class_smart_array_a3c01debdf5b0f95c484a0190baf72886}{clear}}();}
-\DoxyCodeLine{00099\ \ \ \ \ file.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&new\_size),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}));}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ Read\ all\ data}}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ new\_size;\ ++i)\ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ T\ temp;}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ deserialize(file,\ temp);}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ ob.\mbox{\hyperlink{class_smart_array_a20cf2b29f213e4a9367289b611a21845}{push}}(temp);}
-\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ FILENAME\ "{}preload\_data.bin"{}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_smart_array_i_o}{SmartArrayIO}}\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{static}\ std::filesystem::path\ \mbox{\hyperlink{class_smart_array_i_o_ab0934c8ca2d4de121f7a89d4da405770}{GetFileDirectory}}(std::string\ filename);}
+\DoxyCodeLine{00074\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_smart_array_i_o_ab03801b0d487fb8a9e68b8f26910c4a0}{save}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob,\ std::string\ source\ =\ \mbox{\hyperlink{_smart_array_i_o_8hpp_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_smart_array_i_o_a4169689e3e9eac8886f205c771f07337}{load}}(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob,\ std::string\ source\ =\ \mbox{\hyperlink{_smart_array_i_o_8hpp_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}});}
+\DoxyCodeLine{00092\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00095\ std::filesystem::path\ \mbox{\hyperlink{class_smart_array_i_o_ab0934c8ca2d4de121f7a89d4da405770}{SmartArrayIO<T>::GetFileDirectory}}(std::string\ filename)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ std::filesystem::path\ exeDir\ =\ \mbox{\hyperlink{_smart_array_i_o_8hpp_afb5987469f43e590fbb25e8190c5bc34}{GetExeDirectory}}();}
+\DoxyCodeLine{00097\ \ \ \ \ std::filesystem::path\ filePath\ =\ exeDir\ /\ \textcolor{stringliteral}{"{}.."{}}\ /\ \textcolor{stringliteral}{"{}.."{}}\ /\ \textcolor{stringliteral}{"{}app"{}}\ /\ \textcolor{stringliteral}{"{}files"{}}\ /\ filename;}
+\DoxyCodeLine{00098\ \ \ \ \ filePath\ =\ std::filesystem::weakly\_canonical(filePath);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ filePath;}
+\DoxyCodeLine{00101\ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_smart_array_i_o_ab03801b0d487fb8a9e68b8f26910c4a0}{SmartArrayIO<T>::save}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob,\ std::string\ source)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ std::fstream\ file;}
+\DoxyCodeLine{00106\ \ \ \ \ file.open(\mbox{\hyperlink{class_smart_array_i_o_ab0934c8ca2d4de121f7a89d4da405770}{GetFileDirectory}}(source),\ std::ios::out\ |\ std::ios::binary);}
 \DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \ \ \ file.close();}
-\DoxyCodeLine{00109\ \}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_error_handler_a2b1665ccd5e35806754eefdb633c1bd9}{ErrorHandler::handler}}(\mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc}{ErrorHandler::OPENING\_FILE\_ERROR}});}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\ Write\ array\ size}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ current\_size\ =\ ob.\mbox{\hyperlink{class_smart_array_ab87cb8259db23121020d5255ccf56c94}{size}}();}
+\DoxyCodeLine{00114\ \ \ \ \ file.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&current\_size),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}));}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ ob.\mbox{\hyperlink{class_smart_array_ab87cb8259db23121020d5255ccf56c94}{size}}();\ ++i)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_employee_8hpp_a3fe4523b1090fcb620508c7bfa888911}{serialize}}(file,\ ob[i]);}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ file.close();}
+\DoxyCodeLine{00121\ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_smart_array_i_o_a4169689e3e9eac8886f205c771f07337}{SmartArrayIO<T>::load}}(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob,\ std::string\ source)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ std::fstream\ file;}
+\DoxyCodeLine{00126\ \ \ \ \ file.open(\mbox{\hyperlink{class_smart_array_i_o_ab0934c8ca2d4de121f7a89d4da405770}{GetFileDirectory}}(source),\ std::ios::in\ |\ std::ios::binary);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_error_handler_a2b1665ccd5e35806754eefdb633c1bd9}{ErrorHandler::handler}}(\mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc}{ErrorHandler::OPENING\_FILE\_ERROR}});}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{//\ Read\ array\ size}}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ new\_size\ =\ 0;}
+\DoxyCodeLine{00134\ \ \ \ \ ob.\mbox{\hyperlink{class_smart_array_a3c01debdf5b0f95c484a0190baf72886}{clear}}();}
+\DoxyCodeLine{00135\ \ \ \ \ file.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&new\_size),\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}));}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ Read\ all\ data}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ new\_size;\ ++i)\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ T\ temp;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_employee_8hpp_a181d9d1962fb2edf980797cc5288528e}{deserialize}}(file,\ temp);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ ob.\mbox{\hyperlink{class_smart_array_a20cf2b29f213e4a9367289b611a21845}{push}}(temp);}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ file.close();}
+\DoxyCodeLine{00145\ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

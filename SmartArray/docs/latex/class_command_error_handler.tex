@@ -1,23 +1,116 @@
 \doxysection{Command\+Error\+Handler Class Reference}
 \hypertarget{class_command_error_handler}{}\label{class_command_error_handler}\index{CommandErrorHandler@{CommandErrorHandler}}
+
+
+Handles errors related to command execution in the \doxylink{class_smart_array}{Smart\+Array} CLI.  
+
+
+
+
+{\ttfamily \#include $<$Command\+Error\+Handler.\+hpp$>$}
+
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92}\label{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92} 
-enum {\bfseries Errors} \{ {\bfseries ARGS\+\_\+\+EXCEPTION}
-, {\bfseries CMD\+\_\+\+NOT\+\_\+\+FOUND}
-, {\bfseries TOT\+\_\+\+ERROR}
+enum \mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92}{Errors}} \{ \mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863}{ARGS\+\_\+\+EXCEPTION}}
+, \mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8}{CMD\+\_\+\+NOT\+\_\+\+FOUND}}
+, \mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3}{TOT\+\_\+\+ERROR}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumeration of possible command errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_command_error_handler_a1a7c4454a0c2e40614cb0eb2d71b6d52}\label{class_command_error_handler_a1a7c4454a0c2e40614cb0eb2d71b6d52} 
-static void {\bfseries cmd\+\_\+handler} (enum Errors error, const char \texorpdfstring{$\ast$}{*}info="{}"{})
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_command_error_handler_a1a7c4454a0c2e40614cb0eb2d71b6d52}{cmd\+\_\+handler}} (enum \mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92}{Errors}} error, const char \texorpdfstring{$\ast$}{*}info="{}"{})
+\begin{DoxyCompactList}\small\item\em Handle a command-\/related error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_command_error_handler_ada3765fba069f67f91eb35faa3b4dfad}{messages}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of predefined error messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles errors related to command execution in the \doxylink{class_smart_array}{Smart\+Array} CLI. 
+
+This class provides static methods and predefined error messages to handle situations such as incorrect arguments or unknown commands. 
+
+\label{doc-enum-members}
+\Hypertarget{class_command_error_handler_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92}\index{CommandErrorHandler@{CommandErrorHandler}!Errors@{Errors}}
+\index{Errors@{Errors}!CommandErrorHandler@{CommandErrorHandler}}
+\doxysubsubsection{\texorpdfstring{Errors}{Errors}}
+{\footnotesize\ttfamily \label{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92} 
+enum \mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92}{Command\+Error\+Handler\+::\+Errors}}}
+
+
+
+Enumeration of possible command errors. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARGS\_EXCEPTION@{ARGS\_EXCEPTION}!CommandErrorHandler@{CommandErrorHandler}}\index{CommandErrorHandler@{CommandErrorHandler}!ARGS\_EXCEPTION@{ARGS\_EXCEPTION}}}\Hypertarget{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863}\label{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863} 
+ARGS\+\_\+\+EXCEPTION&Thrown when the number of arguments is incorrect. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_NOT\_FOUND@{CMD\_NOT\_FOUND}!CommandErrorHandler@{CommandErrorHandler}}\index{CommandErrorHandler@{CommandErrorHandler}!CMD\_NOT\_FOUND@{CMD\_NOT\_FOUND}}}\Hypertarget{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8}\label{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8} 
+CMD\+\_\+\+NOT\+\_\+\+FOUND&Thrown when the specified command does not exist. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOT\_ERROR@{TOT\_ERROR}!CommandErrorHandler@{CommandErrorHandler}}\index{CommandErrorHandler@{CommandErrorHandler}!TOT\_ERROR@{TOT\_ERROR}}}\Hypertarget{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3}\label{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92ac6ad56aa2672c8f136ff82c128898db3} 
+TOT\+\_\+\+ERROR&Total number of errors defined. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{class_command_error_handler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_error_handler_a1a7c4454a0c2e40614cb0eb2d71b6d52}\index{CommandErrorHandler@{CommandErrorHandler}!cmd\_handler@{cmd\_handler}}
+\index{cmd\_handler@{cmd\_handler}!CommandErrorHandler@{CommandErrorHandler}}
+\doxysubsubsection{\texorpdfstring{cmd\_handler()}{cmd\_handler()}}
+{\footnotesize\ttfamily \label{class_command_error_handler_a1a7c4454a0c2e40614cb0eb2d71b6d52} 
+void Command\+Error\+Handler\+::cmd\+\_\+handler (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92}{Errors}}}]{error}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{info}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handle a command-\/related error. 
+
+Prints or logs the appropriate error message based on the error type. An optional info string can provide additional context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & The type of error (from \doxylink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92}{Errors} enum) \\
+\hline
+{\em info} & Optional additional information about the error \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_command_error_handler_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_command_error_handler_ada3765fba069f67f91eb35faa3b4dfad}\index{CommandErrorHandler@{CommandErrorHandler}!messages@{messages}}
+\index{messages@{messages}!CommandErrorHandler@{CommandErrorHandler}}
+\doxysubsubsection{\texorpdfstring{messages}{messages}}
+{\footnotesize\ttfamily \label{class_command_error_handler_ada3765fba069f67f91eb35faa3b4dfad} 
+const char \texorpdfstring{$\ast$}{*} Command\+Error\+Handler\+::messages\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}W\ Wrong\ argument\ list\ given"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}W\ Command\ not\ found,\ please\ try\ again\ or\ use\ \(\backslash\)'help\(\backslash\)'\ command."{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Array of predefined error messages. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/handlers/Command\+Error\+Handler.\+hpp\item 
-app/src/handlers/Command\+Error\+Handler.\+cpp\end{DoxyCompactItemize}
+app/includes/handlers/\mbox{\hyperlink{_command_error_handler_8hpp}{Command\+Error\+Handler.\+hpp}}\item 
+app/src/handlers/\mbox{\hyperlink{_command_error_handler_8cpp}{Command\+Error\+Handler.\+cpp}}\end{DoxyCompactItemize}

@@ -91,56 +91,74 @@ $(function(){initNavTree('_command_handler_8hpp_source.html','',''); });
   <div class="headertitle"><div class="title">CommandHandler.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef COMMAND_HANDLER_HPP</span></div>
+<a href="_command_handler_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef COMMAND_HANDLER_HPP</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define COMMAND_HANDLER_HPP</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;handlers/CommandErrorHandler.hpp&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;commands/CommandHandler.hpp&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;commands/PopCommand.hpp&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;commands/PrintCommand.hpp&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;commands/AddCommand.hpp&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;commands/HelpCommand.hpp&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;SmartArray.hpp&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;commands/CommandFactory.hpp&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_command_handler.html">   15</a></span><span class="keyword">class </span>CommandHandler {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_smart_array.html">SmartArray&lt;T&gt;</a>&amp; array_;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    CommandHandler(<a class="code hl_class" href="class_smart_array.html">SmartArray&lt;T&gt;</a>&amp; ob) : array_(ob) {};</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> handle(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="_command_error_handler_8hpp.html">handlers/CommandErrorHandler.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="_command_handler_8hpp.html">commands/CommandHandler.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="_pop_command_8hpp.html">commands/PopCommand.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="_print_command_8hpp.html">commands/PrintCommand.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="_add_command_8hpp.html">commands/AddCommand.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="_help_command_8hpp.html">commands/HelpCommand.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="_smart_array_8hpp.html">SmartArray.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="_command_factory_8hpp.html">commands/CommandFactory.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_command_handler.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="class_command_handler.html#a31d942dbf6eeb6cb3bc9ffd27391942c">CommandHandler</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_command_handler.html#af95ca482584e648cf47bec9b4b931ed2">   25</a></span>    <a class="code hl_class" href="class_smart_array.html">SmartArray&lt;T&gt;</a>&amp; <a class="code hl_variable" href="class_command_handler.html#af95ca482584e648cf47bec9b4b931ed2">array_</a>;   </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_command_handler.html#a31d942dbf6eeb6cb3bc9ffd27391942c">   32</a></span>    <a class="code hl_function" href="class_command_handler.html#a31d942dbf6eeb6cb3bc9ffd27391942c">CommandHandler</a>(<a class="code hl_class" href="class_smart_array.html">SmartArray&lt;T&gt;</a>&amp; ob) : <a class="code hl_variable" href="class_command_handler.html#af95ca482584e648cf47bec9b4b931ed2">array_</a>(ob) {};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_command_handler.html#a442d81ce5e5d8d6626980da9efaeaa1d">handle</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">int</span> CommandHandler&lt;T, Parser&gt;::handle(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (argv[1] == NULL) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        CommandErrorHandler::cmd_handler(CommandErrorHandler::ARGS_EXCEPTION);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="class_command_factory.html">CommandFactory&lt;T, Parser&gt;</a> factory(array_);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Pass command name as a parameter</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::unique_ptr&lt;Command&gt; command = factory.createCommand(argv[1]);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (!command) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        CommandErrorHandler::cmd_handler(CommandErrorHandler::CMD_NOT_FOUND);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">int</span> expectedArgs = command-&gt;expectedArgCount();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (expectedArgs != argc &amp;&amp; expectedArgs != -1) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        CommandErrorHandler::cmd_handler(CommandErrorHandler::ARGS_EXCEPTION);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">int</span> result = command-&gt;execute(argc, argv);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_command_factory_html"><div class="ttname"><a href="class_command_factory.html">CommandFactory</a></div><div class="ttdef"><b>Definition</b> CommandFactory.hpp:16</div></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Parser&gt;</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_command_handler.html#a442d81ce5e5d8d6626980da9efaeaa1d">   48</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_command_handler.html#a442d81ce5e5d8d6626980da9efaeaa1d">CommandHandler&lt;T, Parser&gt;::handle</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (argv[1] == NULL) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_function" href="class_command_error_handler.html#a1a7c4454a0c2e40614cb0eb2d71b6d52">CommandErrorHandler::cmd_handler</a>(<a class="code hl_enumvalue" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863">CommandErrorHandler::ARGS_EXCEPTION</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_class" href="class_command_factory.html">CommandFactory&lt;T, Parser&gt;</a> factory(<a class="code hl_variable" href="class_command_handler.html#af95ca482584e648cf47bec9b4b931ed2">array_</a>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// Pass command name as a parameter</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    std::unique_ptr&lt;Command&gt; command = factory.<a class="code hl_function" href="class_command_factory.html#ae6efd9704642ffb7cce9d0e47b7b7930">createCommand</a>(argv[1]);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (!command) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_function" href="class_command_error_handler.html#a1a7c4454a0c2e40614cb0eb2d71b6d52">CommandErrorHandler::cmd_handler</a>(<a class="code hl_enumvalue" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8">CommandErrorHandler::CMD_NOT_FOUND</a>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">int</span> expectedArgs = command-&gt;expectedArgCount();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (expectedArgs != argc &amp;&amp; expectedArgs != -1) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_function" href="class_command_error_handler.html#a1a7c4454a0c2e40614cb0eb2d71b6d52">CommandErrorHandler::cmd_handler</a>(<a class="code hl_enumvalue" href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863">CommandErrorHandler::ARGS_EXCEPTION</a>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">int</span> result = command-&gt;execute(argc, argv);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_add_command_8hpp_html"><div class="ttname"><a href="_add_command_8hpp.html">AddCommand.hpp</a></div></div>
+<div class="ttc" id="a_command_error_handler_8hpp_html"><div class="ttname"><a href="_command_error_handler_8hpp.html">CommandErrorHandler.hpp</a></div></div>
+<div class="ttc" id="a_command_factory_8hpp_html"><div class="ttname"><a href="_command_factory_8hpp.html">CommandFactory.hpp</a></div></div>
+<div class="ttc" id="a_command_handler_8hpp_html"><div class="ttname"><a href="_command_handler_8hpp.html">CommandHandler.hpp</a></div></div>
+<div class="ttc" id="a_help_command_8hpp_html"><div class="ttname"><a href="_help_command_8hpp.html">HelpCommand.hpp</a></div></div>
+<div class="ttc" id="a_pop_command_8hpp_html"><div class="ttname"><a href="_pop_command_8hpp.html">PopCommand.hpp</a></div></div>
+<div class="ttc" id="a_print_command_8hpp_html"><div class="ttname"><a href="_print_command_8hpp.html">PrintCommand.hpp</a></div></div>
+<div class="ttc" id="a_smart_array_8hpp_html"><div class="ttname"><a href="_smart_array_8hpp.html">SmartArray.hpp</a></div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a1a7c4454a0c2e40614cb0eb2d71b6d52"><div class="ttname"><a href="class_command_error_handler.html#a1a7c4454a0c2e40614cb0eb2d71b6d52">CommandErrorHandler::cmd_handler</a></div><div class="ttdeci">static void cmd_handler(enum Errors error, const char *info=&quot;&quot;)</div><div class="ttdoc">Handle a command-related error.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.cpp:9</div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8"><div class="ttname"><a href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8">CommandErrorHandler::CMD_NOT_FOUND</a></div><div class="ttdeci">@ CMD_NOT_FOUND</div><div class="ttdoc">Thrown when the specified command does not exist.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:18</div></div>
+<div class="ttc" id="aclass_command_error_handler_html_a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863"><div class="ttname"><a href="class_command_error_handler.html#a570c43c4da0e5d857eeb658316bc0a92a2f13e08b86899eb64d435a7357456863">CommandErrorHandler::ARGS_EXCEPTION</a></div><div class="ttdeci">@ ARGS_EXCEPTION</div><div class="ttdoc">Thrown when the number of arguments is incorrect.</div><div class="ttdef"><b>Definition</b> CommandErrorHandler.hpp:17</div></div>
+<div class="ttc" id="aclass_command_factory_html"><div class="ttname"><a href="class_command_factory.html">CommandFactory</a></div><div class="ttdoc">Factory class to create command objects.</div><div class="ttdef"><b>Definition</b> CommandFactory.hpp:25</div></div>
+<div class="ttc" id="aclass_command_factory_html_ae6efd9704642ffb7cce9d0e47b7b7930"><div class="ttname"><a href="class_command_factory.html#ae6efd9704642ffb7cce9d0e47b7b7930">CommandFactory::createCommand</a></div><div class="ttdeci">std::unique_ptr&lt; Command &gt; createCommand(std::string name)</div><div class="ttdoc">Create a command object based on the command name.</div><div class="ttdef"><b>Definition</b> CommandFactory.hpp:59</div></div>
+<div class="ttc" id="aclass_command_handler_html_a31d942dbf6eeb6cb3bc9ffd27391942c"><div class="ttname"><a href="class_command_handler.html#a31d942dbf6eeb6cb3bc9ffd27391942c">CommandHandler::CommandHandler</a></div><div class="ttdeci">CommandHandler(SmartArray&lt; T &gt; &amp;ob)</div><div class="ttdoc">Construct a new CommandHandler.</div><div class="ttdef"><b>Definition</b> CommandHandler.hpp:32</div></div>
+<div class="ttc" id="aclass_command_handler_html_a442d81ce5e5d8d6626980da9efaeaa1d"><div class="ttname"><a href="class_command_handler.html#a442d81ce5e5d8d6626980da9efaeaa1d">CommandHandler::handle</a></div><div class="ttdeci">int handle(int argc, char *argv[])</div><div class="ttdoc">Handle command-line arguments and execute the corresponding command.</div><div class="ttdef"><b>Definition</b> CommandHandler.hpp:48</div></div>
+<div class="ttc" id="aclass_command_handler_html_af95ca482584e648cf47bec9b4b931ed2"><div class="ttname"><a href="class_command_handler.html#af95ca482584e648cf47bec9b4b931ed2">CommandHandler::array_</a></div><div class="ttdeci">SmartArray&lt; T &gt; &amp; array_</div><div class="ttdoc">Reference to the SmartArray being manipulated.</div><div class="ttdef"><b>Definition</b> CommandHandler.hpp:25</div></div>
 <div class="ttc" id="aclass_smart_array_html"><div class="ttname"><a href="class_smart_array.html">SmartArray</a></div><div class="ttdoc">A dynamic array template class similar to std::vector.</div><div class="ttdef"><b>Definition</b> SmartArray.hpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -148,7 +166,7 @@ $(function(){initNavTree('_command_handler_8hpp_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a href="dir_1c5c03227cca0102ee47bee331c2b55d.html">includes</a></li><li class="navelem"><a href="dir_bc8d970148ce4b2a97cc4f30e81f9493.html">commands</a></li><li class="navelem"><b>CommandHandler.hpp</b></li>
+    <li class="navelem"><a href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a href="dir_1c5c03227cca0102ee47bee331c2b55d.html">includes</a></li><li class="navelem"><a href="dir_bc8d970148ce4b2a97cc4f30e81f9493.html">commands</a></li><li class="navelem"><a href="_command_handler_8hpp.html">CommandHandler.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

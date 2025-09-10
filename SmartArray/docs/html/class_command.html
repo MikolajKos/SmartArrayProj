@@ -91,29 +91,172 @@ $(function(){initNavTree('class_command.html','','class_command-members'); });
   <div class="headertitle"><div class="title">Command Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base class for all commands.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_command_8hpp_source.html">Command.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Command:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_command.png" usemap="#Command_map" alt=""/>
   <map id="Command_map" name="Command_map">
-<area href="class_add_command.html" alt="AddCommand&lt; T, Parser &gt;" shape="rect" coords="0,56,171,80"/>
-<area href="class_clear_command.html" alt="ClearCommand&lt; T &gt;" shape="rect" coords="181,56,352,80"/>
-<area href="class_help_command.html" alt="HelpCommand&lt; T, Parser &gt;" shape="rect" coords="362,56,533,80"/>
-<area href="class_pop_command.html" alt="PopCommand&lt; T &gt;" shape="rect" coords="543,56,714,80"/>
-<area href="class_print_command.html" alt="PrintCommand&lt; T &gt;" shape="rect" coords="724,56,895,80"/>
+<area href="class_add_command.html" title="Command to add a new element to a SmartArray." alt="AddCommand&lt; T, Parser &gt;" shape="rect" coords="0,56,171,80"/>
+<area href="class_clear_command.html" title="Command to clear all elements from a SmartArray." alt="ClearCommand&lt; T &gt;" shape="rect" coords="181,56,352,80"/>
+<area href="class_help_command.html" title="Command to display help information for SmartArray CLI commands." alt="HelpCommand&lt; T, Parser &gt;" shape="rect" coords="362,56,533,80"/>
+<area href="class_pop_command.html" title="Command to remove the last element from a SmartArray." alt="PopCommand&lt; T &gt;" shape="rect" coords="543,56,714,80"/>
+<area href="class_print_command.html" title="Command to print all elements of a SmartArray." alt="PrintCommand&lt; T &gt;" shape="rect" coords="724,56,895,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab37f624bfa17ab524c83b6f17931359b" id="r_ab37f624bfa17ab524c83b6f17931359b"><td class="memItemLeft" align="right" valign="top"><a id="ab37f624bfa17ab524c83b6f17931359b" name="ab37f624bfa17ab524c83b6f17931359b"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> (int argc, char *argv[])=0</td></tr>
-<tr class="memitem:a8a12c681e4fcd3b2b5c6dc7342556399" id="r_a8a12c681e4fcd3b2b5c6dc7342556399"><td class="memItemLeft" align="right" valign="top"><a id="a8a12c681e4fcd3b2b5c6dc7342556399" name="a8a12c681e4fcd3b2b5c6dc7342556399"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>expectedArgCount</b> ()=0</td></tr>
-<tr class="memitem:aeb531b2696ec5a067dfa80d30e653cdb" id="r_aeb531b2696ec5a067dfa80d30e653cdb"><td class="memItemLeft" align="right" valign="top"><a id="aeb531b2696ec5a067dfa80d30e653cdb" name="aeb531b2696ec5a067dfa80d30e653cdb"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>description</b> ()</td></tr>
+<tr class="memitem:ab37f624bfa17ab524c83b6f17931359b" id="r_ab37f624bfa17ab524c83b6f17931359b"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab37f624bfa17ab524c83b6f17931359b">execute</a> (int argc, char *argv[])=0</td></tr>
+<tr class="memdesc:ab37f624bfa17ab524c83b6f17931359b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the command.  <br /></td></tr>
+<tr class="memitem:a8a12c681e4fcd3b2b5c6dc7342556399" id="r_a8a12c681e4fcd3b2b5c6dc7342556399"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a12c681e4fcd3b2b5c6dc7342556399">expectedArgCount</a> ()=0</td></tr>
+<tr class="memdesc:a8a12c681e4fcd3b2b5c6dc7342556399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the expected number of arguments for this command.  <br /></td></tr>
+<tr class="memitem:aeb531b2696ec5a067dfa80d30e653cdb" id="r_aeb531b2696ec5a067dfa80d30e653cdb"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb531b2696ec5a067dfa80d30e653cdb">description</a> ()</td></tr>
+<tr class="memdesc:aeb531b2696ec5a067dfa80d30e653cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a textual description of the command.  <br /></td></tr>
+<tr class="memitem:aa545a53d35818f9efb936daf3fa16c61" id="r_aa545a53d35818f9efb936daf3fa16c61"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa545a53d35818f9efb936daf3fa16c61">~Command</a> ()=default</td></tr>
+<tr class="memdesc:aa545a53d35818f9efb936daf3fa16c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class for all commands. </p>
+<p>Defines the interface for commands that can be executed by <a class="el" href="class_command_handler.html" title="Handles commands for a SmartArray using a specified parser.">CommandHandler</a>. All concrete command classes should inherit from this class and implement the pure virtual methods. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa545a53d35818f9efb936daf3fa16c61" name="aa545a53d35818f9efb936daf3fa16c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa545a53d35818f9efb936daf3fa16c61">&#9670;&#160;</a></span>~Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Command::~Command </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Virtual destructor. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aeb531b2696ec5a067dfa80d30e653cdb" name="aeb531b2696ec5a067dfa80d30e653cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb531b2696ec5a067dfa80d30e653cdb">&#9670;&#160;</a></span>description()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string Command::description </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a textual description of the command. </p>
+<p>Can be overridden by derived classes to provide detailed instructions for using the command. Default implementation returns a placeholder string.</p>
+<dl class="section return"><dt>Returns</dt><dd>std::string <a class="el" href="class_command.html" title="Abstract base class for all commands.">Command</a> description </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_add_command.html#a533ca89310451e80e0e18419b5bc796b">AddCommand&lt; T, Parser &gt;</a>, <a class="el" href="class_clear_command.html#a173d1c84b8d6bb217881ef81ad73674e">ClearCommand&lt; T &gt;</a>, <a class="el" href="class_help_command.html#afc7db3202df626e359a57e43df90d2bf">HelpCommand&lt; T, Parser &gt;</a>, <a class="el" href="class_pop_command.html#a07e9bdf9c72bb1b5380cf81f46fa2bb7">PopCommand&lt; T &gt;</a>, and <a class="el" href="class_print_command.html#a9fef62a117e60d48dff74b5c9ff01f3e">PrintCommand&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ab37f624bfa17ab524c83b6f17931359b" name="ab37f624bfa17ab524c83b6f17931359b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab37f624bfa17ab524c83b6f17931359b">&#9670;&#160;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Command::execute </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>argv</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Execute the command. </p>
+<p>This is a pure virtual method that must be implemented by derived classes. It performs the command's main action.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Number of command-line arguments </td></tr>
+    <tr><td class="paramname">argv</td><td>Array of command-line arguments </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Result code (0 on success, non-zero on error) </dd></dl>
+
+<p>Implemented in <a class="el" href="class_add_command.html#a0b222ed96a96728d64b861fe8511027a">AddCommand&lt; T, Parser &gt;</a>, <a class="el" href="class_clear_command.html#a97a2ea36275332ac4923b4151dcc710f">ClearCommand&lt; T &gt;</a>, <a class="el" href="class_help_command.html#a8afb79b89f79989c5c70cecd4912c870">HelpCommand&lt; T, Parser &gt;</a>, <a class="el" href="class_pop_command.html#a6be6f4dd65a0005bdc24e8792c64360e">PopCommand&lt; T &gt;</a>, and <a class="el" href="class_print_command.html#a16f912b4b0dc03bc9deabf9175b9fbb5">PrintCommand&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a8a12c681e4fcd3b2b5c6dc7342556399" name="a8a12c681e4fcd3b2b5c6dc7342556399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a12c681e4fcd3b2b5c6dc7342556399">&#9670;&#160;</a></span>expectedArgCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Command::expectedArgCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the expected number of arguments for this command. </p>
+<p>This is a pure virtual method that must be implemented by derived classes. It returns the number of arguments the command expects. A return value of -1 indicates that the command can accept an arbitrary number of arguments.</p>
+<dl class="section return"><dt>Returns</dt><dd>int Expected argument count, or -1 if the number of arguments is not fixed </dd></dl>
+
+<p>Implemented in <a class="el" href="class_add_command.html#a409439b43702d9fae603d3739ed76b32">AddCommand&lt; T, Parser &gt;</a>, <a class="el" href="class_clear_command.html#aaca369a274f48a1ac08e05db304f9be7">ClearCommand&lt; T &gt;</a>, <a class="el" href="class_help_command.html#a5013e0a13bdc2eafcb3f1752a72699f9">HelpCommand&lt; T, Parser &gt;</a>, <a class="el" href="class_pop_command.html#ad2b066f81b8c1a3e7a8aeee1cb6fe24f">PopCommand&lt; T &gt;</a>, and <a class="el" href="class_print_command.html#a7a0801bdbe5bcf949a79ecc9c55f21dd">PrintCommand&lt; T &gt;</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>app/includes/commands/<a class="el" href="_command_8hpp_source.html">Command.hpp</a></li>
 </ul>

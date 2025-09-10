@@ -8,14 +8,57 @@
 #include <functional>
 #include <SmartArray.hpp>
 
+/**
+ * @brief Command to display help information for SmartArray CLI commands.
+ *
+ * This template class implements the Command interface and provides detailed
+ * usage instructions for all commands, or for a specific command if a name
+ * is passed as an argument.
+ *
+ * @tparam T Type of elements stored in SmartArray
+ * @tparam Parser Parser type used to provide description of the element type T
+ */
 template <typename T, typename Parser>
 class HelpCommand : public Command {
-	SmartArray<T>& array_;
+	SmartArray<T>& array_; ///< Reference to the SmartArray used by commands
 public:
+	/**
+	 * @brief Construct a new HelpCommand.
+	 *
+	 * @param ob Reference to the SmartArray to operate on
+	 */
 	HelpCommand(SmartArray<T>& ob): array_(ob) {};
 
+	/**
+	 * @brief Execute the help command.
+	 *
+	 * If no command name is provided, displays general help information for
+	 * the SmartArray CLI application. If a command name is given, displays
+	 * the description for that specific command.
+	 *
+	 * @param argc Number of command-line arguments
+	 * @param argv Array of command-line arguments
+	 * @return int Result code (0 on success, non-zero on error)
+	 */
 	int execute(int argc, char* argv[]) override;
+
+	/**
+	 * @brief Get the expected number of arguments for the help command.
+	 *
+	 * A return value of -1 indicates that the command can accept an arbitrary
+	 * number of arguments.
+	 *
+	 * @return int Expected argument count (-1 for undefined)
+	 */
 	int expectedArgCount() override;
+
+	/**
+	 * @brief Get a textual description of the help command.
+	 *
+	 * Provides a brief message about the purpose of the help command.
+	 *
+	 * @return std::string Description of the command
+	 */
 	std::string description() override;
 };
 

@@ -1,28 +1,136 @@
 \doxysection{Error\+Handler Class Reference}
 \hypertarget{class_error_handler}{}\label{class_error_handler}\index{ErrorHandler@{ErrorHandler}}
+
+
+Handles general runtime errors in the \doxylink{class_smart_array}{Smart\+Array} project.  
+
+
+
+
+{\ttfamily \#include $<$Error\+Handler.\+hpp$>$}
+
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_error_handler_ae638861bcc34c854854c23ad2ff9729a}\label{class_error_handler_ae638861bcc34c854854c23ad2ff9729a} 
-enum {\bfseries Errors} \{ \newline
-{\bfseries MEM\+\_\+\+ALLOC\+\_\+\+ERROR} = 0
-, {\bfseries STACK\+\_\+\+IS\+\_\+\+FULL}
-, {\bfseries STACK\+\_\+\+IS\+\_\+\+EMPTY}
-, {\bfseries OPENING\+\_\+\+FILE\+\_\+\+ERROR}
+enum \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729a}{Errors}} \{ \newline
+\mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65}{MEM\+\_\+\+ALLOC\+\_\+\+ERROR}}
+, \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd}{STACK\+\_\+\+IS\+\_\+\+FULL}}
+, \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5}{STACK\+\_\+\+IS\+\_\+\+EMPTY}}
+, \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc}{OPENING\+\_\+\+FILE\+\_\+\+ERROR}}
 , \newline
-{\bfseries INDEX\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}
-, {\bfseries TOT\+\_\+\+ERROR}
+\mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8}{INDEX\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}}
+, \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb}{TOT\+\_\+\+ERROR}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumeration of possible runtime errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_error_handler_a2b1665ccd5e35806754eefdb633c1bd9}\label{class_error_handler_a2b1665ccd5e35806754eefdb633c1bd9} 
-static void {\bfseries handler} (enum Errors error, const char \texorpdfstring{$\ast$}{*}info="{}"{})
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_error_handler_a2b1665ccd5e35806754eefdb633c1bd9}{handler}} (enum \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729a}{Errors}} error, const char \texorpdfstring{$\ast$}{*}info="{}"{})
+\begin{DoxyCompactList}\small\item\em Handle a runtime error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_error_handler_a23305b5c34caa5c937c0682947ae9f04}{messages}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of predefined error messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles general runtime errors in the \doxylink{class_smart_array}{Smart\+Array} project. 
+
+This class provides static methods and predefined error messages to handle common runtime errors such as memory allocation failures, stack overflows, empty collections, file access errors, or out-\/of-\/range indices. 
+
+\label{doc-enum-members}
+\Hypertarget{class_error_handler_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_error_handler_ae638861bcc34c854854c23ad2ff9729a}\index{ErrorHandler@{ErrorHandler}!Errors@{Errors}}
+\index{Errors@{Errors}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{Errors}{Errors}}
+{\footnotesize\ttfamily \label{class_error_handler_ae638861bcc34c854854c23ad2ff9729a} 
+enum \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729a}{Error\+Handler\+::\+Errors}}}
+
+
+
+Enumeration of possible runtime errors. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEM\_ALLOC\_ERROR@{MEM\_ALLOC\_ERROR}!ErrorHandler@{ErrorHandler}}\index{ErrorHandler@{ErrorHandler}!MEM\_ALLOC\_ERROR@{MEM\_ALLOC\_ERROR}}}\Hypertarget{class_error_handler_ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65}\label{class_error_handler_ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65} 
+MEM\+\_\+\+ALLOC\+\_\+\+ERROR&Memory allocation failure. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STACK\_IS\_FULL@{STACK\_IS\_FULL}!ErrorHandler@{ErrorHandler}}\index{ErrorHandler@{ErrorHandler}!STACK\_IS\_FULL@{STACK\_IS\_FULL}}}\Hypertarget{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd}\label{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd} 
+STACK\+\_\+\+IS\+\_\+\+FULL&Attempt to push element into a full stack/array. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STACK\_IS\_EMPTY@{STACK\_IS\_EMPTY}!ErrorHandler@{ErrorHandler}}\index{ErrorHandler@{ErrorHandler}!STACK\_IS\_EMPTY@{STACK\_IS\_EMPTY}}}\Hypertarget{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5}\label{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5} 
+STACK\+\_\+\+IS\+\_\+\+EMPTY&Attempt to pop or print from an empty stack/array. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPENING\_FILE\_ERROR@{OPENING\_FILE\_ERROR}!ErrorHandler@{ErrorHandler}}\index{ErrorHandler@{ErrorHandler}!OPENING\_FILE\_ERROR@{OPENING\_FILE\_ERROR}}}\Hypertarget{class_error_handler_ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc}\label{class_error_handler_ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc} 
+OPENING\+\_\+\+FILE\+\_\+\+ERROR&Error opening a file for read/write. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INDEX\_OUT\_OF\_RANGE@{INDEX\_OUT\_OF\_RANGE}!ErrorHandler@{ErrorHandler}}\index{ErrorHandler@{ErrorHandler}!INDEX\_OUT\_OF\_RANGE@{INDEX\_OUT\_OF\_RANGE}}}\Hypertarget{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8}\label{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8} 
+INDEX\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE&Index accessed is out of valid range. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOT\_ERROR@{TOT\_ERROR}!ErrorHandler@{ErrorHandler}}\index{ErrorHandler@{ErrorHandler}!TOT\_ERROR@{TOT\_ERROR}}}\Hypertarget{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb}\label{class_error_handler_ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb} 
+TOT\+\_\+\+ERROR&Total number of errors defined. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{class_error_handler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_error_handler_a2b1665ccd5e35806754eefdb633c1bd9}\index{ErrorHandler@{ErrorHandler}!handler@{handler}}
+\index{handler@{handler}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily \label{class_error_handler_a2b1665ccd5e35806754eefdb633c1bd9} 
+void Error\+Handler\+::handler (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{class_error_handler_ae638861bcc34c854854c23ad2ff9729a}{Errors}}}]{error}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{info}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handle a runtime error. 
+
+Prints or logs the appropriate error message based on the error type. An optional info string can provide additional context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & The type of error (from \doxylink{class_error_handler_ae638861bcc34c854854c23ad2ff9729a}{Errors} enum) \\
+\hline
+{\em info} & Optional additional information about the error \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_error_handler_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_error_handler_a23305b5c34caa5c937c0682947ae9f04}\index{ErrorHandler@{ErrorHandler}!messages@{messages}}
+\index{messages@{messages}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{messages}{messages}}
+{\footnotesize\ttfamily \label{class_error_handler_a23305b5c34caa5c937c0682947ae9f04} 
+const char \texorpdfstring{$\ast$}{*} Error\+Handler\+::messages\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}E\ Memory\ allocation\ Error"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}W\ Stack\ is\ full"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}W\ Stack\ is\ empty"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}E\ Error\ opening\ file"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}E\ Index\ out\ of\ range"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Array of predefined error messages. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/handlers/Error\+Handler.\+hpp\item 
-app/src/handlers/Error\+Handler.\+cpp\end{DoxyCompactItemize}
+app/includes/handlers/\mbox{\hyperlink{_error_handler_8hpp}{Error\+Handler.\+hpp}}\item 
+app/src/handlers/\mbox{\hyperlink{_error_handler_8cpp}{Error\+Handler.\+cpp}}\end{DoxyCompactItemize}

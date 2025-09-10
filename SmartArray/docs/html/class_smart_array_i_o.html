@@ -91,14 +91,151 @@ $(function(){initNavTree('class_smart_array_i_o.html','','class_smart_array_i_o-
   <div class="headertitle"><div class="title">SmartArrayIO&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Template class for saving and loading <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> objects to/from binary files.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_smart_array_i_o_8hpp_source.html">SmartArrayIO.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab03801b0d487fb8a9e68b8f26910c4a0" id="r_ab03801b0d487fb8a9e68b8f26910c4a0"><td class="memItemLeft" align="right" valign="top"><a id="ab03801b0d487fb8a9e68b8f26910c4a0" name="ab03801b0d487fb8a9e68b8f26910c4a0"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> (const <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;ob, std::string source=FILENAME)</td></tr>
-<tr class="memitem:a4169689e3e9eac8886f205c771f07337" id="r_a4169689e3e9eac8886f205c771f07337"><td class="memItemLeft" align="right" valign="top"><a id="a4169689e3e9eac8886f205c771f07337" name="a4169689e3e9eac8886f205c771f07337"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> (<a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;ob, std::string source=FILENAME)</td></tr>
+<tr class="memitem:ab03801b0d487fb8a9e68b8f26910c4a0" id="r_ab03801b0d487fb8a9e68b8f26910c4a0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab03801b0d487fb8a9e68b8f26910c4a0">save</a> (const <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;ob, std::string source=<a class="el" href="_smart_array_i_o_8hpp.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a>)</td></tr>
+<tr class="memdesc:ab03801b0d487fb8a9e68b8f26910c4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save a <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> to a binary file.  <br /></td></tr>
+<tr class="memitem:a4169689e3e9eac8886f205c771f07337" id="r_a4169689e3e9eac8886f205c771f07337"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4169689e3e9eac8886f205c771f07337">load</a> (<a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;ob, std::string source=<a class="el" href="_smart_array_i_o_8hpp.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a>)</td></tr>
+<tr class="memdesc:a4169689e3e9eac8886f205c771f07337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> from a binary file.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ab0934c8ca2d4de121f7a89d4da405770" id="r_ab0934c8ca2d4de121f7a89d4da405770"><td class="memItemLeft" align="right" valign="top">static std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0934c8ca2d4de121f7a89d4da405770">GetFileDirectory</a> (std::string filename)</td></tr>
+<tr class="memdesc:ab0934c8ca2d4de121f7a89d4da405770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the full path for a given filename relative to the executable.  <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class SmartArrayIO&lt; T &gt;</div><p>Template class for saving and loading <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> objects to/from binary files. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of elements stored in <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ab0934c8ca2d4de121f7a89d4da405770" name="ab0934c8ca2d4de121f7a89d4da405770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0934c8ca2d4de121f7a89d4da405770">&#9670;&#160;</a></span>GetFileDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::filesystem::path <a class="el" href="class_smart_array_i_o.html">SmartArrayIO</a>&lt; T &gt;::GetFileDirectory </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the full path for a given filename relative to the executable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Name of the file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::filesystem::path Full path to the file </dd></dl>
+
+</div>
+</div>
+<a id="a4169689e3e9eac8886f205c771f07337" name="a4169689e3e9eac8886f205c771f07337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4169689e3e9eac8886f205c771f07337">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_smart_array_i_o.html">SmartArrayIO</a>&lt; T &gt;::load </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>ob</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>source</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_smart_array_i_o_8hpp.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load a <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> from a binary file. </p>
+<p>Clears the current array and fills it with data from the file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ob</td><td><a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> object to load data into </td></tr>
+    <tr><td class="paramname">source</td><td>Filename to load from (default: "preload_data.bin") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab03801b0d487fb8a9e68b8f26910c4a0" name="ab03801b0d487fb8a9e68b8f26910c4a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03801b0d487fb8a9e68b8f26910c4a0">&#9670;&#160;</a></span>save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_smart_array_i_o.html">SmartArrayIO</a>&lt; T &gt;::save </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>ob</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>source</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_smart_array_i_o_8hpp.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save a <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> to a binary file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ob</td><td><a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> object to save </td></tr>
+    <tr><td class="paramname">source</td><td>Filename to save to (default: "preload_data.bin") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>app/includes/<a class="el" href="_smart_array_i_o_8hpp_source.html">SmartArrayIO.hpp</a></li>
 </ul>

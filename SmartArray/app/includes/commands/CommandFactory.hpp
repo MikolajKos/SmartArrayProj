@@ -12,11 +12,27 @@
 #include <commands/ClearCommand.hpp>
 #include <SmartArray.hpp>
 
+/**
+ * @brief Factory class to create command objects.
+ *
+ * This template class maps command names to their corresponding Command objects
+ * and provides a method to create commands dynamically based on a string identifier.
+ *
+ * @tparam T Type of elements stored in SmartArray
+ * @tparam Parser Parser type used to parse input arguments into objects of type T
+ */
 template<typename T, typename Parser>
 class CommandFactory {
-	std::unordered_map<std::string, std::function<std::unique_ptr<Command>()>> cmdMap_;
-	SmartArray<T>& array_;
+	std::unordered_map<std::string, std::function<std::unique_ptr<Command>()>> cmdMap_; ///< Map of command names to factory functions
+	SmartArray<T>& array_; ///< Reference to the SmartArray used by commands
 public:
+	/**
+	 * @brief Construct a new CommandFactory.
+	 *
+	 * Initializes the mapping of command names to the corresponding command objects.
+	 *
+	 * @param ob Reference to the SmartArray used by created commands
+	 */
 	CommandFactory(SmartArray<T>& ob) : array_(ob) {
 		cmdMap_["add"] = [this]() {return std::make_unique<AddCommand<T, Parser>>(array_);};
 		cmdMap_["help"] = [this]() {return std::make_unique<HelpCommand<T, Parser>>(array_);};
@@ -25,6 +41,16 @@ public:
 		cmdMap_["clear"] = [this]() {return std::make_unique<ClearCommand<T>>(array_);};
 	};
 
+	/**
+	 * @brief Create a command object based on the command name.
+	 *
+	 * Looks up the command name in the internal map and returns a unique_ptr
+	 * to the corresponding Command object. Returns nullptr if the command
+	 * is not found.
+	 *
+	 * @param name Name of the command to create
+	 * @return std::unique_ptr<Command> Pointer to the created Command object, or nullptr if not found
+	 */
 	std::unique_ptr<Command> createCommand(std::string name);
 };
 

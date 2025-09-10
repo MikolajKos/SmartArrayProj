@@ -1,16 +1,122 @@
 \doxysection{Command\+Factory\texorpdfstring{$<$}{<} T, Parser \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{class_command_factory}{}\label{class_command_factory}\index{CommandFactory$<$ T, Parser $>$@{CommandFactory$<$ T, Parser $>$}}
+
+
+Factory class to create command objects.  
+
+
+
+
+{\ttfamily \#include $<$Command\+Factory.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_command_factory_ac83180af592fbc0243d82fba531e6e64}\label{class_command_factory_ac83180af592fbc0243d82fba531e6e64} 
-{\bfseries Command\+Factory} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
+\mbox{\hyperlink{class_command_factory_ac83180af592fbc0243d82fba531e6e64}{Command\+Factory}} (\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&ob)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_command_factory}{Command\+Factory}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$ \mbox{\hyperlink{class_command_factory_ae6efd9704642ffb7cce9d0e47b7b7930}{create\+Command}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Create a command object based on the command name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_command_factory_ae6efd9704642ffb7cce9d0e47b7b7930}\label{class_command_factory_ae6efd9704642ffb7cce9d0e47b7b7930} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$ {\bfseries create\+Command} (std\+::string name)
-\end{DoxyCompactItemize}
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$()$>$ $>$ \mbox{\hyperlink{class_command_factory_ae4ecc1332e76a521b10e7034398e19ec}{cmd\+Map\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Map of command names to factory functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \& \mbox{\hyperlink{class_command_factory_a803dd37a80e73887bc5cb68df9df258b}{array\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Reference to the \doxylink{class_smart_array}{Smart\+Array} used by commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename Parser$>$\newline
+class Command\+Factory$<$ T, Parser $>$}
+Factory class to create command objects. 
+
+This template class maps command names to their corresponding \doxylink{class_command}{Command} objects and provides a method to create commands dynamically based on a string identifier.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of elements stored in \doxylink{class_smart_array}{Smart\+Array} \\
+\hline
+{\em Parser} & Parser type used to parse input arguments into objects of type T \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\Hypertarget{class_command_factory_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_command_factory_ac83180af592fbc0243d82fba531e6e64}\index{CommandFactory$<$ T, Parser $>$@{CommandFactory$<$ T, Parser $>$}!CommandFactory@{CommandFactory}}
+\index{CommandFactory@{CommandFactory}!CommandFactory$<$ T, Parser $>$@{CommandFactory$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{CommandFactory()}{CommandFactory()}}
+{\footnotesize\ttfamily \label{class_command_factory_ac83180af592fbc0243d82fba531e6e64} 
+template$<$typename T, typename Parser$>$ \\
+\mbox{\hyperlink{class_command_factory}{Command\+Factory}}$<$ T, Parser $>$\mbox{\hyperlink{class_command_factory}{\+::\+Command\+Factory}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$ T $>$ \&}]{ob}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_command_factory}{Command\+Factory}. 
+
+Initializes the mapping of command names to the corresponding command objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ob} & Reference to the \doxylink{class_smart_array}{Smart\+Array} used by created commands \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_command_factory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_factory_ae6efd9704642ffb7cce9d0e47b7b7930}\index{CommandFactory$<$ T, Parser $>$@{CommandFactory$<$ T, Parser $>$}!createCommand@{createCommand}}
+\index{createCommand@{createCommand}!CommandFactory$<$ T, Parser $>$@{CommandFactory$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{createCommand()}{createCommand()}}
+{\footnotesize\ttfamily \label{class_command_factory_ae6efd9704642ffb7cce9d0e47b7b7930} 
+template$<$typename T, typename Parser$>$ \\
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_command}{Command}} $>$ \mbox{\hyperlink{class_command_factory}{Command\+Factory}}$<$ T, Parser $>$\+::create\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Create a command object based on the command name. 
+
+Looks up the command name in the internal map and returns a unique\+\_\+ptr to the corresponding \doxylink{class_command}{Command} object. Returns nullptr if the command is not found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the command to create \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Command$>$ Pointer to the created \doxylink{class_command}{Command} object, or nullptr if not found 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_command_factory_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_command_factory_a803dd37a80e73887bc5cb68df9df258b}\index{CommandFactory$<$ T, Parser $>$@{CommandFactory$<$ T, Parser $>$}!array\_@{array\_}}
+\index{array\_@{array\_}!CommandFactory$<$ T, Parser $>$@{CommandFactory$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{array\_}{array\_}}
+{\footnotesize\ttfamily \label{class_command_factory_a803dd37a80e73887bc5cb68df9df258b} 
+template$<$typename T, typename Parser$>$ \\
+\mbox{\hyperlink{class_smart_array}{Smart\+Array}}$<$T$>$\& \mbox{\hyperlink{class_command_factory}{Command\+Factory}}$<$ T, Parser $>$\+::array\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the \doxylink{class_smart_array}{Smart\+Array} used by commands. 
+
+\Hypertarget{class_command_factory_ae4ecc1332e76a521b10e7034398e19ec}\index{CommandFactory$<$ T, Parser $>$@{CommandFactory$<$ T, Parser $>$}!cmdMap\_@{cmdMap\_}}
+\index{cmdMap\_@{cmdMap\_}!CommandFactory$<$ T, Parser $>$@{CommandFactory$<$ T, Parser $>$}}
+\doxysubsubsection{\texorpdfstring{cmdMap\_}{cmdMap\_}}
+{\footnotesize\ttfamily \label{class_command_factory_ae4ecc1332e76a521b10e7034398e19ec} 
+template$<$typename T, typename Parser$>$ \\
+std\+::unordered\+\_\+map$<$std\+::string, std\+::function$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_command}{Command}}$>$()$>$ $>$ \mbox{\hyperlink{class_command_factory}{Command\+Factory}}$<$ T, Parser $>$\+::cmd\+Map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map of command names to factory functions. 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/commands/Command\+Factory.\+hpp\end{DoxyCompactItemize}
+app/includes/commands/\mbox{\hyperlink{_command_factory_8hpp}{Command\+Factory.\+hpp}}\end{DoxyCompactItemize}

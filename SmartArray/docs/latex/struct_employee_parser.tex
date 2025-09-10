@@ -1,19 +1,83 @@
 \doxysection{Employee\+Parser Struct Reference}
 \hypertarget{struct_employee_parser}{}\label{struct_employee_parser}\index{EmployeeParser@{EmployeeParser}}
+
+
+Utility structure for parsing \doxylink{class_employee}{Employee} data from command-\/line arguments.  
+
+
+
+
+{\ttfamily \#include $<$Employee\+Parser.\+hpp$>$}
+
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{struct_employee_parser_aa2d0c9504a02b124708f32c2ff36ebdb}\label{struct_employee_parser_aa2d0c9504a02b124708f32c2ff36ebdb} 
-static \mbox{\hyperlink{class_employee}{Employee}} {\bfseries parse\+Data} (char \texorpdfstring{$\ast$}{*}args\mbox{[}$\,$\mbox{]})
-\item 
-\Hypertarget{struct_employee_parser_a26f2774c44baf34ffebd5b12070a827b}\label{struct_employee_parser_a26f2774c44baf34ffebd5b12070a827b} 
-static int {\bfseries get\+Arg\+Count} ()
-\item 
-\Hypertarget{struct_employee_parser_a43166550f4b2e5a16f660547be37dba9}\label{struct_employee_parser_a43166550f4b2e5a16f660547be37dba9} 
-static std\+::string {\bfseries description} ()
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{class_employee}{Employee}} \mbox{\hyperlink{struct_employee_parser_aa2d0c9504a02b124708f32c2ff36ebdb}{parse\+Data}} (char \texorpdfstring{$\ast$}{*}args\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Parse an \doxylink{class_employee}{Employee} from command-\/line arguments. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{struct_employee_parser_a26f2774c44baf34ffebd5b12070a827b}{get\+Arg\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Get the expected number of command-\/line arguments. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{struct_employee_parser_a43166550f4b2e5a16f660547be37dba9}{description}} ()
+\begin{DoxyCompactList}\small\item\em Get a description of the expected command-\/line arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility structure for parsing \doxylink{class_employee}{Employee} data from command-\/line arguments. 
+
+This struct provides static methods to parse \doxylink{class_employee}{Employee} objects, retrieve expected argument count, and get a description of arguments. 
+
+\label{doc-func-members}
+\Hypertarget{struct_employee_parser_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_employee_parser_a43166550f4b2e5a16f660547be37dba9}\index{EmployeeParser@{EmployeeParser}!description@{description}}
+\index{description@{description}!EmployeeParser@{EmployeeParser}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily \label{struct_employee_parser_a43166550f4b2e5a16f660547be37dba9} 
+std\+::string Employee\+Parser\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a description of the expected command-\/line arguments. 
+
+Returns a multi-\/line string explaining the number and type of arguments.
+
+\begin{DoxyReturn}{Returns}
+std\+::string containing the description 
+\end{DoxyReturn}
+\Hypertarget{struct_employee_parser_a26f2774c44baf34ffebd5b12070a827b}\index{EmployeeParser@{EmployeeParser}!getArgCount@{getArgCount}}
+\index{getArgCount@{getArgCount}!EmployeeParser@{EmployeeParser}}
+\doxysubsubsection{\texorpdfstring{getArgCount()}{getArgCount()}}
+{\footnotesize\ttfamily \label{struct_employee_parser_a26f2774c44baf34ffebd5b12070a827b} 
+int Employee\+Parser\+::get\+Arg\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the expected number of command-\/line arguments. 
+
+\begin{DoxyReturn}{Returns}
+Integer representing the number of expected arguments 
+\end{DoxyReturn}
+\Hypertarget{struct_employee_parser_aa2d0c9504a02b124708f32c2ff36ebdb}\index{EmployeeParser@{EmployeeParser}!parseData@{parseData}}
+\index{parseData@{parseData}!EmployeeParser@{EmployeeParser}}
+\doxysubsubsection{\texorpdfstring{parseData()}{parseData()}}
+{\footnotesize\ttfamily \label{struct_employee_parser_aa2d0c9504a02b124708f32c2ff36ebdb} 
+\mbox{\hyperlink{class_employee}{Employee}} Employee\+Parser\+::parse\+Data (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{args}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Parse an \doxylink{class_employee}{Employee} from command-\/line arguments. 
+
+Skips the first two arguments (program and command name parameter) and reads the next arguments to create an \doxylink{class_employee}{Employee} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Array of C-\/style strings representing command-\/line arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_employee}{Employee} object constructed from arguments 
+\end{DoxyReturn}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-app/includes/Employee\+Parser.\+hpp\end{DoxyCompactItemize}
+app/includes/\mbox{\hyperlink{_employee_parser_8hpp}{Employee\+Parser.\+hpp}}\end{DoxyCompactItemize}

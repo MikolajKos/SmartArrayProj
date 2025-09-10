@@ -1,78 +1,80 @@
 \doxysection{Help\+Command.\+hpp}
 \hypertarget{_help_command_8hpp_source}{}\label{_help_command_8hpp_source}\index{app/includes/commands/HelpCommand.hpp@{app/includes/commands/HelpCommand.hpp}}
-
+\mbox{\hyperlink{_help_command_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ HELP\_COMMAND\_HPP}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ HELP\_COMMAND\_HPP}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <commands/Command.hpp>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <commands/CommandFactory.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_command_8hpp}{commands/Command.hpp}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_command_factory_8hpp}{commands/CommandFactory.hpp}}>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <functional>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SmartArray.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_smart_array_8hpp}{SmartArray.hpp}}>}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }HelpCommand\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ array\_;}
-\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00015\ \ \ \ \ HelpCommand(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob):\ array\_(ob)\ \{\};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ execute(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ expectedArgCount()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00019\ \ \ \ \ std::string\ description()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00020\ \};}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
-\DoxyCodeLine{00023\ \textcolor{keywordtype}{int}\ HelpCommand<T,\ Parser>::execute(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Gets\ help\ argument}}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cmd\_name\ =\ argv[2];}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Execute\ when\ no\ command\ arguments\ were\ passed}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ <\ 3)\ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::cout\ <<}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Welcome\ to\ the\ SmartArray\ CLI\ Application.\(\backslash\)n"{}}}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ command-\/line\ tool\ allows\ you\ to\ interact\ with\ and\ manage\ a\ dynamic\ array\ of\ elements.\(\backslash\)n"{}}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}It\ supports\ various\ operations\ such\ as\ adding,\ removing,\ and\ printing\ elements,\(\backslash\)n"{}}}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}making\ it\ ideal\ for\ educational\ purposes,\ testing\ parsers,\ or\ experimenting\ with\ templated\ containers.\(\backslash\)n"{}}}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}You\ are\ currently\ viewing\ the\ help\ system.\(\backslash\)n"{}}}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}To\ learn\ more\ about\ a\ specific\ command,\ you\ can\ pass\ its\ name\ as\ an\ argument\ to\ the\ help\ command.\(\backslash\)n"{}}}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example:\(\backslash\)n"{}}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ help\ add\(\backslash\)n"{}}}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ will\ display\ detailed\ usage\ information\ and\ available\ options\ for\ the\ 'add'\ command.\(\backslash\)n"{}};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00045\ \ \ \ \ \}}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Command\ argument\ was\ given}}
-\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_command_factory}{CommandFactory<T,\ Parser>}}\ factory(array\_);}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ std::unique\_ptr<Command>\ command\ =\ factory.createCommand(cmd\_name);}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (!command)\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ CommandErrorHandler::cmd\_handler(CommandErrorHandler::CMD\_NOT\_FOUND);}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
-\DoxyCodeLine{00054\ \ \ \ \ \}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ std::cout\ <<\ command-\/>description();}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00059\ \}}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
-\DoxyCodeLine{00062\ \textcolor{keywordtype}{int}\ HelpCommand<T,\ Parser>::expectedArgCount()\ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ return\ -\/1\ if\ expected\ argument\ count\ is\ undedined}}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00065\ \}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
-\DoxyCodeLine{00068\ std::string\ HelpCommand<T,\ Parser>::description()\ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}I\ see\ you\ ask\ for\ a\ lot\ of\ help\ ;)\(\backslash\)n"{}};}
-\DoxyCodeLine{00070\ \}}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_help_command_a8c14ebf4f6970fed40e6e0b5ff5a81ec}{HelpCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command}{Command}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ \mbox{\hyperlink{class_help_command_aad76832fd98df31bab09bfa7bc5562c2}{array\_}};\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_help_command_a8c14ebf4f6970fed40e6e0b5ff5a81ec}{HelpCommand}}(\mbox{\hyperlink{class_smart_array}{SmartArray<T>}}\&\ ob):\ \mbox{\hyperlink{class_help_command_aad76832fd98df31bab09bfa7bc5562c2}{array\_}}(ob)\ \{\};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_help_command_a8afb79b89f79989c5c70cecd4912c870}{execute}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_help_command_a5013e0a13bdc2eafcb3f1752a72699f9}{expectedArgCount}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \ \ \ \ std::string\ \mbox{\hyperlink{class_help_command_afc7db3202df626e359a57e43df90d2bf}{description}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_help_command_a8afb79b89f79989c5c70cecd4912c870}{HelpCommand<T,\ Parser>::execute}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ Gets\ help\ argument}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cmd\_name\ =\ argv[2];}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Execute\ when\ no\ command\ arguments\ were\ passed}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ <\ 3)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::cout\ <<}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Welcome\ to\ the\ SmartArray\ CLI\ Application.\(\backslash\)n"{}}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ command-\/line\ tool\ allows\ you\ to\ interact\ with\ and\ manage\ a\ dynamic\ array\ of\ elements.\(\backslash\)n"{}}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}It\ supports\ various\ operations\ such\ as\ adding,\ removing,\ and\ printing\ elements,\(\backslash\)n"{}}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}making\ it\ ideal\ for\ educational\ purposes,\ testing\ parsers,\ or\ experimenting\ with\ templated\ containers.\(\backslash\)n"{}}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}You\ are\ currently\ viewing\ the\ help\ system.\(\backslash\)n"{}}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}To\ learn\ more\ about\ a\ specific\ command,\ you\ can\ pass\ its\ name\ as\ an\ argument\ to\ the\ help\ command.\(\backslash\)n"{}}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Example:\(\backslash\)n"{}}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ help\ add\(\backslash\)n"{}}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ will\ display\ detailed\ usage\ information\ and\ available\ options\ for\ the\ 'add'\ command.\(\backslash\)n"{}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Command\ argument\ was\ given}}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_command_factory}{CommandFactory<T,\ Parser>}}\ factory(\mbox{\hyperlink{class_help_command_aad76832fd98df31bab09bfa7bc5562c2}{array\_}});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ std::unique\_ptr<Command>\ command\ =\ factory.\mbox{\hyperlink{class_command_factory_ae6efd9704642ffb7cce9d0e47b7b7930}{createCommand}}(cmd\_name);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (!command)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_error_handler_a1a7c4454a0c2e40614cb0eb2d71b6d52}{CommandErrorHandler::cmd\_handler}}(\mbox{\hyperlink{class_command_error_handler_a570c43c4da0e5d857eeb658316bc0a92a0e988dcbdb455a5321526b60876a2ce8}{CommandErrorHandler::CMD\_NOT\_FOUND}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ std::cout\ <<\ command-\/>description();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_help_command_a5013e0a13bdc2eafcb3f1752a72699f9}{HelpCommand<T,\ Parser>::expectedArgCount}}()\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//\ return\ -\/1\ if\ expected\ argument\ count\ is\ undedined}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Parser>}
+\DoxyCodeLine{00111\ std::string\ \mbox{\hyperlink{class_help_command_afc7db3202df626e359a57e43df90d2bf}{HelpCommand<T,\ Parser>::description}}()\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}I\ see\ you\ ask\ for\ a\ lot\ of\ help\ ;)\(\backslash\)n"{}};}
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

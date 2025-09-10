@@ -91,28 +91,145 @@ $(function(){initNavTree('class_error_handler.html','','class_error_handler-memb
   <div class="headertitle"><div class="title">ErrorHandler Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Handles general runtime errors in the <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> project.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_error_handler_8hpp_source.html">ErrorHandler.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae638861bcc34c854854c23ad2ff9729a" id="r_ae638861bcc34c854854c23ad2ff9729a"><td class="memItemLeft" align="right" valign="top"><a id="ae638861bcc34c854854c23ad2ff9729a" name="ae638861bcc34c854854c23ad2ff9729a"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Errors</b> { <br />
-&#160;&#160;<b>MEM_ALLOC_ERROR</b> = 0
-, <b>STACK_IS_FULL</b>
-, <b>STACK_IS_EMPTY</b>
-, <b>OPENING_FILE_ERROR</b>
+<tr class="memitem:ae638861bcc34c854854c23ad2ff9729a" id="r_ae638861bcc34c854854c23ad2ff9729a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae638861bcc34c854854c23ad2ff9729a">Errors</a> { <br />
+&#160;&#160;<a class="el" href="#ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65">MEM_ALLOC_ERROR</a>
+, <a class="el" href="#ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd">STACK_IS_FULL</a>
+, <a class="el" href="#ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5">STACK_IS_EMPTY</a>
+, <a class="el" href="#ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc">OPENING_FILE_ERROR</a>
 , <br />
-&#160;&#160;<b>INDEX_OUT_OF_RANGE</b>
-, <b>TOT_ERROR</b>
+&#160;&#160;<a class="el" href="#ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8">INDEX_OUT_OF_RANGE</a>
+, <a class="el" href="#ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb">TOT_ERROR</a>
 <br />
  }</td></tr>
+<tr class="memdesc:ae638861bcc34c854854c23ad2ff9729a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of possible runtime errors.  <a href="#ae638861bcc34c854854c23ad2ff9729a">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b1665ccd5e35806754eefdb633c1bd9" id="r_a2b1665ccd5e35806754eefdb633c1bd9"><td class="memItemLeft" align="right" valign="top"><a id="a2b1665ccd5e35806754eefdb633c1bd9" name="a2b1665ccd5e35806754eefdb633c1bd9"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>handler</b> (enum Errors error, const char *info=&quot;&quot;)</td></tr>
+<tr class="memitem:a2b1665ccd5e35806754eefdb633c1bd9" id="r_a2b1665ccd5e35806754eefdb633c1bd9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b1665ccd5e35806754eefdb633c1bd9">handler</a> (enum <a class="el" href="#ae638861bcc34c854854c23ad2ff9729a">Errors</a> error, const char *info=&quot;&quot;)</td></tr>
+<tr class="memdesc:a2b1665ccd5e35806754eefdb633c1bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a runtime error.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a23305b5c34caa5c937c0682947ae9f04" id="r_a23305b5c34caa5c937c0682947ae9f04"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23305b5c34caa5c937c0682947ae9f04">messages</a> []</td></tr>
+<tr class="memdesc:a23305b5c34caa5c937c0682947ae9f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of predefined error messages.  <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Handles general runtime errors in the <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> project. </p>
+<p>This class provides static methods and predefined error messages to handle common runtime errors such as memory allocation failures, stack overflows, empty collections, file access errors, or out-of-range indices. </p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="ae638861bcc34c854854c23ad2ff9729a" name="ae638861bcc34c854854c23ad2ff9729a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae638861bcc34c854854c23ad2ff9729a">&#9670;&#160;</a></span>Errors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ae638861bcc34c854854c23ad2ff9729a">ErrorHandler::Errors</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeration of possible runtime errors. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65" name="ae638861bcc34c854854c23ad2ff9729aad93dd03e903573412ec43a7596208f65"></a>MEM_ALLOC_ERROR&#160;</td><td class="fielddoc"><p>Memory allocation failure. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd" name="ae638861bcc34c854854c23ad2ff9729aa4c03e14b869d43926a7af5b3cb0e32fd"></a>STACK_IS_FULL&#160;</td><td class="fielddoc"><p>Attempt to push element into a full stack/array. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5" name="ae638861bcc34c854854c23ad2ff9729aa93e55a2a4b026eabd0f15f97e68a6db5"></a>STACK_IS_EMPTY&#160;</td><td class="fielddoc"><p>Attempt to pop or print from an empty stack/array. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc" name="ae638861bcc34c854854c23ad2ff9729aaa6ff43c6006c6bb030bdefc15909b3cc"></a>OPENING_FILE_ERROR&#160;</td><td class="fielddoc"><p>Error opening a file for read/write. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8" name="ae638861bcc34c854854c23ad2ff9729aa61a3d8ada5c8c2bace9ba6bc669cb3f8"></a>INDEX_OUT_OF_RANGE&#160;</td><td class="fielddoc"><p>Index accessed is out of valid range. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb" name="ae638861bcc34c854854c23ad2ff9729aa8a649363b0ae57b23dd8f80b0e2ddfcb"></a>TOT_ERROR&#160;</td><td class="fielddoc"><p>Total number of errors defined. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a2b1665ccd5e35806754eefdb633c1bd9" name="a2b1665ccd5e35806754eefdb633c1bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1665ccd5e35806754eefdb633c1bd9">&#9670;&#160;</a></span>handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorHandler::handler </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="#ae638861bcc34c854854c23ad2ff9729a">Errors</a></td>          <td class="paramname"><span class="paramname"><em>error</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>info</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle a runtime error. </p>
+<p>Prints or logs the appropriate error message based on the error type. An optional info string can provide additional context.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>The type of error (from <a class="el" href="#ae638861bcc34c854854c23ad2ff9729a" title="Enumeration of possible runtime errors.">Errors</a> enum) </td></tr>
+    <tr><td class="paramname">info</td><td>Optional additional information about the error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a23305b5c34caa5c937c0682947ae9f04" name="a23305b5c34caa5c937c0682947ae9f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23305b5c34caa5c937c0682947ae9f04">&#9670;&#160;</a></span>messages</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ErrorHandler::messages</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="stringliteral">&quot;E Memory allocation Error&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;W Stack is full&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;W Stack is empty&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;E Error opening file&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;E Index out of range&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Array of predefined error messages. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>app/includes/handlers/<a class="el" href="_error_handler_8hpp_source.html">ErrorHandler.hpp</a></li>
-<li>app/src/handlers/<b>ErrorHandler.cpp</b></li>
+<li>app/src/handlers/<a class="el" href="_error_handler_8cpp.html">ErrorHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
