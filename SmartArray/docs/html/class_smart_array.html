@@ -109,37 +109,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af7af9518754f2bbc3eb7523f00ef3be8" id="r_af7af9518754f2bbc3eb7523f00ef3be8"><td class="memItemLeft" align="right" valign="top"><a id="af7af9518754f2bbc3eb7523f00ef3be8" name="af7af9518754f2bbc3eb7523f00ef3be8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~SmartArray</b> ()</td></tr>
 <tr class="memdesc:af7af9518754f2bbc3eb7523f00ef3be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. Frees allocated memory. <br /></td></tr>
-<tr class="memitem:a20cf2b29f213e4a9367289b611a21845" id="r_a20cf2b29f213e4a9367289b611a21845"><td class="memItemLeft" align="right" valign="top"><a id="a20cf2b29f213e4a9367289b611a21845" name="a20cf2b29f213e4a9367289b611a21845"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>push</b> (const T &amp;elem)</td></tr>
-<tr class="memitem:a5a796ef3048abcabdc04b011263b505f" id="r_a5a796ef3048abcabdc04b011263b505f"><td class="memItemLeft" align="right" valign="top"><a id="a5a796ef3048abcabdc04b011263b505f" name="a5a796ef3048abcabdc04b011263b505f"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> ()</td></tr>
-<tr class="memitem:a586d5241d72371658f450d458029b3aa" id="r_a586d5241d72371658f450d458029b3aa"><td class="memItemLeft" align="right" valign="top"><a id="a586d5241d72371658f450d458029b3aa" name="a586d5241d72371658f450d458029b3aa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resize</b> (unsigned cap)</td></tr>
-<tr class="memitem:a853c970d278b70688061a172cb532bfc" id="r_a853c970d278b70688061a172cb532bfc"><td class="memItemLeft" align="right" valign="top"><a id="a853c970d278b70688061a172cb532bfc" name="a853c970d278b70688061a172cb532bfc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>printAll</b> ()</td></tr>
-<tr class="memitem:a7455d353176a1b35fee43e6cd7704965" id="r_a7455d353176a1b35fee43e6cd7704965"><td class="memItemLeft" align="right" valign="top"><a id="a7455d353176a1b35fee43e6cd7704965" name="a7455d353176a1b35fee43e6cd7704965"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFull</b> () const</td></tr>
-<tr class="memitem:aa3251f665fb665a32411b3116ec2d913" id="r_aa3251f665fb665a32411b3116ec2d913"><td class="memItemLeft" align="right" valign="top"><a id="aa3251f665fb665a32411b3116ec2d913" name="aa3251f665fb665a32411b3116ec2d913"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEmpty</b> () const</td></tr>
-<tr class="memitem:ab87cb8259db23121020d5255ccf56c94" id="r_ab87cb8259db23121020d5255ccf56c94"><td class="memItemLeft" align="right" valign="top"><a id="ab87cb8259db23121020d5255ccf56c94" name="ab87cb8259db23121020d5255ccf56c94"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</td></tr>
-<tr class="memitem:a4da54c90e859d8ef228403929b759820" id="r_a4da54c90e859d8ef228403929b759820"><td class="memItemLeft" align="right" valign="top"><a id="a4da54c90e859d8ef228403929b759820" name="a4da54c90e859d8ef228403929b759820"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (int index)</td></tr>
-<tr class="memitem:a25751c0ed414113351ed28e68057f8c8" id="r_a25751c0ed414113351ed28e68057f8c8"><td class="memItemLeft" align="right" valign="top"><a id="a25751c0ed414113351ed28e68057f8c8" name="a25751c0ed414113351ed28e68057f8c8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSize</b> (unsigned s)</td></tr>
+<tr class="memitem:a20cf2b29f213e4a9367289b611a21845" id="r_a20cf2b29f213e4a9367289b611a21845"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20cf2b29f213e4a9367289b611a21845">push</a> (const T &amp;elem)</td></tr>
+<tr class="memdesc:a20cf2b29f213e4a9367289b611a21845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the end of the array, reallocates if full.  <br /></td></tr>
+<tr class="memitem:a5a796ef3048abcabdc04b011263b505f" id="r_a5a796ef3048abcabdc04b011263b505f"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a796ef3048abcabdc04b011263b505f">pop</a> ()</td></tr>
+<tr class="memdesc:a5a796ef3048abcabdc04b011263b505f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and returns the last element from the array.  <br /></td></tr>
+<tr class="memitem:a586d5241d72371658f450d458029b3aa" id="r_a586d5241d72371658f450d458029b3aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a586d5241d72371658f450d458029b3aa">resize</a> (unsigned cap)</td></tr>
+<tr class="memdesc:a586d5241d72371658f450d458029b3aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the array to new capacity.  <br /></td></tr>
+<tr class="memitem:a853c970d278b70688061a172cb532bfc" id="r_a853c970d278b70688061a172cb532bfc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a853c970d278b70688061a172cb532bfc">printAll</a> ()</td></tr>
+<tr class="memdesc:a853c970d278b70688061a172cb532bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all elements to std::cout.  <br /></td></tr>
+<tr class="memitem:a7455d353176a1b35fee43e6cd7704965" id="r_a7455d353176a1b35fee43e6cd7704965"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7455d353176a1b35fee43e6cd7704965">isFull</a> () const</td></tr>
+<tr class="memdesc:a7455d353176a1b35fee43e6cd7704965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the array is full.  <br /></td></tr>
+<tr class="memitem:aa3251f665fb665a32411b3116ec2d913" id="r_aa3251f665fb665a32411b3116ec2d913"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3251f665fb665a32411b3116ec2d913">isEmpty</a> () const</td></tr>
+<tr class="memdesc:aa3251f665fb665a32411b3116ec2d913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the array is empty.  <br /></td></tr>
+<tr class="memitem:ab87cb8259db23121020d5255ccf56c94" id="r_ab87cb8259db23121020d5255ccf56c94"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab87cb8259db23121020d5255ccf56c94">size</a> () const</td></tr>
+<tr class="memdesc:ab87cb8259db23121020d5255ccf56c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current number of elements.  <br /></td></tr>
+<tr class="memitem:a4da54c90e859d8ef228403929b759820" id="r_a4da54c90e859d8ef228403929b759820"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4da54c90e859d8ef228403929b759820">get</a> (int index)</td></tr>
+<tr class="memdesc:a4da54c90e859d8ef228403929b759820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to element at specified index.  <br /></td></tr>
+<tr class="memitem:a25751c0ed414113351ed28e68057f8c8" id="r_a25751c0ed414113351ed28e68057f8c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25751c0ed414113351ed28e68057f8c8">setSize</a> (unsigned s)</td></tr>
+<tr class="memdesc:a25751c0ed414113351ed28e68057f8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the size of the array manually.  <br /></td></tr>
 <tr class="memitem:a3c01debdf5b0f95c484a0190baf72886" id="r_a3c01debdf5b0f95c484a0190baf72886"><td class="memItemLeft" align="right" valign="top"><a id="a3c01debdf5b0f95c484a0190baf72886" name="a3c01debdf5b0f95c484a0190baf72886"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
-<tr class="memitem:af4e3765b9043e39f868a82528196ae8c" id="r_af4e3765b9043e39f868a82528196ae8c"><td class="memItemLeft" align="right" valign="top"><a id="af4e3765b9043e39f868a82528196ae8c" name="af4e3765b9043e39f868a82528196ae8c"></a>
-<a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;other)</td></tr>
-<tr class="memitem:afce638d7827fa4032cfe627345f8201a" id="r_afce638d7827fa4032cfe627345f8201a"><td class="memItemLeft" align="right" valign="top"><a id="afce638d7827fa4032cfe627345f8201a" name="afce638d7827fa4032cfe627345f8201a"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (unsigned index)</td></tr>
-<tr class="memitem:a634a70fa833351129d20c937b1df451a" id="r_a634a70fa833351129d20c937b1df451a"><td class="memItemLeft" align="right" valign="top"><a id="a634a70fa833351129d20c937b1df451a" name="a634a70fa833351129d20c937b1df451a"></a>
-const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (unsigned index) const</td></tr>
+<tr class="memdesc:a3c01debdf5b0f95c484a0190baf72886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all elements from the array. <br /></td></tr>
+<tr class="memitem:af4e3765b9043e39f868a82528196ae8c" id="r_af4e3765b9043e39f868a82528196ae8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4e3765b9043e39f868a82528196ae8c">operator=</a> (const <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;other)</td></tr>
+<tr class="memdesc:af4e3765b9043e39f868a82528196ae8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <br /></td></tr>
+<tr class="memitem:afce638d7827fa4032cfe627345f8201a" id="r_afce638d7827fa4032cfe627345f8201a"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afce638d7827fa4032cfe627345f8201a">operator[]</a> (unsigned index)</td></tr>
+<tr class="memdesc:afce638d7827fa4032cfe627345f8201a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access element by index (non-const).  <br /></td></tr>
+<tr class="memitem:a634a70fa833351129d20c937b1df451a" id="r_a634a70fa833351129d20c937b1df451a"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a634a70fa833351129d20c937b1df451a">operator[]</a> (unsigned index) const</td></tr>
+<tr class="memdesc:a634a70fa833351129d20c937b1df451a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access element by index (const).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a2d6144ec060c9531784e28e852279f90" id="r_a2d6144ec060c9531784e28e852279f90"><td class="memItemLeft" align="right" valign="top"><a id="a2d6144ec060c9531784e28e852279f90" name="a2d6144ec060c9531784e28e852279f90"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;ob)</td></tr>
+<tr class="memitem:a2d6144ec060c9531784e28e852279f90" id="r_a2d6144ec060c9531784e28e852279f90"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d6144ec060c9531784e28e852279f90">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;ob)</td></tr>
+<tr class="memdesc:a2d6144ec060c9531784e28e852279f90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output stream operator. Prints all elements.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
@@ -203,6 +204,353 @@ template&lt;typename T&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a4da54c90e859d8ef228403929b759820" name="a4da54c90e859d8ef228403929b759820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4da54c90e859d8ef228403929b759820">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns reference to element at specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to element. </dd></dl>
+
+</div>
+</div>
+<a id="aa3251f665fb665a32411b3116ec2d913" name="aa3251f665fb665a32411b3116ec2d913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3251f665fb665a32411b3116ec2d913">&#9670;&#160;</a></span>isEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::isEmpty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the array is empty. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if empty, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a7455d353176a1b35fee43e6cd7704965" name="a7455d353176a1b35fee43e6cd7704965"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7455d353176a1b35fee43e6cd7704965">&#9670;&#160;</a></span>isFull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::isFull </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the array is full. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if full, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="af4e3765b9043e39f868a82528196ae8c" name="af4e3765b9043e39f868a82528196ae8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4e3765b9043e39f868a82528196ae8c">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp; <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Assignment operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> to assign from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this <a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a>. </dd></dl>
+
+</div>
+</div>
+<a id="afce638d7827fa4032cfe627345f8201a" name="afce638d7827fa4032cfe627345f8201a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce638d7827fa4032cfe627345f8201a">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access element by index (non-const). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to element. </dd></dl>
+
+</div>
+</div>
+<a id="a634a70fa833351129d20c937b1df451a" name="a634a70fa833351129d20c937b1df451a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634a70fa833351129d20c937b1df451a">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access element by index (const). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to element. </dd></dl>
+
+</div>
+</div>
+<a id="a5a796ef3048abcabdc04b011263b505f" name="a5a796ef3048abcabdc04b011263b505f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a796ef3048abcabdc04b011263b505f">&#9670;&#160;</a></span>pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::pop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes and returns the last element from the array. </p>
+<dl class="section return"><dt>Returns</dt><dd>Last element or default T{} if array is empty. </dd></dl>
+
+</div>
+</div>
+<a id="a853c970d278b70688061a172cb532bfc" name="a853c970d278b70688061a172cb532bfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a853c970d278b70688061a172cb532bfc">&#9670;&#160;</a></span>printAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::printAll </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints all elements to std::cout. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, 2 if array is empty. </dd></dl>
+
+</div>
+</div>
+<a id="a20cf2b29f213e4a9367289b611a21845" name="a20cf2b29f213e4a9367289b611a21845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20cf2b29f213e4a9367289b611a21845">&#9670;&#160;</a></span>push()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::push </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>elem</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an element to the end of the array, reallocates if full. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elem</td><td>Element to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success. </dd></dl>
+
+</div>
+</div>
+<a id="a586d5241d72371658f450d458029b3aa" name="a586d5241d72371658f450d458029b3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586d5241d72371658f450d458029b3aa">&#9670;&#160;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>cap</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resizes the array to new capacity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cap</td><td>New capacity. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a25751c0ed414113351ed28e68057f8c8" name="a25751c0ed414113351ed28e68057f8c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25751c0ed414113351ed28e68057f8c8">&#9670;&#160;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::setSize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the size of the array manually. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>New size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab87cb8259db23121020d5255ccf56c94" name="ab87cb8259db23121020d5255ccf56c94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab87cb8259db23121020d5255ccf56c94">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the current number of elements. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of elements. </dd></dl>
+
+</div>
+</div>
+<a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a2d6144ec060c9531784e28e852279f90" name="a2d6144ec060c9531784e28e852279f90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d6144ec060c9531784e28e852279f90">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_smart_array.html">SmartArray</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>ob</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Output stream operator. Prints all elements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Output stream. </td></tr>
+    <tr><td class="paramname">ob</td><td><a class="el" href="class_smart_array.html" title="A dynamic array template class similar to std::vector.">SmartArray</a> to print. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the output stream. </dd></dl>
 
 </div>
 </div>

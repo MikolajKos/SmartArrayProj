@@ -169,10 +169,10 @@ $(function(){initNavTree('_smart_array_i_o_8hpp_source.html','',''); });
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// Write array size</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">unsigned</span> current_size = ob.size();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">unsigned</span> current_size = ob.<a class="code hl_function" href="class_smart_array.html#ab87cb8259db23121020d5255ccf56c94">size</a>();</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    file.write(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;current_size), <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>));</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; ob.size(); ++i) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; ob.<a class="code hl_function" href="class_smart_array.html#ab87cb8259db23121020d5255ccf56c94">size</a>(); ++i) {</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        serialize(file, ob[i]);</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
@@ -190,14 +190,14 @@ $(function(){initNavTree('_smart_array_i_o_8hpp_source.html','',''); });
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">// Read array size</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">unsigned</span> new_size = 0;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    ob.clear();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    ob.<a class="code hl_function" href="class_smart_array.html#a3c01debdf5b0f95c484a0190baf72886">clear</a>();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    file.read(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;new_size), <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>));</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// Read all data</span></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; new_size; ++i) {</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        T temp;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        deserialize(file, temp);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        ob.push(temp);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        ob.<a class="code hl_function" href="class_smart_array.html#a20cf2b29f213e4a9367289b611a21845">push</a>(temp);</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    file.close();</div>
@@ -205,6 +205,9 @@ $(function(){initNavTree('_smart_array_i_o_8hpp_source.html','',''); });
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_smart_array_html"><div class="ttname"><a href="class_smart_array.html">SmartArray</a></div><div class="ttdoc">A dynamic array template class similar to std::vector.</div><div class="ttdef"><b>Definition</b> SmartArray.hpp:23</div></div>
+<div class="ttc" id="aclass_smart_array_html_a20cf2b29f213e4a9367289b611a21845"><div class="ttname"><a href="class_smart_array.html#a20cf2b29f213e4a9367289b611a21845">SmartArray::push</a></div><div class="ttdeci">int push(const T &amp;elem)</div><div class="ttdoc">Adds an element to the end of the array, reallocates if full.</div><div class="ttdef"><b>Definition</b> SmartArray.hpp:165</div></div>
+<div class="ttc" id="aclass_smart_array_html_a3c01debdf5b0f95c484a0190baf72886"><div class="ttname"><a href="class_smart_array.html#a3c01debdf5b0f95c484a0190baf72886">SmartArray::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears all elements from the array.</div><div class="ttdef"><b>Definition</b> SmartArray.hpp:226</div></div>
+<div class="ttc" id="aclass_smart_array_html_ab87cb8259db23121020d5255ccf56c94"><div class="ttname"><a href="class_smart_array.html#ab87cb8259db23121020d5255ccf56c94">SmartArray::size</a></div><div class="ttdeci">unsigned size() const</div><div class="ttdoc">Returns the current number of elements.</div><div class="ttdef"><b>Definition</b> SmartArray.hpp:211</div></div>
 <div class="ttc" id="aclass_smart_array_i_o_html"><div class="ttname"><a href="class_smart_array_i_o.html">SmartArrayIO</a></div><div class="ttdef"><b>Definition</b> SmartArrayIO.hpp:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

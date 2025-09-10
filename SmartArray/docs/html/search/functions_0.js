@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['smartarray_0',['SmartArray',['../class_smart_array.html#a28ee1e59ee1f9268663fa1f81a45319a',1,'SmartArray::SmartArray()'],['../class_smart_array.html#a695ccf5274ebe802847ab723f936120a',1,'SmartArray::SmartArray(unsigned cap)'],['../class_smart_array.html#a7b3c305502d6b16e4e92039573827579',1,'SmartArray::SmartArray(const SmartArray &amp;ob)']]]
+  ['clear_0',['clear',['../class_smart_array.html#a3c01debdf5b0f95c484a0190baf72886',1,'SmartArray']]]
 ];

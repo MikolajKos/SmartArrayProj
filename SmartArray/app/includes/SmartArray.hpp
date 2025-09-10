@@ -43,29 +43,91 @@ public:
 	~SmartArray();
 
 	// Methods
+	/** @brief Adds an element to the end of the array, reallocates if full.
+	*  @param elem Element to add.
+	*  @return 0 on success.
+	*/
 	int push(const T& elem);
+
+	/** @brief Removes and returns the last element from the array.
+	*  @return Last element or default T{} if array is empty.
+	*/
 	T pop();
+
+	/** @brief Resizes the array to new capacity.
+	 *  @param cap New capacity.
+	 */
 	void resize(unsigned cap);
+
+	/** @brief Prints all elements to std::cout.
+	*  @return 0 on success, 2 if array is empty.
+	*/
 	int printAll();
+
+	/** @brief Checks if the array is full.
+	*  @return true if full, false otherwise.
+	*/
 	bool isFull() const;
+
+	/** @brief Checks if the array is empty.
+	*  @return true if empty, false otherwise.
+	*/
 	bool isEmpty() const;
 
 	// Getters
+	/** @brief Returns the current number of elements.
+	*  @return Number of elements.
+	*/
 	unsigned size() const;
+
+	/** @brief Returns reference to element at specified index.
+	*  @param index Index of element.
+	*  @return Reference to element.
+	*/
 	T& get(int index);
 
 	// Setters
+	/** @brief Sets the size of the array manually.
+	*  @param s New size.
+	*/
 	void setSize(unsigned s);
+
+	/** @brief Clears all elements from the array. */
 	void clear();
 
 	// Operators
+	/** @brief Assignment operator.
+	*  @param other Another SmartArray to assign from.
+	*  @return Reference to this SmartArray.
+	*/
 	SmartArray<T>& operator=(const SmartArray<T>& other);
+
+	/** @brief Output stream operator. Prints all elements.
+	*  @param os Output stream.
+	*  @param ob SmartArray to print.
+	*  @return Reference to the output stream.
+	*/
 	friend std::ostream& operator<< <T>(std::ostream& os, const SmartArray<T>& ob);
+
+	/** @brief Access element by index (non-const).
+	*  @param index Index of element.
+	*  @return Reference to element.
+	*/
 	T& operator[](unsigned index);
+
+	/** @brief Access element by index (const).
+	*  @param index Index of element.
+	*  @return Const reference to element.
+	*/
 	const T& operator[](unsigned index) const;
 
 private:
+	/** @brief Allocates memory for the array based on current capacity. */
 	void alloc();
+
+	/** @brief Reallocates array to new capacity.
+	*  @param cap New capacity.
+	*/
 	void reallocate(unsigned cap);
 };
 
