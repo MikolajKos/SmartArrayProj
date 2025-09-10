@@ -21,7 +21,7 @@ public:
 		OPENING_FILE_ERROR,///< Error opening a file for read/write
 		INDEX_OUT_OF_RANGE,///< Index accessed is out of valid range
 		TOT_ERROR          ///< Total number of errors defined
-	};
+	};	
 
 	/**
 	 * @brief Handle a runtime error.
