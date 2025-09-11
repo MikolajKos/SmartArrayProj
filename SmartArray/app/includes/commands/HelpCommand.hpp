@@ -7,6 +7,7 @@
 #include <memory>
 #include <functional>
 #include <SmartArray.hpp>
+#include <IParser.hpp>
 
 /**
  * @brief Command to display help information for SmartArray CLI commands.
@@ -16,18 +17,19 @@
  * is passed as an argument.
  *
  * @tparam T Type of elements stored in SmartArray
- * @tparam Parser Parser type used to provide description of the element type T
  */
-template <typename T, typename Parser>
+template <typename T>
 class HelpCommand : public Command {
 	SmartArray<T>& array_; ///< Reference to the SmartArray used by commands
+	IParser<T>& parser_; ///< Reference to the T type parser used to mannage data
 public:
 	/**
 	 * @brief Construct a new HelpCommand.
 	 *
 	 * @param ob Reference to the SmartArray to operate on
+	 * @param parser Reference to the T parser
 	 */
-	HelpCommand(SmartArray<T>& ob): array_(ob) {};
+	HelpCommand(SmartArray<T>& ob, IParser<T>& parser) : array_(ob), parser_(parser) {};
 
 	/**
 	 * @brief Execute the help command.
@@ -62,8 +64,8 @@ public:
 	std::string description() override;
 };
 
-template <typename T, typename Parser>
-int HelpCommand<T, Parser>::execute(int argc, char* argv[]) {
+template <typename T>
+int HelpCommand<T>::execute(int argc, char* argv[]) {
 	// Gets help argument
 	const char* cmd_name = argv[2];
 
@@ -88,7 +90,7 @@ int HelpCommand<T, Parser>::execute(int argc, char* argv[]) {
 	}
 
 	// Command argument was given
-	CommandFactory<T, Parser> factory(array_);
+	CommandFactory<T> factory(array_, parser_);
 
 	std::unique_ptr<Command> command = factory.createCommand(cmd_name);
 	if (!command) {
@@ -101,14 +103,14 @@ int HelpCommand<T, Parser>::execute(int argc, char* argv[]) {
 	return 0;
 }
 
-template <typename T, typename Parser>
-int HelpCommand<T, Parser>::expectedArgCount() {
+template <typename T>
+int HelpCommand<T>::expectedArgCount() {
 	// return -1 if expected argument count is undedined
 	return -1;
 }
 
-template <typename T, typename Parser>
-std::string HelpCommand<T, Parser>::description() {
+template <typename T>
+std::string HelpCommand<T>::description() {
 	return "I see you ask for a lot of help ;)\n";
 }
 

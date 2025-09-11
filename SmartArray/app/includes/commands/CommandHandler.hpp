@@ -10,6 +10,7 @@
 #include <commands/HelpCommand.hpp>
 #include <SmartArray.hpp>
 #include <commands/CommandFactory.hpp>
+#include <IParser.hpp>
 
 /**
  * @brief Handles commands for a SmartArray using a specified parser.
@@ -18,18 +19,18 @@
  * creating the appropriate command via CommandFactory, and executing it.
  *
  * @tparam T Type of elements stored in SmartArray
- * @tparam Parser Parser type used to parse input arguments into objects of type T
  */
-template <typename T, typename Parser>
+template <typename T>
 class CommandHandler {
 	SmartArray<T>& array_;	///< Reference to the SmartArray being manipulated
+	IParser<T>& parser_; ///< Reference to the data type parser
 public:
 	/**
 	* @brief Construct a new CommandHandler.
 	*
 	* @param ob Reference to the SmartArray object to manage
 	*/
-	CommandHandler(SmartArray<T>& ob) : array_(ob) {};
+	CommandHandler(SmartArray<T>& ob, IParser<T>& parser) : array_(ob), parser_(parser) {};
 
 	/**
 	* @brief Handle command-line arguments and execute the corresponding command.
@@ -44,14 +45,14 @@ public:
 	int handle(int argc, char* argv[]);
 };
 
-template <typename T, typename Parser>
-int CommandHandler<T, Parser>::handle(int argc, char* argv[]) {
+template <typename T>
+int CommandHandler<T>::handle(int argc, char* argv[]) {
 	if (argv[1] == NULL) {
 		CommandErrorHandler::cmd_handler(CommandErrorHandler::ARGS_EXCEPTION);
 		return 2;
 	}
 	
-	CommandFactory<T, Parser> factory(array_);
+	CommandFactory<T> factory(array_, parser_);
 	// Pass command name as a parameter
 	std::unique_ptr<Command> command = factory.createCommand(argv[1]);
 	if (!command) {

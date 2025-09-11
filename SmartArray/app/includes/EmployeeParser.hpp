@@ -1,17 +1,30 @@
 #ifndef EMPLOYEE_PARSER_HPP
 #define EMPLOYEE_PARSER_HPP
 
+#include <IParser.hpp>
 #include <Employee.hpp>
 #include <vector>
 #include <string>
 
 /**
- * @brief Utility structure for parsing Employee data from command-line arguments.
+ * @brief Parser for Employee objects from command-line arguments.
  *
- * This struct provides static methods to parse Employee objects,
- * retrieve expected argument count, and get a description of arguments.
+ * This struct implements the IParser<Employee> interface and provides
+ * functionality to parse Employee data, validate it, and supply metadata.
+ * It encapsulates all type-specific logic for handling Employee input,
+ * so command classes can remain generic and type-agnostic.
+ *
+ * @note Parsing assumes arguments are passed in the expected order:
+ *       ID, First Name, Last Name, Position, Salary, Birth Year.
+ *
+ * Example usage:
+ * @code
+ * Employee e = EmployeeParser::parseData(argv);
+ * int argc_expected = EmployeeParser::getArgCount();
+ * std::string info = EmployeeParser::description();
+ * @endcode
  */
-struct EmployeeParser {
+struct EmployeeParser : public IParser<Employee>{
 	
 	/**
 	* @brief Parse an Employee from command-line arguments.
@@ -22,7 +35,7 @@ struct EmployeeParser {
 	* @param args Array of C-style strings representing command-line arguments
 	* @return Employee object constructed from arguments
 	*/
-	static Employee parseData(char* args[]) {
+	Employee parseData(char* args[]) const override {
 		// Skip first two arguments
 		return Employee{
 			std::stoi(args[2]),
@@ -38,7 +51,11 @@ struct EmployeeParser {
 	* @brief Get the expected number of command-line arguments.
 	* @return Integer representing the number of expected arguments
 	*/
-	static int getArgCount() { return 8; }
+	int getArgCount() const override { return 8; }
+
+	bool validate() const override {
+		return true;
+	}
 
 	/**
 	* @brief Get a description of the expected command-line arguments.
@@ -47,7 +64,7 @@ struct EmployeeParser {
 	*
 	* @return std::string containing the description
 	*/
-	static std::string description() {
+	std::string description() const override {
 		return R"(Number of arguments: 8
 Arguments:
 1. ID (integer)

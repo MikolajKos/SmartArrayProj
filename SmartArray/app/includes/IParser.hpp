@@ -6,10 +6,11 @@
 template <typename T>
 class IParser {
 public:
-	virtual T parseData(char* args[]) = 0;
-	virtual int getArgCount() = 0;
-	virtual std::string description() = 0;
-	virtual bool validate() = 0;
+	virtual T parseData(char* args[]) const = 0;
+	virtual int getArgCount() const = 0;
+	virtual std::string description() const = 0;
+	virtual bool validate() const = 0;
+	virtual ~IParser() = default;
 };
 
 #endif

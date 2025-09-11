@@ -11,6 +11,7 @@
 #include <commands/PrintCommand.hpp>
 #include <commands/ClearCommand.hpp>
 #include <SmartArray.hpp>
+#include <IParser.hpp>
 
 /**
  * @brief Factory class to create command objects.
@@ -19,12 +20,13 @@
  * and provides a method to create commands dynamically based on a string identifier.
  *
  * @tparam T Type of elements stored in SmartArray
- * @tparam Parser Parser type used to parse input arguments into objects of type T
  */
-template<typename T, typename Parser>
+template<typename T>
 class CommandFactory {
 	std::unordered_map<std::string, std::function<std::unique_ptr<Command>()>> cmdMap_; ///< Map of command names to factory functions
 	SmartArray<T>& array_; ///< Reference to the SmartArray used by commands
+	IParser<T>& parser_; ///< Reference to the data type parser
+
 public:
 	/**
 	 * @brief Construct a new CommandFactory.
@@ -32,10 +34,11 @@ public:
 	 * Initializes the mapping of command names to the corresponding command objects.
 	 *
 	 * @param ob Reference to the SmartArray used by created commands
+	 * @param parser Reference to the T type parser for data manipulation
 	 */
-	CommandFactory(SmartArray<T>& ob) : array_(ob) {
-		cmdMap_["add"] = [this]() {return std::make_unique<AddCommand<T, Parser>>(array_);};
-		cmdMap_["help"] = [this]() {return std::make_unique<HelpCommand<T, Parser>>(array_);};
+	CommandFactory(SmartArray<T>& ob, IParser<T>& parser) : array_(ob), parser_(parser) {
+		cmdMap_["add"] = [this]() {return std::make_unique<AddCommand<T>>(array_, parser_);};
+		cmdMap_["help"] = [this]() {return std::make_unique<HelpCommand<T>>(array_, parser_);};
 		cmdMap_["pop"] = [this]() {return std::make_unique<PopCommand<T>>(array_);};
 		cmdMap_["print"] = [this]() {return std::make_unique<PrintCommand<T>>(array_);};
 		cmdMap_["clear"] = [this]() {return std::make_unique<ClearCommand<T>>(array_);};
@@ -55,8 +58,8 @@ public:
 };
 
 // Implementation
-template<typename T, typename Parser>
-std::unique_ptr<Command> CommandFactory<T, Parser>::createCommand(std::string name) {
+template<typename T>
+std::unique_ptr<Command> CommandFactory<T>::createCommand(std::string name) {
 	auto it = cmdMap_.find(name);
 	if (it != cmdMap_.end()) {
 		return (it->second)();

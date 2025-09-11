@@ -4,6 +4,7 @@
 #include <commands/CommandHandler.hpp>
 #include <Employee.hpp>
 #include <EmployeeParser.hpp>
+#include <IParser.hpp>
 #include <SmartArray.hpp>
 #include <SmartArrayIO.hpp>
 
@@ -17,7 +18,9 @@ int main(int argc, char* argv[]) {
 	SmartArray<Employee> arr;
 	SmartArrayIO<Employee>::load(arr);
 
-	CommandHandler<Employee, EmployeeParser> handler(arr);
+	EmployeeParser empParser;
+
+	CommandHandler<Employee> handler(arr, empParser);
 	int result = handler.handle(argc, argv);
 	
 	if (result == 0)
@@ -31,8 +34,7 @@ int main(int argc, char* argv[]) {
 // GENERAL NOTES
 
 /*
-*	"add" command validation will be added
-*	Factory pattern will be implemented for creating dynamic Command objects
+*	"pushBack" command validation will be added
 */
 
 
