@@ -53,6 +53,14 @@ struct EmployeeParser : public IParser<Employee>{
 	*/
 	int getArgCount() const override { return 8; }
 
+	/**
+	 * @brief Validate the parsed data.
+	 *
+	 * This method checks whether the parsed data meets the required conditions.
+	 * Specific validation rules are defined by the specific parser implementation.
+	 *
+	 * @return true if the data is valid according to the parser's rules, false otherwise.
+	 */
 	bool validate() const override {
 		return true;
 	}

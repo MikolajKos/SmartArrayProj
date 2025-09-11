@@ -13,7 +13,6 @@
  * elements to a SmartArray using a specified parser for input arguments.
  *
  * @tparam T Type of elements stored in SmartArray
- * @tparam Parser Parser type used to parse command-line arguments into objects of type T
  */
 template<typename T>
 class AddCommand : public Command {

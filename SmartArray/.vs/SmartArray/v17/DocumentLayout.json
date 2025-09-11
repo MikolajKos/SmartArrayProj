@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\EmployeeParser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\EmployeeParser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\IParser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\IParser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\commands\\AddCommand.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\commands\\AddCommand.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -21,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\IParser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\IParser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\EmployeeParser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\includes\\EmployeeParser.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "HelpCommand.hpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\commands\\HelpCommand.hpp",
               "RelativeDocumentMoniker": "app\\includes\\commands\\HelpCommand.hpp",
@@ -63,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\src\\main.cpp",
               "RelativeDocumentMoniker": "app\\src\\main.cpp",
@@ -76,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "CommandHandler.hpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\commands\\CommandHandler.hpp",
               "RelativeDocumentMoniker": "app\\includes\\commands\\CommandHandler.hpp",
@@ -89,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CommandFactory.hpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\commands\\CommandFactory.hpp",
               "RelativeDocumentMoniker": "app\\includes\\commands\\CommandFactory.hpp",
@@ -102,39 +102,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AddCommand.hpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\commands\\AddCommand.hpp",
               "RelativeDocumentMoniker": "app\\includes\\commands\\AddCommand.hpp",
               "ToolTip": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\commands\\AddCommand.hpp",
               "RelativeToolTip": "app\\includes\\commands\\AddCommand.hpp",
-              "ViewState": "AQIAADAAAAAAAAAAAAAowEcAAAAmAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAA4AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-11T12:06:16.701Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "EmployeeParser.hpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\EmployeeParser.hpp",
               "RelativeDocumentMoniker": "app\\includes\\EmployeeParser.hpp",
               "ToolTip": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\EmployeeParser.hpp",
               "RelativeToolTip": "app\\includes\\EmployeeParser.hpp",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAowDEAAAAEAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAowD0AAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-11T13:46:54.053Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "IParser.hpp",
               "DocumentMoniker": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\IParser.hpp",
               "RelativeDocumentMoniker": "app\\includes\\IParser.hpp",
               "ToolTip": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\STUDIA\\SmartArrayProj\\SmartArray\\app\\includes\\IParser.hpp",
               "RelativeToolTip": "app\\includes\\IParser.hpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAjAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEYAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-11T13:46:19.288Z",
               "EditorCaption": ""
