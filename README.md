@@ -1,11 +1,13 @@
-SmartArray Command Pattern Project
+💡 **SmartArray Command Pattern Project**
 
-
-**Description**
+## Description
 SmartArray is a flexible and extensible C++ project implementing a dynamic array container with a Command pattern interface. It supports operations such as adding, removing, printing, and clearing elements through modular commands. The project also features a command factory and parser integration to enable type-specific command behavior.
 
+## Docs
+The entire documentation is generated with the help of Doxygen and is available online: 
+https://mkosiorek.pl/docs/smart_array/html/index.html
 
-**Features**
+## Features
 - Template-based SmartArray container for generic data types.
 - Command pattern with commands like Add, Pop, Print, Clear, and Help.
 - Command factory for dynamic command creation.
@@ -15,13 +17,13 @@ SmartArray is a flexible and extensible C++ project implementing a dynamic array
 - Built-in error handling for invalid inputs and command failures.
 
 
-**Requirements**
+## Requirements
 - C++17 (or newer) compatible compiler.
 - CMake (version 3.10 or higher recommended).
 - Compatible with Windows, Linux, and macOS.
 
 
-**Instalation**
+## Instalation
 1. Clone the repository:<br>
    git clone https://github.com/MikolajKos/SmartArrayProj.git<br>
    cd SmartArray
@@ -40,7 +42,7 @@ SmartArray is a flexible and extensible C++ project implementing a dynamic array
    - Restart your terminal or IDE.
 
 
-**Usage**<br>
+## Usage
 Run the executable from your terminal or command prompt. Commands are structured as follows:<br>
 `sa <command> [arguments]`<br>
 Where `sa` is program name
