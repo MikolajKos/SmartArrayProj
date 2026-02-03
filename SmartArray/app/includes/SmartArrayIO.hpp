@@ -94,7 +94,7 @@ public:
 template <typename T>
 std::filesystem::path SmartArrayIO<T>::GetFileDirectory(std::string filename) {
 	std::filesystem::path exeDir = GetExeDirectory();
-	std::filesystem::path filePath = exeDir / ".." / ".." / "app" / "files" / filename;
+	std::filesystem::path filePath = exeDir / ".." / "app" / "files" / filename;
 	filePath = std::filesystem::weakly_canonical(filePath);
 
 	return filePath;
@@ -126,14 +126,15 @@ void SmartArrayIO<T>::load(SmartArray<T>& ob, std::string source) {
 	file.open(GetFileDirectory(source), std::ios::in | std::ios::binary);
 
 	if (!file.is_open()) {
+		std::cerr << "Could not open file at directory: " << GetFileDirectory(source) << "\n";
 		ErrorHandler::handler(ErrorHandler::OPENING_FILE_ERROR);
 	}
-
+	
 	// Read array size
 	unsigned new_size = 0;
 	ob.clear();
 	file.read(reinterpret_cast<char*>(&new_size), sizeof(unsigned));
-
+	
 	// Read all data
 	for (unsigned i = 0; i < new_size; ++i) {
 		T temp;
