@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <crtdbg.h>
 #include <commands/CommandHandler.hpp>
 #include <Employee.hpp>
 #include <EmployeeParser.hpp>
@@ -8,12 +7,14 @@
 #include <SmartArray.hpp>
 #include <SmartArrayIO.hpp>
 
-#define DEBUG // Only for detecting memory leaks
-#define _CRTDBG_MAP_ALLOC
+// #define DEBUG // Only for detecting memory leaks
 
 int main(int argc, char* argv[]) {	
-#ifdef DEBUG
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#if defined(DEBUG) && defined(_WIN32)
+        #include <crtdbg.h>
+  
+        #define _CRTDBG_MAP_ALLOC
+        _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif // !DEBUGS
 	SmartArray<Employee> arr;
 	SmartArrayIO<Employee>::load(arr);

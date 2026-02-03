@@ -10,14 +10,15 @@
 #include <filesystem>
 
 #ifdef _WIN32
-#include <windows.h>
+       #include <windows.h>
 #elif __APPLE__
 
-#include <mach-o/dyld.h>
-#include <climits>
+       #include <mach-o/dyld.h>
+       #include <climits>
 
-#elif
-#include <unistd.h>
+#else
+       #include <unistd.h>
+       #include <climits>
 #endif
 
 /**
@@ -52,6 +53,7 @@ inline std::filesystem::path GetExeDirectory() {
 	if (count < 0 || count >= PATH_MAX)
 		return {}; // some error
 	szPath[count] = '\0';
+	return std::filesystem::path(szPath).parent_path();
 #endif
 }
 

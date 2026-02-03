@@ -2,12 +2,16 @@
 #define HELP_COMMAND_HPP
 
 #include <commands/Command.hpp>
-#include <commands/CommandFactory.hpp>
+//#include <commands/CommandFactory.hpp>
 #include <iostream>
 #include <memory>
 #include <functional>
 #include <SmartArray.hpp>
 #include <IParser.hpp>
+#include <handlers/CommandErrorHandler.hpp>
+
+template <typename T>
+class CommandFactory;
 
 /**
  * @brief Command to display help information for SmartArray CLI commands.
@@ -65,6 +69,20 @@ public:
 };
 
 template <typename T>
+int HelpCommand<T>::expectedArgCount() {
+	// return -1 if expected argument count is undedined
+	return -1;
+}
+
+template <typename T>
+std::string HelpCommand<T>::description() {
+	return "I see you ask for a lot of help ;)\n";
+}
+
+
+#include <commands/CommandFactory.hpp>
+
+template <typename T>
 int HelpCommand<T>::execute(int argc, char* argv[]) {
 	// Gets help argument
 	const char* cmd_name = argv[2];
@@ -101,17 +119,6 @@ int HelpCommand<T>::execute(int argc, char* argv[]) {
 	std::cout << command->description();
 
 	return 0;
-}
-
-template <typename T>
-int HelpCommand<T>::expectedArgCount() {
-	// return -1 if expected argument count is undedined
-	return -1;
-}
-
-template <typename T>
-std::string HelpCommand<T>::description() {
-	return "I see you ask for a lot of help ;)\n";
 }
 
 #endif
