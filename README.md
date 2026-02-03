@@ -23,23 +23,37 @@ https://mkosiorek.pl/docs/smart_array/html/index.html
 - Compatible with Windows, Linux, and macOS.
 
 
-## Instalation
-1. Clone the repository:<br>
-   git clone https://github.com/MikolajKos/SmartArrayProj.git<br>
-   cd SmartArray
+## Installation & Build
 
-2. Build the project with CMake:<br>
-   mkdir build<br>
-   cd build<br> 
-   cmake ..<br> 
-   cmake --build . 
+### Prerequisites
+* **Compiler:** C++17 compliant compiler.
+    * *Windows:* **Microsoft Visual C++ (MSVC)** is recommended to fully utilize the built-in memory leak detection features.
+* **Build System:** CMake (3.10+).
 
-3. (Optional) To use the compiled executable globally from any terminal, add the executable directory to your system's environment PATH variable:<br>
-   Windows:
-   - Open System Properties -> Advanced -> Environment Variables.
-   - Find and edit the Path variable.
-   - Add the full path to your debug directory (e.g., C:\path\to\SmartArrayProj\SmartArray\build\Debug).
-   - Restart your terminal or IDE.
+### Building form Source
+1.  Clone the repository:
+    ```bash
+    git clone [https://github.com/MikolajKos/SmartArrayProj.git](https://github.com/MikolajKos/SmartArrayProj.git)
+    cd SmartArray
+    ```
+
+2.  Create a build directory and compile:
+    ```bash
+    mkdir build
+    cd build
+    cmake ..
+    cmake --build .
+    ```
+
+3.  **Running the application:**
+    For the automatic path detection to work correctly, run the executable directly from the `build` directory:
+    ```bash
+    .\sa.exe   # Windows
+    ./sa       # Linux/macOS
+    ```
+
+*(Optional) Adding to PATH:*
+To use the `sa` command globally, add the full path of your `build` directory to your system's Environment Variables.
 
 
 ## Usage
