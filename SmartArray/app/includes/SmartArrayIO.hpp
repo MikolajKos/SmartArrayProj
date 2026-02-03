@@ -96,10 +96,21 @@ public:
 template <typename T>
 std::filesystem::path SmartArrayIO<T>::GetFileDirectory(std::string filename) {
 	std::filesystem::path exeDir = GetExeDirectory();
-	std::filesystem::path filePath = exeDir / ".." / "app" / "files" / filename;
-	filePath = std::filesystem::weakly_canonical(filePath);
 
-	return filePath;
+	// File path for Linux / MinGW (.exe file directly in build catalog)
+	std::filesystem::path pathFlat = exeDir / ".." / "app" / "files" / filename;
+
+	// Visual Studio path (.exe file in build/Debug catalog)
+	std::filesystem::path pathNested = exeDir / ".." / ".." / "app" / "files" / filename;
+	
+	std::filesystem::path finalDirPath;
+
+	if (std::filesystem::exists(pathNested))
+		finalDirPath = pathNested;
+	else
+		finalDirPath = pathFlat;
+
+	return std::filesystem::weakly_canonical(finalDirPath);
 }
 
 template <typename T>

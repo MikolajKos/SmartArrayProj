@@ -32,13 +32,6 @@ int main(int argc, char* argv[]) {
 	return result;
 }
 
-// GENERAL NOTES
-
-/*
-*	"pushBack" command validation will be added
-*/
-
-
 // DOCUMENTATION NOTES
 
 /*
