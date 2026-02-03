@@ -34,6 +34,7 @@ https://mkosiorek.pl/docs/smart_array/html/index.html
 1.  Clone the repository:
     ```bash
     git clone [https://github.com/MikolajKos/SmartArrayProj.git](https://github.com/MikolajKos/SmartArrayProj.git)
+    cd SmartArrayProj
     cd SmartArray
     ```
 
@@ -55,6 +56,18 @@ https://mkosiorek.pl/docs/smart_array/html/index.html
 *(Optional) Adding to PATH:*
 To use the `sa` command globally, add the full path of your `build` directory to your system's Environment Variables.
 
+## Technical Details
+
+### Memory Management
+The project utilizes the **Microsoft C Runtime Library (`<crtdbg.h>`)** for advanced memory management on Windows.
+- **Leak Detection:** Automatic memory leak reporting is enabled upon program termination.
+- **Debug Flags:** The application uses `_CRTDBG_MAP_ALLOC` to precisely track memory allocations and prevent resource leaks during runtime.
+*Note: These debugging features are active when compiling with MSVC on Windows.*
+
+### Data Persistence
+Data consistency is ensured through a binary serialization mechanism.
+- The application automatically saves the state of the array to a binary file (`preload_data.bin`).
+- **Path Resolution:** The file path is dynamically calculated relative to the executable's location, ensuring the application works correctly regardless of the installation directory (portable pathing).
 
 ## Usage
 Run the executable from your terminal or command prompt. Commands are structured as follows:<br>
